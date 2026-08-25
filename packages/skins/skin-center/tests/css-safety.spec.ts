@@ -103,20 +103,6 @@ describe('transformSkinCss scoping', () => {
     expect(code).toContain('--dsw-alias-markdown-code-block: #17243ad9;')
   })
 
-  it('keeps whale song markdown code aliases body-scoped (#646)', () => {
-    const css = readFileSync(new URL('../skins/whale-song/skin.css', import.meta.url), 'utf8')
-    const whaleScope = 'html[data-dsh-skin="whale-song"]'
-    const token = '--dsw-alias-markdown-code-block'
-    const { code } = transformSkinCss(css, { skinId: 'whale-song', filename: 'skin.css' })
-    const rootReset = code.indexOf(`${token}: initial;`)
-    const bodyCloneStart = code.indexOf(`${whaleScope} body {`, rootReset)
-    const bodyClone = code.slice(bodyCloneStart, code.indexOf('}', bodyCloneStart) + 1)
-    expect(css).toContain(token)
-    expect(rootReset).toBeGreaterThanOrEqual(0)
-    expect(bodyCloneStart).toBeGreaterThan(rootReset)
-    expect(bodyClone).toContain(`${token}:`)
-  })
-
   it('normalizes commented important html tokens for body themes (#646)', () => {
     const token = '--dsw-alias-markdown-code-block'
     const css = [

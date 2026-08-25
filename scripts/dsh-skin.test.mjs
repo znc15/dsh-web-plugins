@@ -94,15 +94,21 @@ test('install refuses hooks-bearing skins without --allow-hooks', () => {
 })
 
 test('use writes the selection; current reads it; official clears it', () => {
-  const use = run(['use', 'whale-song'])
+  // No bundled skins anymore: install a fixture skin first, then select it.
+  const root = mkdtempSync(join(tmpdir(), 'dsh-skin-fixture-'))
+  const dir = fixtureSkin(root, 'demo')
+  const installed = run(['install', dir])
+  assert.equal(installed.code, 0, installed.out)
+  const env = { DSH_HOME: join(installed.home, '.dsh') }
+  const use = run(['use', 'demo'], env)
   assert.equal(use.code, 0, use.out)
-  const env = { DSH_HOME: join(use.home, '.dsh') }
   const current = run(['current'], env)
-  assert.equal(current.out.trim(), 'whale-song')
+  assert.equal(current.out.trim(), 'demo')
   const off = run(['use', 'official'], env)
   assert.equal(off.code, 0, off.out)
   const after = run(['current'], env)
   assert.equal(after.out.trim(), 'none')
+  rmSync(root, { recursive: true, force: true })
 })
 
 test('use rejects an unknown skin', () => {
@@ -111,11 +117,16 @@ test('use rejects an unknown skin', () => {
   assert.match(r.out, /unknown skin/)
 })
 
-test('list shows builtin skins and diagnostics', () => {
-  const r = run(['list'])
+test('list shows user skins and diagnostics', () => {
+  const root = mkdtempSync(join(tmpdir(), 'dsh-skin-fixture-'))
+  const dir = fixtureSkin(root, 'demo')
+  const installed = run(['install', dir])
+  assert.equal(installed.code, 0, installed.out)
+  const r = run(['list'], { DSH_HOME: join(installed.home, '.dsh') })
   assert.equal(r.code, 0, r.out)
-  assert.match(r.out, /whale-song \[builtin\]/)
+  assert.match(r.out, /demo \[user\]/)
   assert.match(r.out, /active:/)
+  rmSync(root, { recursive: true, force: true })
 })
 test('validate warns (not fails) on a partial primary-action token set', () => {
   const root = mkdtempSync(join(tmpdir(), 'dsh-skin-fixture-'))

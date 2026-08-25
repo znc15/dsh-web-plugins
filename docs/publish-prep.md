@@ -9,7 +9,7 @@
 
 ## 一、范围
 
-`packages/` 与 `packages/skins/` 下共 17 个插件包（截至 2026-08-24 快照，新增 session-delete）。皮肤不再独立成包：皮肤是纯资产目录（仓库内 `packages/skins/skin-center/skins/<id>/` 为创意工坊/画廊来源），皮肤集已裁剪为单一皮肤 `whale-song`（鲸吟），随 `@linxin666/dsh-client-ui-skin-center` 的 `files` 白名单分发：
+`packages/` 与 `packages/skins/` 下共 17 个插件包（截至 2026-08-25 快照）。皮肤中心 **不再内置任何皮肤**：鲸吟（whale-song）已独立出来，在独立皮肤仓库（znc15/dsh-skin-whale-song）中以 v2 纯资产目录分发，用户装进 `$DSH_HOME/skins/<id>/` 即被收录；皮肤中心包的 `files` 白名单不含任何 `skins/*` 条目。
 
 | 目录 | 包名 | 当前版本 | private |
 | --- | --- | --- | --- |

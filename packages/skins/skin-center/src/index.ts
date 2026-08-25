@@ -234,12 +234,14 @@ function applyImpl(ctx: Context): void {
     console.error('[ui-skin-center] route registration failed:', error)
   }
 
-  // Default-skin seed: whale-song (the only skin in the collection) ships in
-  // the package and acts as the default look. A first boot with no persisted
-  // selection activates it once, so fresh installs see the intended look
-  // without the user opening the skin center. Existing selections are never
+  // Default-skin seed: the package ships no skins — whale-song (鲸吟)
+  // comes from the independent skin repository and lives in the user skins
+  // directory. When it is present and no selection was persisted yet, a
+  // first boot activates it once so fresh installs see the intended look
+  // without opening the skin center. Existing selections are never
   // overwritten; a selection no longer in the catalog resolves to the stock
-  // look browser-side.
+  // look browser-side. An empty catalog (no user skins at all) skips the
+  // seed and keeps the official stock look.
   try {
     const statePath = defaultActiveStatePath()
     seedDefaultActiveSkin(statePath, (id) => findSkin(loadSkinCatalog(), id) !== null)

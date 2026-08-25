@@ -21,10 +21,8 @@ async function main() {
   const lib = await import(pathToFileURL(LIB_PATH).href)
   const catalog = lib.loadSkinCatalog({ builtinDir: SKINS_DIR, userDir: path.join(SKINS_DIR, '.nonexistent-user-root') })
   let failed = false
-  if (catalog.skins.length === 0) {
-    console.error('skin-center:check: no built-in skins found')
-    failed = true
-  }
+  // Independent-skin design: the package carries no built-in skins; an empty
+  // catalog is expected and valid (skins install into $DSH_HOME/skins).
   for (const diag of catalog.diagnostics) {
     console.error(`skin-center:check: ${diag.subject} excluded: ${diag.errors.join('; ')}`)
     failed = true
@@ -57,7 +55,7 @@ async function main() {
   // The package ships only the default skin (market on-demand plan); this
   // check validates the whole repo catalog that market-build and the gallery
   // serve. Keep both facts visible in the report.
-  const shipped = 'whale-song'
+  const shipped = 'none (independent skin repository)'
   if (!checkMode) {
     console.log(`skin-center:check: ${catalog.skins.length} repo catalog skins valid (package ships ${shipped} only)`)
   } else {

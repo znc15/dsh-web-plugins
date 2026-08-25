@@ -81,13 +81,12 @@ node scripts/dsh-plugin-new <name>   # 生成 packages/<name>/ 骨架
 ### 新增皮肤
 
 ```sh
-node scripts/dsh-skin-new          # 生成 packages/skins/skin-center/skins/<id>/ 纯资产骨架
+node scripts/dsh-skin-new          # 生成皮肤纯资产骨架
 node scripts/capture-previews <id>  # 重拍 preview/{light,dark}.png
-pnpm gallery:build                # 画廊产物
-node scripts/skins-montage.mjs    # 重排根 README 皮肤一览图（docs/images/skins-montage.png）
+pnpm gallery:build                # 画廊产物（当前仓库零内置皮肤，产出空目录册）
 ```
 
-皮肤启用互斥由 `dsh-skin use` 管理（客户端原子切换，不改 cordis.patch.yml）；皮肤资产全部内置在皮肤中心包，不单独发 npm 包。
+皮肤启用互斥由 `dsh-skin use` 管理（客户端原子切换，不改 cordis.patch.yml）。仓库不再内置皮肤：鲸吟（whale-song）以独立皮肤仓库（znc15/dsh-skin-whale-song）分发，装进 `$DSH_HOME/skins/<id>/` 即被皮肤中心收录；根 README 也已移除皮肤一览图（skins-montage 保留供未来皮肤回归后使用）。
 
 ### 本地验证（挂载进 dsh web）
 

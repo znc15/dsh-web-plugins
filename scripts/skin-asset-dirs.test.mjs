@@ -1,9 +1,9 @@
 /**
  * v2 skin layout invariants (issue #506): skin-center stays the only real
- * bundle package under packages/skins/, and every built-in skin is a pure
- * asset directory — a v2 skin.json, no package.json, no build files. A
- * package.json inside a skin directory would turn the asset back into a
- * workspace package and revive the retired per-skin npm package shape.
+ * bundle package under packages/skins/, and the package ships ZERO bundled
+ * skins — v2 skins are pure asset directories installed by the user (or the
+ * market) into $DSH_HOME/skins/<id>/. The whale-song (鲸吟) skin lives in
+ * its own independent repository (znc15/dsh-skin-whale-song).
  */
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
@@ -19,39 +19,28 @@ function readJson(path) {
   return JSON.parse(readFileSync(path, 'utf8'))
 }
 
-test('skin-center stays a real bundle; skin asset directories stay package-free', () => {
+test('skin-center stays a real bundle; the package carries no skin asset directories', () => {
   const center = readJson(join(skinsRoot, 'skin-center', 'package.json'))
   assert.equal(center.dsh?.bundle?.patch, './cordis.patch.yml')
 
-  const skins = readdirSync(assetRoot, { withFileTypes: true })
-    .filter((entry) => entry.isDirectory())
-    .map((entry) => entry.name)
-
-  assert.ok(skins.length > 0)
-  for (const name of skins) {
-    const dir = join(assetRoot, name)
-    assert.equal(existsSync(join(dir, 'package.json')), false, name)
-    const skin = readJson(join(dir, 'skin.json'))
-    assert.equal(skin.skinManifestVersion, 2, name)
-    assert.equal(skin.id, name, name)
-  }
+  const entries = existsSync(assetRoot)
+    ? readdirSync(assetRoot, { withFileTypes: true }).filter((entry) => entry.isDirectory())
+    : []
+  assert.deepEqual(entries.map((entry) => entry.name), [], 'no bundled skin directories expected')
 })
 
-test('the published package ships exactly the one skin in the collection', () => {
-  // Single-skin collection: whale-song (鲸吟) is the only skin under the
-  // repo's skin-center source AND the only skin bundled in the npm package.
-  // The repository skins/ directory remains the single source for
-  // market-build, the gallery and the preview tooling; users may still drop
-  // their own skins into $DSH_HOME/skins, where the same skin center manages
-  // them.
+test('the published package ships no bundled skins (skins live in the independent skin repository)', () => {
+  // Independent-skin design: the skin-center npm package ships zero skins.
+  // whale-song (鲸吟) is distributed from its own repository
+  // (znc15/dsh-skin-whale-song) and is installed by the user into
+  // $DSH_HOME/skins/whale-song, where the same skin center manages it.
   const center = readJson(join(skinsRoot, 'skin-center', 'package.json'))
   const files = center.files
   assert.ok(Array.isArray(files), 'files whitelist must exist')
   const packagedSkins = files.filter((entry) => typeof entry === 'string' && entry.startsWith('skins/'))
-  assert.deepEqual(packagedSkins, ['skins/whale-song'], 'whale-song is the only skin that may ship in the package')
-  const skins = readdirSync(assetRoot, { withFileTypes: true })
-    .filter((entry) => entry.isDirectory())
-    .map((entry) => entry.name)
-  assert.deepEqual(skins, ['whale-song'], 'the repo skin collection contains exactly whale-song')
-  assert.ok(readJson(join(assetRoot, 'whale-song', 'skin.json')).id === 'whale-song')
+  assert.deepEqual(packagedSkins, [], 'no skin may ship inside the skin-center package')
+  const bundledDirs = existsSync(assetRoot)
+    ? readdirSync(assetRoot).filter((name) => !name.startsWith('.')).length
+    : 0
+  assert.equal(bundledDirs, 0, 'the skin-center package must not bundle any skin asset directory')
 })

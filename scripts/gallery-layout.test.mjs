@@ -26,11 +26,11 @@ try {
 after(() => { if (browser !== null) return browser.close() })
 
 const SKIP = browser === null
+// No bundled skins anymore (whale-song lives in the independent skin
+// repository): the try-on gallery renders the stock look only.
 const CASES = [
   { skin: 'stock', theme: 'light' },
   { skin: 'stock', theme: 'dark' },
-  { skin: 'whale-song', theme: 'light' },
-  { skin: 'whale-song', theme: 'dark' },
 ]
 
 for (const c of CASES) {

@@ -76,6 +76,10 @@ function readSkinFile(dir, rel, label) {
 }
 
 function scanSkins() {
+  // Independent-skin design: the repo ships no bundled skins (whale-song
+  // lives in its own skin repository), so an absent or empty skins source
+  // is valid and yields an empty gallery catalog.
+  if (!fs.existsSync(SKINS_DIR)) return []
   const skins = []
   for (const name of fs.readdirSync(SKINS_DIR).sort()) {
     const dir = path.join(SKINS_DIR, name)
@@ -84,7 +88,6 @@ function scanSkins() {
     if (!meta) continue
     skins.push({ name, dir, meta })
   }
-  if (!skins.length) throw new Error('no skins found under packages/skins/skin-center/skins/')
   // 入库顺序（skin.json 的 order 字段）决定 Gallery 卡片顺序
   skins.sort((a, b) => (a.meta.order ?? 999) - (b.meta.order ?? 999))
   return skins

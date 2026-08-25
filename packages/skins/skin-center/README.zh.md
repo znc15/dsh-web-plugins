@@ -4,7 +4,7 @@
 
 `@linxin666/dsh-client-ui-skin-center`（cordis 插件 id `ui-skin-center`）是 dsh Web GUI 唯一的皮肤包：它把皮肤列表 / 试穿 / 应用做成一级设置分区「皮肤中心」（设置 → 皮肤中心，只列已安装皮肤），并且是所有皮肤的唯一加载器与渲染器。皮肤是纯资产目录——没有 package.json、不发 npm、不接 cordis 接线——只与皮肤中心契约（`contracts/`）耦合；皮肤中心把对官方 DSH 的全部耦合吸收在契约之后。卡片自带总开关（关闭即停用试穿、应用与背景控制）。
 
-列表：展示「官方默认」加目录册里已安装的皮肤（名称、标语、强调色），当前应用目标带「使用中」标记。目录册合并两个来源：随本包内置的皮肤（`skins/whale-song/`，即鲸吟）与放进 `$DSH_HOME/skins/<id>/` 的用户皮肤（同 id 时用户皮肤遮蔽内置皮肤）。`skin.json` 校验失败的皮肤按 fail-closed 排除，并作为目录诊断上报。
+列表：展示「官方默认」加目录册里已安装的皮肤（名称、标语、强调色），当前应用目标带「使用中」标记。目录册读取 `$DSH_HOME/skins/<id>/` 下的用户皮肤，本包**不再内置任何皮肤**——鲸吟（whale-song）以独立皮肤仓库分发：把它装进 `$DSH_HOME/skins/whale-song/` 即被目录收录。`skin.json` 校验失败的皮肤按 fail-closed 排除，并作为目录诊断上报。
 - 自定义主题：列表末尾提供一张基于官方默认外观派生的用户级主题卡，与「官方默认」及目录册皮肤相互独立。浅色、深色分别编辑强调色、背景色、前景色和对比度（0–100），支持即时试穿、应用、恢复当前模式默认值和刷新持久化。生成的 CSS 只能覆盖经审计的官方 token 白名单，不接收选择器、任意 CSS 或资源 URL；不会修改任何第三方皮肤定义，目录册皮肤激活时自定义主题层自动停用。
 - 试穿 / 应用：两者走同一个原子切换引擎（`src/client/runtime/skin-controller.ts`）。一次切换 = 一个新的 activation identity：取回已限定作用域的样式表，安装样式、背景媒体与可选 hooks，翻转 `html[data-dsh-skin="<id>"]`，然后销毁上一个 activation（append-only 效果账本，幂等清理）。最新请求永远胜出；失败或被淘汰的切换完整保留旧皮肤。试穿是同一个切换但不落盘——「退出试穿」恢复已提交的皮肤。应用会持久化选择（`POST /api/skin-center/v2/active`）。不刷新页面、不改写 `cordis.patch.yml`、不重建启动图。
 - 首屏：host 半区注册一个 index.html 转换（`webServer.tapIndex`，单一适配模块 `src/tap-index-adapter.ts`），向每份送达的文档盖 `html[data-dsh-skin]` 属性并插入样式表链接，刷新后直接以当前皮肤启动，无官方原貌闪屏。tap 出任何问题都 fail-closed 回官方原貌。
@@ -22,7 +22,7 @@ dsh plugin --profile web add @linxin666/dsh-client-ui-skin-center
 # 仓库开发：dsh plugin --profile web add link:$(pwd)/packages/skins/skin-center
 ```
 
-`$(pwd)` 是 dsh-web monorepo 的本地克隆。皮肤集只有一款皮肤 —— 鲸吟（whale-song），随本包发布并兼作默认外观。新装默认激活鲸吟（宿主种子）；升级后原激活皮肤已不可用时回退官方主题。包内只发布 `skins/whale-song`，与市场站点、画廊构建使用同一份 `skins/` 源码。
+`$(pwd)` 是 dsh-web monorepo 的本地克隆。本包不内置皮肤：**鲸吟（Whale Song）** 放在独立皮肤仓库（[znc15/dsh-skin-whale-song](https://github.com/znc15/dsh-skin-whale-song)）——克隆或复制到 `$DSH_HOME/skins/whale-song/` 即可（仓库 README 有完整命令；自带 provenance 文件，favicon 钩子安装后保持可信）。全新安装且鲸吟已就位、且尚无持久化选择时会自动以鲸吟为默认；未安装任何用户皮肤时保持官方默认外观。
 
 皮肤中心是符合官方 DSH 插件标准的自包含 bundle（`dsh.bundle.patch` 指向 `cordis.patch.yml`）；也可经 git 安装：`dsh plugin --profile web add github:<org>/dsh-web#<sha>`（`prepare` 脚本就地构建 `lib/`）。pnpm ≥10 安装 git 依赖前需授权 `allowBuilds`；本地 `link:` 安装无此要求。
 

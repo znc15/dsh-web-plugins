@@ -35,7 +35,7 @@
 
 dsh-web 是 DeepSeek Harness（DSH）Web 的插件聚合生态包，也是「一切皆开发、一切皆插件」理念在 Web 端最完整的落地：梁神模式、任务看板、移动端远程、SSH 运维、图像理解、右侧面板、鲸鱼娘宠物与皮肤，每一样都是独立成包的插件，可插拔、可替换、可再开发——一次装齐便是完整的开发工作台，只挑一两个也能安静融入原生界面。所有插件都经官方 profile 机制挂载到 `dsh web`，不改 DSH 源码；聚合包还能把外部插件（如 `dsh-better-sidebar`）拼进全家桶，详见 [dsh-web-all README](packages/dsh-web-all/README.zh.md)。
 
-皮肤同样长在插件体系里：v2 皮肤不是独立产品，而是「皮肤」插件的纯资产包（skin.json 清单 + 样式、贴图与可选特效脚本），由该插件这一唯一加载器即时加载，与官方彻底解耦——官方升级不再牵动皮肤，新增皮肤也只需落一个目录，无需发布、无需安装。插件负责逻辑，皮肤资产负责外观；插件与皮肤、宠物资产的分发统一走 [创意工坊](#创意工坊dsh-marketcom)（dsh-market.com）。
+皮肤同样长在插件体系里：v2 皮肤是纯资产目录（skin.json 清单 + 样式、贴图与可选特效脚本），由皮肤中心这一唯一加载器即时加载，与官方彻底解耦——官方升级不再牵动皮肤。鲸吟（Whale Song）以独立皮肤仓库分发（[dsh-skin-whale-song](https://github.com/znc15/dsh-skin-whale-song)），放进 `$DSH_HOME/skins/<id>/` 即被收录。插件负责逻辑，皮肤资产负责外观；插件与皮肤、宠物资产的分发统一走 [创意工坊](#创意工坊dsh-marketcom)（dsh-market.com）。
 
 ![DSH Web UI 主界面](docs/screenshots/13-hero-main.png)
 
@@ -49,7 +49,7 @@ dsh-web 是 DeepSeek Harness（DSH）Web 的插件聚合生态包，也是「一
 | 文件预览与变更 | 无 | 右侧面板：资源管理器 / 编辑器 / 终端 / Git / 浏览器 |
 | 陪伴宠物 | 无 | 鲸鱼娘：跟随智能体状态互动、喂养养成 |
 | Git 可视化 | 无 | 分支选择器 + 提交历史图谱 |
-| 主题皮肤 | 默认主题（鲸吟） | 皮肤插件 1 款主题皮肤（鲸吟）+ 自定义主题编辑器，先试穿再应用 |
+| 主题皮肤 | 默认主题（无内置；鲸吟独立仓库分发） | 皮肤插件不再内置皮肤（鲸吟走 [dsh-skin-whale-song](https://github.com/znc15/dsh-skin-whale-song) 独立仓库安装）+ 自定义主题编辑器，先试穿再应用 |
 
 ## 创意工坊（dsh-market.com）
 
@@ -141,26 +141,15 @@ DeepSeek V4 Pro 对首轮工具目录很敏感。社区评测里，官方 Standa
 
 ### 皮肤
 
-「皮肤」插件是全部皮肤的唯一加载器：鲸吟（Whale Song）试穿后即可应用——试穿即时生效、退出完全还原，满意再一键应用；列表末尾还有自定义主题编辑器，强调色、背景、前景与对比度即时预览。鲸吟随皮肤插件自带、开箱即用，本地目录（`$DSH_HOME/skins/<id>/`）仍可放入其它皮肤。
+「皮肤中心」插件（skin-center）是全部皮肤的唯一加载器：皮肤试穿后即可应用——试穿即时生效、退出完全还原，满意再一键应用；列表末尾还有自定义主题编辑器，强调色、背景、前景与对比度即时预览。**皮肤中心不再内置任何皮肤**：鲸吟（Whale Song）以独立皮肤仓库分发（[znc15/dsh-skin-whale-song](https://github.com/znc15/dsh-skin-whale-song)），克隆或复制到 `$DSH_HOME/skins/whale-song/` 后即被目录收录；全新安装且皮肤已就位时会自动以鲸吟为默认，未安装皮肤时保持官方默认外观。
 
 ![皮肤](docs/screenshots/03-settings-skin-center.png)
-
-主题皮肤一览：
-
-![主题皮肤一览](docs/images/skins-montage.png)
 
 #### Wallpaper Engine 壁纸
 
 皮肤插件可直接把本机 Wallpaper Engine 壁纸库用作 GUI 背景：视频、网页与场景壁纸均动态渲染——场景壁纸由内置 WebGL 播放器驱动；任意类型也可切到「静态帧」模式，钉成零动画开销的图片。单张壁纸可导入 `skin-center/wallpapers/`，脱离 Steam 库也能用，并检测创意工坊原作更新；没有 Wallpaper Engine（如 macOS）时，手动目录可把任意 `.mp4`/`.webm` 视频文件夹或壁纸项目文件夹加为壁纸库。壁纸都是本机文件，从不上传或再分发。
 
 ![Wallpaper Engine 壁纸](docs/screenshots/30-skin-wallpaper-engine.png)
-
-#### 鲸吟（Whale Song）
-
-深海鲸语女神主题：纯氛围背景画垫在半透明面板下，冰蓝冷色系贯穿全局，暗色变体是深海夜航调。
-
-![鲸吟 亮色](docs/screenshots/24-skin-whale-song-light.png) · ![鲸吟 暗色](docs/screenshots/25-skin-whale-song-dark.png)
-
 ## 快速上手
 
 ### 系统要求

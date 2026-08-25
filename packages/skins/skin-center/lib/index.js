@@ -1054,9 +1054,11 @@ function resolveInsideSkin(entry, relPath) {
 * @module @linxin666/dsh-client-ui-skin-center/active-state
 */
 /**
-* The single skin shipped with the package: the whale-song (鲸吟) skin is the
-* only skin in the collection, doubling as the default look for a fresh
-* install. The user skins directory can still hold locally added skins.
+* The canonical collection skin: whale-song (鲸吟) is distributed as an
+* independent skin repository (znc15/dsh-skin-whale-song) and is installed
+* into the user skins directory. This id is used as the first-boot default
+* only when that skin is present in the catalog; the package itself ships
+* no skins, and an empty catalog simply keeps the official stock look.
 */
 const DEFAULT_SKIN_ID = "whale-song";
 /** Default location: $DSH_HOME/skin-center-active.json. */

@@ -25,9 +25,9 @@ test('market/dist 核心文件齐全', () => {
   }
 })
 
-test('skins.json 契约与资产存在性', () => {
+test('skins.json 契约与资产存在性（可为零：皮肤已独立出仓库）', () => {
   const m = readJson('manifest/skins.json')
-  assert.ok(Array.isArray(m.items) && m.items.length > 0, 'skins empty')
+  assert.ok(Array.isArray(m.items), 'skins items array')
   const ids = new Set()
   for (const item of m.items) {
     assert.ok(item.id && item.name && item.nameEn && item.author, 'skin fields: ' + item.id)

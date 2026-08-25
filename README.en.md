@@ -35,7 +35,7 @@
 
 dsh-web is the aggregate plugin ecosystem for DeepSeek Harness (DSH) Web — the most complete realization of "everything is development, everything is a plugin" on the web: Liang Shen Mode, the task board, mobile remote, SSH ops, image understanding, the right panel, the whale-girl pet and skins each ship as an independent, self-contained plugin — pluggable, swappable, re-developable. Install the whole family to assemble a complete dev workbench, or pick one or two and they melt quietly into the stock UI. Everything mounts into `dsh web` through the official profile mechanism, no DSH source changes; the aggregate can even bolt on external plugins like `dsh-better-sidebar` — see the [dsh-web-all README](packages/dsh-web-all/README.md).
 
-Skins live inside the same plugin system: a v2 skin is not a standalone product but a pure asset pack of the skins plugin (a skin.json manifest plus styles, art and optional effect scripts), loaded on demand by that plugin, the single loader — official upgrades no longer touch any skin, and adding one means dropping in a directory: no publish, no install. Plugins own the logic, skin assets own the look; plugins and skin or pet assets are all distributed through the [Workshop](#workshop-dsh-marketcom) (dsh-market.com).
+Skins live inside the same plugin system: a v2 skin is a pure asset directory (a skin.json manifest plus styles, art and optional effect scripts), loaded by the skin-center plugin, the single loader — official upgrades no longer touch any skin, and adding one means dropping it into \`$DSH_HOME/skins/<id>/\`: no publish, no install. Whale Song is distributed as an independent skin repository ([dsh-skin-whale-song](https://github.com/znc15/dsh-skin-whale-song)). Plugins own the logic, skin assets own the look.
 
 ![DSH Web UI main screen](docs/screenshots/13-hero-main.png)
 
@@ -49,7 +49,7 @@ Skins live inside the same plugin system: a v2 skin is not a standalone product 
 | File preview & changes | None | Right panel: explorer / editor / terminal / git / browser |
 | Companion pet | None | Whale girl: reacts to agent state, feeding and bonding |
 | Git visualization | None | Branch picker + commit history graph |
-| Themes & skins | Default theme (Whale Song) | Skins plugin with 1 skin (Whale Song) + a custom-theme editor, try-on before apply |
+| Themes & skins | Default theme (none bundled; Whale Song from its own repo) | Skins plugin with no bundled skins (Whale Song installs from [dsh-skin-whale-song](https://github.com/znc15/dsh-skin-whale-song)) + a custom-theme editor, try-on before apply |
 
 ## Workshop (dsh-market.com)
 
@@ -141,25 +141,15 @@ The mechanics, stabilization controls and limits live in [dsh-liangshen README](
 
 ### Skins
 
-The skins plugin is the single loader for every skin: Whale Song tries on before apply — previews apply instantly and revert fully on exit, apply with one click once happy; the list ends with a custom-theme editor previewing accent, background, foreground and contrast live. Whale Song ships with the skins plugin, ready out of the box; `$DSH_HOME/skins/<id>/` remains open for locally added skins.
+The skins plugin (skin-center) is the single loader for every skin: skins try on before apply — previews apply instantly and revert fully on exit, apply with one click once happy; the list ends with a custom-theme editor previewing accent, background, foreground and contrast live. **The skin center no longer bundles any skin**: Whale Song is distributed as an independent skin repository ([znc15/dsh-skin-whale-song](https://github.com/znc15/dsh-skin-whale-song)) — clone or copy it into `$DSH_HOME/skins/whale-song/` and it shows up in the catalog. A fresh install seeds Whale Song as the default once when the skin is present; without any installed skin the GUI keeps the official stock look.
 
 ![Skins](docs/screenshots/03-settings-skin-center.png)
-
-The theme skin at a glance:
-
-![Theme skin](docs/images/skins-montage.png)
 
 #### Wallpaper Engine Wallpapers
 
 The skins plugin can use your local Wallpaper Engine library as the GUI backdrop: video, web and scene wallpapers all render live — scene wallpapers are driven by a built-in WebGL player — and any type can be pinned to a zero-animation "static frame" image. Import a single wallpaper into `skin-center/wallpapers/` to keep it working outside the Steam library, with update detection against the workshop original; without a Wallpaper Engine install (e.g. macOS), manual folders can add any `.mp4`/`.webm` folder or wallpaper project folder as the library. Wallpapers are your own local files and are never uploaded or redistributed.
 
 ![Wallpaper Engine wallpapers](docs/screenshots/30-skin-wallpaper-engine.png)
-
-#### Whale Song
-
-The deep-sea whale-goddess theme: a text-free ambience painting sits beneath translucent panes in an ice-blue palette, with a night-cruise dark variant.
-
-![Whale Song light](docs/screenshots/24-skin-whale-song-light.png) · ![Whale Song dark](docs/screenshots/25-skin-whale-song-dark.png)
 ## Quick Start
 
 ### System Requirements

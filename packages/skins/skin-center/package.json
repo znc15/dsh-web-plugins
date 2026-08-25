@@ -65,7 +65,6 @@
   "files": [
     "lib",
     "contracts",
-    "skins/whale-song",
     "cordis.patch.yml",
     "README.md"
   ],

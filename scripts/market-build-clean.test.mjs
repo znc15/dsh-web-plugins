@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { cpSync, mkdtempSync, rmSync, symlinkSync, writeFileSync, appendFileSync, mkdirSync } from 'node:fs'
+import { cpSync, mkdtempSync, rmSync, symlinkSync, writeFileSync, mkdirSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -21,7 +21,6 @@ function fixture() {
     [join(ROOT, 'market', 'src'), join(dir, 'market', 'src')],
     [join(ROOT, 'market', 'dist'), join(dir, 'market', 'dist')],
     [join(ROOT, 'gallery', 'official-facade.js'), join(dir, 'gallery', 'official-facade.js')],
-    [join(ROOT, 'packages', 'skins', 'skin-center', 'skins'), join(dir, 'packages', 'skins', 'skin-center', 'skins')],
     [join(ROOT, 'packages', 'skins', 'skin-center', 'lib', 'index.js'), join(dir, 'packages', 'skins', 'skin-center', 'lib', 'index.js')],
     [join(ROOT, 'packages', 'dsh-pet', 'assets'), join(dir, 'packages', 'dsh-pet', 'assets')],
     [join(ROOT, 'packages', 'dsh-community-plugins', 'community.json'), join(dir, 'packages', 'dsh-community-plugins', 'community.json')],
@@ -51,17 +50,9 @@ test('clean checkout (no shell dist) passes market-build --check', () => {
   }
 })
 
-test('check refuses tampered tryon-assets output', () => {
-  const dir = fixture()
-  try {
-    appendFileSync(join(dir, 'market', 'dist', 'tryon-assets', 'skins', 'whale-song', 'skin.css'), '\ntampered{}')
-    const result = runCheck(dir)
-    assert.equal(result.status, 1)
-    assert.match(result.stderr, /tryon-assets\/skins\/whale-song\/skin\.css/)
-  } finally {
-    rmSync(dir, { recursive: true, force: true })
-  }
-})
+// tryon-assets carries no per-skin entries anymore (no bundled skins), so
+// the tamper scenario it covered no longer exists; the undeclared-file test
+// below still guards the committed tryon dir.
 
 test('check rejects undeclared files inside the committed tryon dir', () => {
   const dir = fixture()

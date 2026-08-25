@@ -92,10 +92,12 @@ function readJson(file, label) {
 /** --- skins ---------------------------------------------------------------- */
 
 function scanSkins() {
+  // Independent-skin design: the repo ships no bundled skins (whale-song
+  // lives in its own skin repository), so an absent or empty skins source
+  // is valid and yields an empty market skin catalog.
   if (!fs.existsSync(SKINS_DIR)) return []
   const skins = []
   const dirs = fs.readdirSync(SKINS_DIR).sort()
-  if (!dirs.length) throw new Error('no skins found under packages/skins/skin-center/skins/')
   for (const name of dirs) {
     const dir = path.join(SKINS_DIR, name)
     if (!fs.statSync(dir).isDirectory()) continue
