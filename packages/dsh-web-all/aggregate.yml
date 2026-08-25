@@ -26,6 +26,7 @@ patchFrom:
   - ../dsh-tool-describe-image
   - ../dsh-chat-recovery
   - ../session-delete
+  - ../prompt-optimizer
   - ../dsh-liangshen
   - ../dsh-skill-explorer
   - ../dsh-desktop-launcher
@@ -46,6 +47,7 @@ deps:
   - ../dsh-tool-describe-image
   - ../dsh-chat-recovery
   - ../session-delete
+  - ../prompt-optimizer
   - ../dsh-liangshen
   - ../dsh-skill-explorer
   - ../dsh-desktop-launcher

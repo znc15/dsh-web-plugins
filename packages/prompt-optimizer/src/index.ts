@@ -1,0 +1,129 @@
+/**
+ * prompt-optimizer - host half.
+ *
+ * Serves POST /api/prompt-optimizer/v1/optimize: rewrites a user draft
+ * into a clearer, better-structured prompt through the session's own model
+ * route (the same provider/model the conversation uses, resolved from the
+ * session's last request context). The browser calls this from the composer
+ * tool row and replaces the draft with the returned text.
+ */
+
+import type { IncomingMessage, ServerResponse } from 'node:http'
+import type { Context } from '@deepseek-ai/cordis'
+import type { LlmRuntime } from '@deepseek-ai/dsh-llm'
+import type {} from '@deepseek-ai/dsh-host-webserver'
+import type { Session, SessionStore } from '@deepseek-ai/dsh-session'
+import { OptimizeError, runOptimization, type OptimizeRoute } from './core/optimize.ts'
+import { requireSameOrigin } from './fence.ts'
+import { mountOnce } from './mount-once.ts'
+import { readJsonBody, writeJson } from './http.ts'
+
+/** Stable cordis plugin name. */
+export const name = 'prompt-optimizer'
+
+/** Services required before the route can mount. */
+export const inject = ['webServer']
+
+/** The optimization route (client contract shares this literal). */
+export const OPTIMIZE_PATH = '/api/prompt-optimizer/v1/optimize'
+
+/** Smallest useful body cap: one session id plus one draft. */
+const MAX_BODY_BYTES = 32 * 1024
+
+/** Session id guard shared with the client (mirrors session-delete's rule). */
+function isValidSessionId(id: unknown): id is string {
+  return typeof id === 'string' && id.length > 0 && id.length <= 200 && !id.includes('/') && !id.includes('\\') && !id.includes('\0')
+}
+
+function applyImpl(ctx: Context): void {
+  ctx.effect(() => {
+    const disposer = ctx.webServer.register({
+      kind: 'exact',
+      path: OPTIMIZE_PATH,
+      handler: (req: IncomingMessage, res: ServerResponse) => {
+        void handleOptimize(ctx, req, res)
+      },
+    })
+    return disposer
+  }, 'ui-prompt-optimizer: route')
+}
+
+async function handleOptimize(ctx: Context, req: IncomingMessage, res: ServerResponse): Promise<void> {
+  try {
+    if (req.method !== 'POST') {
+      writeJson(res, 405, { ok: false, code: 'method-not-allowed', message: 'POST required' })
+      return
+    }
+    if (!requireSameOrigin(req, res)) return
+
+    const body = await readJsonBody(req, { maxBytes: MAX_BODY_BYTES, objectOnly: true })
+    const obj = body !== null && typeof body === 'object' ? (body as Record<string, unknown>) : null
+    const sessionId = obj?.['sessionId']
+    const prompt = obj?.['prompt']
+
+    if (!isValidSessionId(sessionId)) {
+      writeJson(res, 400, { ok: false, code: 'invalid-session-id', message: 'invalid session id' })
+      return
+    }
+    if (typeof prompt !== 'string') {
+      writeJson(res, 400, { ok: false, code: 'invalid-prompt', message: 'prompt must be a string' })
+      return
+    }
+
+    const sessions = ctx.get('sessions') as SessionStore | undefined
+    const session = sessions?.get?.(sessionId as Parameters<SessionStore['get']>[0])
+    if (session === undefined) {
+      writeJson(res, 404, { ok: false, code: 'session-not-found', message: 'session not found' })
+      return
+    }
+    const llm = ctx.get('llm') as LlmRuntime | undefined
+    if (llm === undefined) {
+      writeJson(res, 503, { ok: false, code: 'llm-unavailable', message: 'LLM service is unavailable' })
+      return
+    }
+
+    const live = session as Session
+    const route: OptimizeRoute | undefined = (() => {
+      const context = live.requestContext?.()
+      if (context !== undefined) return { provider: context.provider, model: context.model }
+      const header = live.requestHeader?.()
+      if (header?.config !== undefined) return { provider: header.config.provider, model: header.config.model }
+      return undefined
+    })()
+
+    const optimized = await runOptimization(
+      {
+        route: () => route,
+        stream: (options) => llm.stream(options),
+      },
+      prompt,
+      sessionId,
+    )
+
+    writeJson(res, 200, { ok: true, optimized })
+  } catch (error) {
+    if (error instanceof OptimizeError) {
+      const status =
+        error.code === 'empty-prompt' || error.code === 'prompt-too-long' ? 400
+        : error.code === 'no-model-route' ? 409
+        : error.code === 'llm-unavailable' ? 503
+        : error.code === 'optimize-timeout' ? 504
+        : 502
+      writeJson(res, status, { ok: false, code: error.code, message: error.message })
+      return
+    }
+    ctx.logger.warn('ui-prompt-optimizer: optimize failed: ' + String(error))
+    writeJson(res, 500, {
+      ok: false,
+      code: 'optimize-failed',
+      message: error instanceof Error ? error.message : String(error),
+    })
+  }
+}
+
+/**
+ * Single-instance guard shared by the plugin family: the aggregate bundle
+ * and a standalone install of this package can coexist in one profile, so
+ * the second host apply must be a no-op instead of re-registering the route.
+ */
+export const apply = mountOnce('@linxin666/dsh-client-ui-prompt-optimizer', applyImpl)

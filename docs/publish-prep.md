@@ -30,6 +30,7 @@
 | packages/dsh-doctor | @linxin666/dsh-doctor | 0.2.7 | false |
 | packages/dsh-web-all | @linxin666/dsh-web-all（聚合） | 0.1.1 | true |
 | packages/session-delete | @linxin666/dsh-client-ui-session-delete | 0.3.2 | false |
+| packages/prompt-optimizer | @linxin666/dsh-client-ui-prompt-optimizer | 0.3.2 | false |
 | packages/skins/skin-center | @linxin666/dsh-client-ui-skin-center | 0.1.1 | true |
 
 

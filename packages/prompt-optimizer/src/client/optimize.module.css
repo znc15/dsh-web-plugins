@@ -1,0 +1,58 @@
+/* The optimize button mirrors the composer trailing tool buttons: a 28px
+ * round ghost trigger beside the context meter, with the official hover
+ * fill and a 14px icon. */
+.root {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  color: var(--dsw-alias-label-secondary);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  outline: none;
+  padding: 0;
+  flex: none;
+}
+.root:hover:not(:disabled) {
+  background: var(--dsw-alias-interactive-bg-hover);
+  color: var(--dsw-alias-label-primary);
+}
+.root:focus-visible {
+  box-shadow: 0 0 0 2px var(--dsw-alias-border-l3);
+}
+.root:disabled {
+  color: var(--dsw-alias-label-dimmed);
+  cursor: default;
+}
+.spinner {
+  animation: prompt-optimizer-spin 0.9s linear infinite;
+}
+@keyframes prompt-optimizer-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Transient inline error caption, absolutely placed under the button. */
+.error {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  z-index: 20;
+  max-width: 260px;
+  white-space: normal;
+  color: var(--dsw-alias-state-error-primary);
+  background: var(--dsw-specific-menu);
+  border: 1px solid var(--dsw-alias-border-l2);
+  border-radius: 8px;
+  box-shadow: var(--dsw-shadow-lv2);
+  padding: 4px 8px;
+  font-size: 12px;
+  line-height: 18px;
+  pointer-events: none;
+}
+.wrap {
+  position: relative;
+  display: inline-flex;
+}

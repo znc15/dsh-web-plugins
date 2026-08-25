@@ -312,108 +312,6 @@ export function SkinCenter({ t, runtime, theme, background, wallpaper, preview, 
                     </div>
                   </div>
 
-                  <div className={css.backgroundRow}>
-                    <div className={css.backgroundHead}>
-                      <span className={css.backgroundLabel}>{t('backgroundOpacity')}</span>
-                      <span className={css.backgroundValue} aria-hidden="true">{shownOpacity}%</span>
-                    </div>
-                                        <SliderControl
-                      id="skin-center-background-opacity"
-                      className={css.backgroundRange}
-                      min={0}
-                      max={100}
-                      step={5}
-                      value={opacity}
-                      ariaValuetext={shownOpacity + '%'}
-                      ariaLabel={t('backgroundOpacity')}
-                      onChanging={setShownOpacity}
-                      onChange={(value) => { background.set(value) }}
-                    />
-                    <p className={backdropActive ? css.backgroundHint : css.backgroundHintMuted}>
-                      {backdropActive ? t('backgroundHint') : t('backgroundHintInert')}
-                    </p>
-                  </div>
-                  <div className={css.backgroundRow}>
-                    <div className={css.backgroundHead}>
-                      <span className={css.backgroundLabel}>{t('backgroundBlurEmpty')}</span>
-                      <span className={css.backgroundValue} aria-hidden="true">{shownBlurEmpty}px</span>
-                    </div>
-                                        <SliderControl
-                      id="skin-center-background-blur-empty"
-                      className={css.backgroundRange}
-                      min={0}
-                      max={20}
-                      step={1}
-                      value={blurEmpty}
-                      ariaValuetext={shownBlurEmpty + 'px'}
-                      ariaLabel={t('backgroundBlurEmpty')}
-                      onChanging={setShownBlurEmpty}
-                      onChange={(value) => { background.setBlurEmpty(value) }}
-                    />
-                    <div className={css.backgroundHead}>
-                      <span className={css.backgroundLabel}>{t('backgroundBlurContent')}</span>
-                      <span className={css.backgroundValue} aria-hidden="true">{shownBlurContent}px</span>
-                    </div>
-                                        <SliderControl
-                      id="skin-center-background-blur-content"
-                      className={css.backgroundRange}
-                      min={0}
-                      max={20}
-                      step={1}
-                      value={blurContent}
-                      ariaValuetext={shownBlurContent + 'px'}
-                      ariaLabel={t('backgroundBlurContent')}
-                      onChanging={setShownBlurContent}
-                      onChange={(value) => { background.setBlurContent(value) }}
-                    />
-                    <p className={backdropActive ? css.backgroundHint : css.backgroundHintMuted}>
-                      {backdropActive ? t('backgroundBlurHint') : t('backgroundBlurInert')}
-                    </p>
-                  </div>
-
-
-                  <div className={css.backgroundRow}>
-                    <div className={css.backgroundHead}>
-                      <span className={css.backgroundLabel}>{t('inputCardBlur')}</span>
-                      <span className={css.backgroundValue} aria-hidden="true">{shownInputCardBlur}px</span>
-                    </div>
-                                        <SliderControl
-                      id="skin-center-input-card-blur"
-                      className={css.backgroundRange}
-                      min={0}
-                      max={20}
-                      step={1}
-                      value={inputCardBlur}
-                      ariaValuetext={shownInputCardBlur + 'px'}
-                      ariaLabel={t('inputCardBlur')}
-                      onChanging={setShownInputCardBlur}
-                      onChange={(value) => { background.setInputCardBlur(value) }}
-                    />
-                    <p className={css.backgroundHint}>{t('inputCardBlurHint')}</p>
-                  </div>
-
-                  <div className={css.backgroundRow}>
-                    <div className={css.backgroundHead}>
-                      <span className={css.backgroundLabel}>{t('bubbleOpacity')}</span>
-                      <span className={css.backgroundValue} aria-hidden="true">{shownBubbleOpacity}%</span>
-                    </div>
-                                        <SliderControl
-                      id="skin-center-bubble-opacity"
-                      className={css.backgroundRange}
-                      min={0}
-                      max={100}
-                      step={5}
-                      value={bubbleOpacity}
-                      ariaValuetext={shownBubbleOpacity + '%'}
-                      ariaLabel={t('bubbleOpacity')}
-                      onChanging={setShownBubbleOpacity}
-                      onChange={(value) => { background.setBubbleOpacity(value) }}
-                    />
-                    <p className={css.backgroundHint}>{t('bubbleOpacityHint')}</p>
-                  </div>
-
-                  <WallpaperPanel t={t} wallpaper={wallpaper} />
-
                   {error !== null && <div className={css.error}>{error}</div>}
 
                   <div className={css.list}>
@@ -477,6 +375,115 @@ export function SkinCenter({ t, runtime, theme, background, wallpaper, preview, 
                         </div>
                       )
                     })}
+                  </div>
+
+                  <details className={css.advanced}>
+                    <summary className={css.advancedSummary}>
+                      <span className={css.advancedTitle}>{t('advanced')}</span>
+                      <span className={css.advancedCaret} aria-hidden="true">›</span>
+                    </summary>
+                    <p className={css.advancedHint}>{t('advancedHint')}</p>
+                    <div className={css.advancedBody}>
+                    <div className={css.backgroundRow}>
+                    <div className={css.backgroundHead}>
+                      <span className={css.backgroundLabel}>{t('backgroundOpacity')}</span>
+                      <span className={css.backgroundValue} aria-hidden="true">{shownOpacity}%</span>
+                    </div>
+                                        <SliderControl
+                      id="skin-center-background-opacity"
+                      className={css.backgroundRange}
+                      min={0}
+                      max={100}
+                      step={5}
+                      value={opacity}
+                      ariaValuetext={shownOpacity + '%'}
+                      ariaLabel={t('backgroundOpacity')}
+                      onChanging={setShownOpacity}
+                      onChange={(value) => { background.set(value) }}
+                    />
+                    <p className={backdropActive ? css.backgroundHint : css.backgroundHintMuted}>
+                      {backdropActive ? t('backgroundHint') : t('backgroundHintInert')}
+                    </p>
+                  </div>
+                  <div className={css.backgroundRow}>
+                    <div className={css.backgroundHead}>
+                      <span className={css.backgroundLabel}>{t('backgroundBlurEmpty')}</span>
+                      <span className={css.backgroundValue} aria-hidden="true">{shownBlurEmpty}px</span>
+                    </div>
+                                        <SliderControl
+                      id="skin-center-background-blur-empty"
+                      className={css.backgroundRange}
+                      min={0}
+                      max={20}
+                      step={1}
+                      value={blurEmpty}
+                      ariaValuetext={shownBlurEmpty + 'px'}
+                      ariaLabel={t('backgroundBlurEmpty')}
+                      onChanging={setShownBlurEmpty}
+                      onChange={(value) => { background.setBlurEmpty(value) }}
+                    />
+                    <div className={css.backgroundHead}>
+                      <span className={css.backgroundLabel}>{t('backgroundBlurContent')}</span>
+                      <span className={css.backgroundValue} aria-hidden="true">{shownBlurContent}px</span>
+                    </div>
+                                        <SliderControl
+                      id="skin-center-background-blur-content"
+                      className={css.backgroundRange}
+                      min={0}
+                      max={20}
+                      step={1}
+                      value={blurContent}
+                      ariaValuetext={shownBlurContent + 'px'}
+                      ariaLabel={t('backgroundBlurContent')}
+                      onChanging={setShownBlurContent}
+                      onChange={(value) => { background.setBlurContent(value) }}
+                    />
+                    <p className={backdropActive ? css.backgroundHint : css.backgroundHintMuted}>
+                      {backdropActive ? t('backgroundBlurHint') : t('backgroundBlurInert')}
+                    </p>
+                  </div>
+
+                  <div className={css.backgroundRow}>
+                    <div className={css.backgroundHead}>
+                      <span className={css.backgroundLabel}>{t('inputCardBlur')}</span>
+                      <span className={css.backgroundValue} aria-hidden="true">{shownInputCardBlur}px</span>
+                    </div>
+                                        <SliderControl
+                      id="skin-center-input-card-blur"
+                      className={css.backgroundRange}
+                      min={0}
+                      max={20}
+                      step={1}
+                      value={inputCardBlur}
+                      ariaValuetext={shownInputCardBlur + 'px'}
+                      ariaLabel={t('inputCardBlur')}
+                      onChanging={setShownInputCardBlur}
+                      onChange={(value) => { background.setInputCardBlur(value) }}
+                    />
+                    <p className={css.backgroundHint}>{t('inputCardBlurHint')}</p>
+                  </div>
+
+                  <div className={css.backgroundRow}>
+                    <div className={css.backgroundHead}>
+                      <span className={css.backgroundLabel}>{t('bubbleOpacity')}</span>
+                      <span className={css.backgroundValue} aria-hidden="true">{shownBubbleOpacity}%</span>
+                    </div>
+                                        <SliderControl
+                      id="skin-center-bubble-opacity"
+                      className={css.backgroundRange}
+                      min={0}
+                      max={100}
+                      step={5}
+                      value={bubbleOpacity}
+                      ariaValuetext={shownBubbleOpacity + '%'}
+                      ariaLabel={t('bubbleOpacity')}
+                      onChanging={setShownBubbleOpacity}
+                      onChange={(value) => { background.setBubbleOpacity(value) }}
+                    />
+                    <p className={css.backgroundHint}>{t('bubbleOpacityHint')}</p>
+                  </div>
+
+                  <WallpaperPanel t={t} wallpaper={wallpaper} />
 
                     <CustomThemeCard
                       t={t}
@@ -491,7 +498,8 @@ export function SkinCenter({ t, runtime, theme, background, wallpaper, preview, 
                       onExitTryOn={exitCustomThemeTryOn}
                       onApply={applyCustomTheme}
                     />
-                  </div>
+                    </div>
+                  </details>
                 </>
               )
               : (

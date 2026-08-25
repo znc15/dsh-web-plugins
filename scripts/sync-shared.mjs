@@ -95,6 +95,7 @@ const MANIFEST = [
       'packages/dsh-plugin-manager/src/mount-once.ts',
       'packages/dsh-web-settings/src/mount-once.ts',
       'packages/session-delete/src/mount-once.ts',
+      'packages/prompt-optimizer/src/mount-once.ts',
       'packages/dsh-tool-describe-image/src/mount-once.ts',
       'packages/dsh-desktop-launcher/src/mount-once.ts',
       'packages/dsh-skill-explorer/src/mount-once.ts',
@@ -124,6 +125,7 @@ const MANIFEST = [
       'packages/dsh-tool-describe-image/src/client/telemetry.ts',
       'packages/dsh-web-settings/src/client/telemetry.ts',
       'packages/session-delete/src/client/telemetry.ts',
+      'packages/prompt-optimizer/src/client/telemetry.ts',
     ],
   },
   {
@@ -153,6 +155,7 @@ const MANIFEST = [
       'packages/skins/skin-center/src/http.ts',
       'packages/dsh-remote-web-ui/src/http.ts',
       'packages/session-delete/src/http.ts',
+      'packages/prompt-optimizer/src/http.ts',
       'packages/dsh-task-board/src/http.ts',
     ],
   },

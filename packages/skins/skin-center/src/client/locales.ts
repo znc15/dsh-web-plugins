@@ -28,6 +28,8 @@ export type SkinCenterKey =
   | 'theme'
   | 'themeLight'
   | 'themeDark'
+  | 'advanced'
+  | 'advancedHint'
   | 'tryOnError'
   | 'backgroundOpacity'
   | 'backgroundBlurEmpty'
@@ -121,6 +123,8 @@ export const en: Record<SkinCenterKey, string> = {
   theme: 'Theme preview',
   themeLight: 'Light',
   themeDark: 'Dark',
+  advanced: 'Advanced settings',
+  advancedHint: 'Backdrop occlusion, wallpaper, and custom theme tweaks live here.',
   tryOnError: 'Try-on failed — see console',
   backgroundOpacity: 'Background occlusion',
   backgroundBlurEmpty: 'Blur when empty',
@@ -215,6 +219,8 @@ export const zh: Record<SkinCenterKey, string> = {
   theme: '主题预览',
   themeLight: '亮色',
   themeDark: '暗色',
+  advanced: '高级设置',
+  advancedHint: '背景遮挡、动态壁纸与自定义主题的微调都在这里。',
   tryOnError: '试穿失败，详见控制台',
   backgroundOpacity: '背景遮挡',
   backgroundBlurEmpty: '空对话背景模糊',

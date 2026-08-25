@@ -73,6 +73,11 @@
     - id: web-ui-session-delete
       name: '@linxin666/dsh-client-ui-session-delete'
 
+# from ../prompt-optimizer
+- insert:
+    - id: web-ui-prompt-optimizer
+      name: '@linxin666/dsh-client-ui-prompt-optimizer'
+
 # from ../dsh-liangshen
 - insert:
     - id: web-ui-liangshen

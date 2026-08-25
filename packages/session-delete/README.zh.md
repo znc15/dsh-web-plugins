@@ -2,11 +2,11 @@
 
 [English](README.md) | 中文
 
-`@linxin666/dsh-client-ui-session-delete`（cordis 插件 id `ui-session-delete`）在 dsh web 的会话头部增加**删除对话**入口。官方 GUI 只能归档会话（从列表隐藏、日志保留）；本插件会把当前对话**永久删除**：先从宿主会话存储中摘除在线会话（浏览器自动移除该行并回到「新建会话」视图），再删除 `$DSH_HOME/sessions/` 下的持久化 JSONL 日志文件。该对话 fork 出的子会话会一并删除，避免残留日志把对话「复活」。
+`@linxin666/dsh-client-ui-session-delete`（cordis 插件 id `ui-session-delete`）在 dsh web 的会话头部**和侧边栏三点菜单**增加**删除对话**入口。官方 GUI 只能归档会话（从列表隐藏、日志保留）；本插件会把当前对话**永久删除**：先从宿主会话存储中摘除在线会话（浏览器自动移除该行并回到「新建会话」视图），再删除 `$DSH_HOME/sessions/` 下的持久化 JSONL 日志文件。该对话 fork 出的子会话会一并删除，避免残留日志把对话「复活」。
 
 ## 功能
 
-- **纯增量入口**：注册进官方 `conversation.session.header.actions` 槽位，带垃圾桶图标与本地化文案，不改动官方外壳。
+- **纯增量入口**：头部按钮注册进官方 `conversation.session.header.actions` 槽位；侧边栏三点菜单通过包裹 workspace 包自己的 `Menu`（只作用于该包的工厂）追加危险样式删除行，不改动官方其它外壳。
 - **安全设计**：确认弹窗必须勾选「我了解这是永久删除」才能提交；**运行中**的会话由宿主拒绝（HTTP 409），弹窗显示忙碌文案。
 - **宿主侧执行**：浏览器只负责确认与展示错误。`POST /api/session-delete/v1/delete` 在宿主进程执行：在线会话通过与拥有方 fiber 相同的摘除路径脱离存储，触发官方 `session/disposed` 事件，api proxy 据此广播 `host/session-removed`——官方列表存储自行移除行并清空当前选中。
 - **日志落盘删除**：插件复刻 JSONL 后端的路径编码，先核对目录确实属于该会话再删除；不匹配或外部路径绝不触碰。
@@ -69,7 +69,9 @@ session-delete/
   src/host-bridge.ts            # ctx.sessions / persistence / agents 的真实服务端口
   src/core/delete-session.ts    # 规划器：校验、闭包、目录安全、编排
   src/fence.ts                  # 路由同源围栏
-  src/client/DeleteConversationAction.tsx  # 头部入口 + 确认弹窗
+  src/client/DeleteConversationAction.tsx  # 头部入口
+  src/client/DeleteConversationDialog.tsx   # 共享确认弹窗 + 删除请求
+  src/client/SidebarMenuPatch.tsx           # workspace Menu 补丁：三点菜单删除行
   src/client/locales.ts         # 中英文案
   tests/                        # 规划器与组件交互测试
 ```

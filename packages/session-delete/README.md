@@ -2,11 +2,11 @@
 
 English | [中文](README.zh.md)
 
-`@linxin666/dsh-client-ui-session-delete` (cordis plugin id `ui-session-delete`) adds a **Delete conversation** action to the conversation header of the dsh web GUI. The official GUI can only archive a session (hide it from the list while keeping the log files); this plugin deletes the current conversation permanently: the live session is removed from the host session store (the browser drops the row and clears back to the New Session view) and its durable JSONL log files are deleted from `$DSH_HOME/sessions/`. Child sessions forked from the conversation are removed together, so no orphan log can resurrect the conversation later.
+`@linxin666/dsh-client-ui-session-delete` (cordis plugin id `ui-session-delete`) adds a **Delete conversation** action to the conversation header **and** the sidebar session-row menu of the dsh web GUI. The official GUI can only archive a session (hide it from the list while keeping the log files); this plugin deletes the current conversation permanently: the live session is removed from the host session store (the browser drops the row and clears back to the New Session view) and its durable JSONL log files are deleted from `$DSH_HOME/sessions/`. Child sessions forked from the conversation are removed together, so no orphan log can resurrect the conversation later.
 
 ## What it is
 
-- **One additive entry**: the action registers into the official `conversation.session.header.actions` slot with a trash icon and a localized label, so nothing in the official shell is replaced.
+- **Additive entries**: the header action registers into the official `conversation.session.header.actions` slot with a trash icon and a localized label; the sidebar three-dot menu gains a destructive delete row by wrapping the workspace bundle's `Menu` (scoped to that bundle's factory only), so nothing else in the official shell is replaced.
 - **Safe by construction**: a confirmation modal requires an explicit "I understand this is permanent" acknowledgement before the request is sent; a session that is currently **running** is refused host-side (HTTP 409) and the dialog shows the busy copy.
 - **Host-side deletion**: the browser only confirms and reflects errors. `POST /api/session-delete/v1/delete` runs on the host, where the live session is detached through the same teardown the owning fiber would run, which emits the official `session/disposed` event and lets the api proxy publish `host/session-removed` — the official list store then removes the row and clears the current selection on its own.
 - **Durable log removal**: the JSONL backend's own path encoding is reimplemented to verify a directory really belongs to the session before it is removed; a foreign or mismatched path is never deleted.
@@ -69,7 +69,9 @@ session-delete/
   src/host-bridge.ts            # live service ports over ctx.sessions / persistence / agents
   src/core/delete-session.ts    # planner: validation, closure, artifact safety, orchestration
   src/fence.ts                  # same-origin fence for the route
-  src/client/DeleteConversationAction.tsx  # header action + confirmation modal
+  src/client/DeleteConversationAction.tsx  # header action
+  src/client/DeleteConversationDialog.tsx   # shared confirmation modal + deletion POST
+  src/client/SidebarMenuPatch.tsx           # workspace Menu patch: delete row in the three-dot menu
   src/client/locales.ts         # zh/en dictionaries
   tests/                        # planner + component interaction tests
 ```
