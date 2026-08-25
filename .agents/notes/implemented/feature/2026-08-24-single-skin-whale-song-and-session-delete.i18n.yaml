@@ -1,0 +1,5 @@
+# Bilingual-pair consistency record (docs/i18n.md): the git blob hash of each
+# side as of the last confirmed-consistent state. Both languages carry equal authority;
+# after editing either side, bring the other along and re-record with git hash-object.
+2026-08-24-single-skin-whale-song-and-session-delete.md: 3a7bd61747304d46a783f1c5257aacba9feff01e
+2026-08-24-single-skin-whale-song-and-session-delete.zh.md: a65be0ea4b5c3cd3f2e19b6321def8a18b8ccf50
