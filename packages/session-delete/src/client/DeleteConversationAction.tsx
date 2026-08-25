@@ -83,7 +83,7 @@ export const DeleteConversationAction = memo(function DeleteConversationAction(
           disabled={running}
           onClick={() => setConfirming(true)}
         >
-          <IconTrashOutline16 />
+          <IconTrashOutline16 size={14} />
           <span className={styles.label}>{t('delete.label')}</span>
         </button>
       </Tooltip>
@@ -101,7 +101,7 @@ export const DeleteConversationAction = memo(function DeleteConversationAction(
             <Button
               variant="primary"
               size="md"
-              icon={<IconTrashOutline16 />}
+              icon={<IconTrashOutline16 size={14} />}
               disabled={!acknowledged || busy}
               onClick={() => void confirmDelete()}
             >

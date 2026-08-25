@@ -1,5 +1,5 @@
 /* The trigger mirrors the official model-selection pill (composer tool
- * row): same 28px height, 13px/500/20px typography, 24px radius, inner
+ * row): same 28px height and 24px radius, 12px/500/18px typography, inner
  * padding and gap, hover fill and focus ring. */
 .action {
   display: inline-flex;
@@ -14,9 +14,9 @@
   outline: none;
   color: var(--dsw-alias-label-secondary);
   cursor: pointer;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
-  line-height: 20px;
+  line-height: 18px;
 }
 .action:hover:not(:disabled) {
   background: var(--dsw-alias-interactive-bg-hover);
