@@ -1,29 +1,38 @@
+/* The trigger mirrors the official model-selection pill (composer tool
+ * row): same 28px height, 13px/500/20px typography, 24px radius, inner
+ * padding and gap, hover fill and focus ring. */
 .action {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  min-width: 0;
   height: 28px;
-  padding: 0 10px;
+  gap: 4px;
+  padding: 0 4px 0 8px;
   border: none;
-  border-radius: 999px;
+  border-radius: 24px;
   background: transparent;
+  outline: none;
   color: var(--dsw-alias-label-secondary);
-  font: inherit;
-  font-size: 13px;
-  line-height: 28px;
   cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
 }
-.action:hover {
+.action:hover:not(:disabled) {
   background: var(--dsw-alias-interactive-bg-hover);
-  color: var(--dsw-alias-state-error-primary);
+}
+.action:focus-visible {
+  box-shadow: 0 0 0 2px var(--dsw-alias-border-l3);
 }
 .action:disabled {
-  opacity: 0.55;
+  color: var(--dsw-alias-label-dimmed);
   cursor: default;
-  pointer-events: none;
 }
 .label {
+  text-overflow: ellipsis;
   white-space: nowrap;
+  min-width: 0;
+  overflow: hidden;
 }
 .error {
   color: var(--dsw-alias-state-error-primary);
