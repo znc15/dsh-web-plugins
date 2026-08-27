@@ -47,9 +47,45 @@ export interface OptimizeRoute {
   readonly model: string
 }
 
+/** A minimal advertised-model shape the fallback probe consumes. */
+export interface AdvertisedModel {
+  readonly id: string
+  /** Accepted request modalities; absent means unknown, an explicit omission is negative capability. */
+  readonly inputModalities?: readonly ('text' | 'image')[]
+}
+
+/**
+ * Pick the fallback route for a session that has no model record yet: prefer
+ * the app's default model selection (when its provider is actually
+ * registered), then the first registered provider advertising a text-capable
+ * model. This is the "poll the available models" path — a fresh session can
+ * be optimized without sending one message first.
+ * @param defaultSelection - the agent-default-model selection, when mounted.
+ * @param providers - registered provider routes in registration order.
+ * @param modelsByProvider - advertised models per provider, when listed.
+ * @returns the chosen route, or undefined when nothing is available.
+ */
+export function pickFallbackRoute(
+  defaultSelection: OptimizeRoute | undefined,
+  providers: readonly { id: string }[],
+  modelsByProvider: ReadonlyMap<string, readonly AdvertisedModel[]>,
+): OptimizeRoute | undefined {
+  if (defaultSelection !== undefined && providers.some((provider) => provider.id === defaultSelection.provider)) {
+    return defaultSelection
+  }
+  for (const provider of providers) {
+    const models = modelsByProvider.get(provider.id) ?? []
+    const model = models.find(
+      (candidate) => candidate.inputModalities === undefined || candidate.inputModalities.includes('text'),
+    )
+    if (model !== undefined) return { provider: provider.id, model: model.id }
+  }
+  return undefined
+}
+
 /** The LLM faces the optimizer core needs; the host route fills them. */
 export interface OptimizePorts {
-  /** The session's current model route, when one was ever used. */
+  /** The route to use: the session's own record, or a resolved default/available route. */
   readonly route: () => OptimizeRoute | undefined
   /** Stream one auxiliary model call (same vocabulary as ctx.llm.stream). */
   readonly stream: (options: GenerateOptions) => AsyncIterable<StreamChunk>
@@ -135,7 +171,7 @@ export async function runOptimization(
   }
   const route = ports.route()
   if (route === undefined) {
-    throw new OptimizeError('no-model-route', 'session has no model route yet; send one message first')
+    throw new OptimizeError('no-model-route', 'no available model route; configure a model in settings first')
   }
   const framed = framePrompt(trimmed)
   const message = createUserMessage({

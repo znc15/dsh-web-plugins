@@ -135,7 +135,7 @@ DeepSeek V4 Pro 对首轮工具目录很敏感。社区评测里，官方 Standa
 - **插件管理器**（`dsh-client-ui-plugin-manager`）：经官方 host 通道从 npm / git 安装插件，管理启停与配置。
 - **会话恢复**（`dsh-chat-recovery`）：fork 编辑历史消息、失败轮次一键重试，原会话不受损。
 - **删除对话**（`dsh-client-ui-session-delete`）：会话头部与侧边栏三点菜单均可**永久删除**当前对话——从会话列表移除并删除其持久化日志文件（运行中的会话拒绝删除；fork 子会话一并删除）。
-- **提示词优化**（`dsh-client-ui-prompt-optimizer`）：输入框上下文圆圈左侧的闪光按钮，用当前会话的模型把草稿改写成更清晰、更结构化的提示词并回填。
+- **提示词优化**（`dsh-client-ui-prompt-optimizer`）：输入框上下文圆圈左侧的闪光按钮，用当前会话的模型（新会话自动改用默认模型）把草稿改写成更清晰、更结构化的提示词并回填。
 - **桌面启动器**（`dsh-desktop-launcher`）：双击桌面图标启动 `dsh web` 并打开 Web GUI，悬浮电源按钮优雅退出宿主进程。
 - **救助模式**（`dsh-doctor`）：事务式修复损坏的 DSH profile——受监管启动器、隔离恢复舱与本地 Web 恢复控制台；默认关闭，在设置中启用。
 - **归档管理**（外部插件 [@mlgbnb/dsh-archive-manager](https://github.com/z953218350/dsh-archive-manager)，聚合包内置）：按项目分组、搜索筛选、预览对话、一键恢复与删除。

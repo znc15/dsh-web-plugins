@@ -9,6 +9,7 @@ import {
   MAX_PROMPT_CHARS,
   normalizeOptimizedPrompt,
   OptimizeError,
+  pickFallbackRoute,
   runOptimization,
   type OptimizePorts,
 } from '../src/core/optimize.ts'
@@ -96,6 +97,49 @@ describe('runOptimization', () => {
     }
     await expect(runOptimization(ports({ stream }), 'hi', 'session-1'))
       .rejects.toMatchObject({ code: 'optimize-failed' })
+  })
+})
+
+describe('pickFallbackRoute', () => {
+  type Mod = { id: string; inputModalities?: readonly ('text' | 'image')[] }
+  const providers = [{ id: 'deepseek' }, { id: 'pi-ai' }]
+  const models = new Map<string, Mod[]>([
+    ['deepseek', [{ id: 'deepseek-v4-flash' }]],
+    ['pi-ai', [{ id: 'vision-model', inputModalities: ['image'] }, { id: 'chat-model', inputModalities: ['text', 'image'] }]],
+  ])
+
+  it('prefers the app default selection when its provider is registered', () => {
+    expect(pickFallbackRoute({ provider: 'pi-ai', model: 'chat-model' }, providers, models))
+      .toEqual({ provider: 'pi-ai', model: 'chat-model' })
+  })
+
+  it('ignores a default selection whose provider is not registered', () => {
+    expect(pickFallbackRoute({ provider: 'missing', model: 'x' }, providers, models))
+      .toEqual({ provider: 'deepseek', model: 'deepseek-v4-flash' })
+  })
+
+  it('picks the first registered provider advertising a text-capable model', () => {
+    const texts: Map<string, Mod[]> = new Map([
+      ['deepseek', [{ id: 'vision', inputModalities: ['image'] }]],
+      ['pi-ai', [{ id: 'vision2', inputModalities: ['image'] }, { id: 'chat-model', inputModalities: ['text'] }]],
+    ])
+    expect(pickFallbackRoute(undefined, providers, texts)).toEqual({ provider: 'pi-ai', model: 'chat-model' })
+  })
+
+  it('returns undefined when every advertised model is explicitly non-text', () => {
+    const imageOnly: Map<string, Mod[]> = new Map([
+      ['deepseek', [{ id: 'vision', inputModalities: ['image'] }]],
+      ['pi-ai', [{ id: 'vision2', inputModalities: ['image'] }]],
+    ])
+    expect(pickFallbackRoute(undefined, providers, imageOnly)).toBeUndefined()
+  })
+
+  it('returns undefined when providers advertise no models', () => {
+    expect(pickFallbackRoute(undefined, providers, new Map<string, Mod[]>())).toBeUndefined()
+  })
+
+  it('returns undefined when nothing is available', () => {
+    expect(pickFallbackRoute(undefined, [], new Map<string, Mod[]>())).toBeUndefined()
   })
 })
 

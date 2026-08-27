@@ -13,7 +13,7 @@ import type { Context } from '@deepseek-ai/cordis'
 import type { LlmRuntime } from '@deepseek-ai/dsh-llm'
 import type {} from '@deepseek-ai/dsh-host-webserver'
 import type { Session, SessionStore } from '@deepseek-ai/dsh-session'
-import { OptimizeError, runOptimization, type OptimizeRoute } from './core/optimize.ts'
+import { OptimizeError, pickFallbackRoute, runOptimization, type OptimizeRoute } from './core/optimize.ts'
 import { requireSameOrigin } from './fence.ts'
 import { mountOnce } from './mount-once.ts'
 import { readJsonBody, writeJson } from './http.ts'
@@ -83,13 +83,7 @@ async function handleOptimize(ctx: Context, req: IncomingMessage, res: ServerRes
     }
 
     const live = session as Session
-    const route: OptimizeRoute | undefined = (() => {
-      const context = live.requestContext?.()
-      if (context !== undefined) return { provider: context.provider, model: context.model }
-      const header = live.requestHeader?.()
-      if (header?.config !== undefined) return { provider: header.config.provider, model: header.config.model }
-      return undefined
-    })()
+    const route = await resolveOptimizeRoute(ctx, llm, live)
 
     const optimized = await runOptimization(
       {
@@ -119,6 +113,51 @@ async function handleOptimize(ctx: Context, req: IncomingMessage, res: ServerRes
       message: error instanceof Error ? error.message : String(error),
     })
   }
+}
+
+/**
+ * Read the app's default model selection (agent-default-model service), when
+ * the core service is mounted and carries a usable provider/model pair.
+ */
+function defaultModelRoute(ctx: Context): OptimizeRoute | undefined {
+  const service = (ctx as unknown as {
+    agentDefaultModel?: { currentSelection?(): { provider?: unknown; model?: unknown } }
+  }).agentDefaultModel
+  const selection = service?.currentSelection?.()
+  if (selection !== undefined && typeof selection.provider === 'string' && typeof selection.model === 'string') {
+    return { provider: selection.provider, model: selection.model }
+  }
+  return undefined
+}
+
+/**
+ * Resolve the optimization route. The session's own model record wins
+ * (request context, then request header). A session with no record yet —
+ * e.g. a fresh empty conversation — falls back to the app's default model
+ * selection, and finally polls the registered providers' advertised models,
+ * so the optimize button works without sending a message first.
+ */
+async function resolveOptimizeRoute(
+  ctx: Context,
+  llm: LlmRuntime,
+  session: Session,
+): Promise<OptimizeRoute | undefined> {
+  const context = session.requestContext?.()
+  if (context !== undefined) return { provider: context.provider, model: context.model }
+  const header = session.requestHeader?.()
+  if (header?.config !== undefined) return { provider: header.config.provider, model: header.config.model }
+
+  const providers = llm.listProviders()
+  const defaults = defaultModelRoute(ctx)
+  if (defaults !== undefined && providers.some((provider) => provider.id === defaults.provider)) {
+    return defaults
+  }
+  const modelsByProvider = new Map<string, readonly { id: string; inputModalities?: readonly ('text' | 'image')[] }[]>()
+  for (const provider of providers) {
+    const models = await llm.listModels(provider.id).catch(() => [] as { id: string; inputModalities?: readonly ('text' | 'image')[] }[])
+    modelsByProvider.set(provider.id, models)
+  }
+  return pickFallbackRoute(undefined, providers, modelsByProvider)
 }
 
 /**
