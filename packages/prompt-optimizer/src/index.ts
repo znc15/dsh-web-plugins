@@ -120,12 +120,18 @@ async function handleOptimize(ctx: Context, req: IncomingMessage, res: ServerRes
  * the core service is mounted and carries a usable provider/model pair.
  */
 function defaultModelRoute(ctx: Context): OptimizeRoute | undefined {
-  const service = (ctx as unknown as {
-    agentDefaultModel?: { currentSelection?(): { provider?: unknown; model?: unknown } }
-  }).agentDefaultModel
-  const selection = service?.currentSelection?.()
-  if (selection !== undefined && typeof selection.provider === 'string' && typeof selection.model === 'string') {
-    return { provider: selection.provider, model: selection.model }
+  try {
+    // ctx.get is the safe loose read: the service is optional and not in our
+    // inject list, so a direct ctx.<name> property access would throw.
+    const service = (ctx.get as (name: string) => unknown)('agentDefaultModel') as
+      | { currentSelection?(): { provider?: unknown; model?: unknown } }
+      | undefined
+    const selection = service?.currentSelection?.()
+    if (selection !== undefined && typeof selection.provider === 'string' && typeof selection.model === 'string') {
+      return { provider: selection.provider, model: selection.model }
+    }
+  } catch {
+    return undefined
   }
   return undefined
 }
