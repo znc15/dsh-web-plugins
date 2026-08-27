@@ -647,71 +647,13 @@ body[data-dsh-skin-center] .customThemeFooter {
   padding-top: 2px;
 }
 
-/* Advanced settings disclosure: everything beyond the skin list folds
-   behind one summary row so the card stays compact by default. */
-body[data-dsh-skin-center] .advanced {
-  border: 1px solid var(--dsw-alias-border-l2);
-  border-radius: 12px;
-  background: var(--dsw-alias-bg-layer-2);
-  transition: border-color 0.16s, background 0.16s;
-}
-
-body[data-dsh-skin-center] .advanced[open] {
-  border-color: var(--dsw-alias-border-l3);
-}
-
-body[data-dsh-skin-center] .advancedSummary {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-  padding: 10px 12px;
-  cursor: pointer;
-  list-style: none;
-  user-select: none;
-  color: var(--dsw-alias-label-primary);
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 20px;
-}
-
-body[data-dsh-skin-center] .advancedSummary::-webkit-details-marker {
-  display: none;
-}
-
-body[data-dsh-skin-center] .advancedSummary:hover {
-  color: var(--dsw-alias-state-business-primary);
-}
-
-body[data-dsh-skin-center] .advancedTitle {
-  flex: none;
-}
-
-body[data-dsh-skin-center] .advancedCaret {
-  margin-left: auto;
-  color: var(--dsw-alias-label-tertiary);
-  font-size: 14px;
-  transition: transform 0.16s var(--ds-ease-in-out);
-}
-
-body[data-dsh-skin-center] .advanced[open] .advancedCaret {
-  transform: rotate(90deg);
-}
-
-body[data-dsh-skin-center] .advancedHint {
+/* Background controls are listed directly in the card (no disclosure):
+   every option keeps its own row so the panel stays flat and explorable. */
+body[data-dsh-skin-center] .controlsHint {
   margin: 0;
-  padding: 0 12px 8px;
   font-size: 12px;
   line-height: 18px;
   color: var(--dsw-alias-label-tertiary);
-}
-
-body[data-dsh-skin-center] .advancedBody {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 8px 12px 12px;
-  border-top: 1px solid var(--dsw-alias-border-l2);
 }
 
 @media (max-width: 680px) {

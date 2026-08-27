@@ -7,7 +7,7 @@ window.__ModuleLoader__.load({
 		let react = require("react");
 		let react_jsx_runtime = require("react/jsx-runtime");
 		//#region \0dsh-css:packages/skins/skin-center/src/client/skin-center.module.css.mjs
-		const css = "body[data-dsh-skin-center] .eDzMgW_sectionList{margin:0;padding:0;list-style:none}body[data-dsh-skin-center] .eDzMgW_pluginCard{border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-alias-bg-layer-3);border-radius:12px;list-style:none;transition:border-color .16s,background .16s}body[data-dsh-skin-center] .eDzMgW_pluginCard:hover{border-color:var(--dsw-alias-label-dimmed)}body[data-dsh-skin-center] .eDzMgW_cardHeaderStatic{align-items:center;gap:12px;width:100%;padding:14px 16px;display:flex}body[data-dsh-skin-center] .eDzMgW_headText{flex-direction:column;flex:1;gap:4px;min-width:0;display:flex}body[data-dsh-skin-center] .eDzMgW_pluginName{color:var(--dsw-alias-label-primary);align-items:baseline;gap:8px;font-size:15px;font-weight:600;line-height:1.4;display:flex}body[data-dsh-skin-center] .eDzMgW_cardDescription{color:var(--dsw-alias-label-tertiary);font-size:13px;line-height:1.5}body[data-dsh-skin-center] .eDzMgW_cardBody{border-top:1px solid var(--dsw-alias-border-l2);flex-direction:column;gap:12px;margin:0 16px;padding:12px 0 8px;display:flex}body[data-dsh-skin-center] .eDzMgW_head{flex-direction:column;gap:6px;display:flex}body[data-dsh-skin-center] .eDzMgW_titleBadge{color:var(--dsw-alias-label-secondary,#6b7280);font-size:11px;font-weight:500}body[data-dsh-skin-center] .eDzMgW_intro{color:var(--dsw-alias-label-secondary);font-size:13px;line-height:1.5}body[data-dsh-skin-center] .eDzMgW_themeRow{align-items:center;gap:8px;margin-top:2px;display:flex}body[data-dsh-skin-center] .eDzMgW_themeLabel{color:var(--dsw-alias-label-secondary,#6b7280);margin-right:2px;font-size:12px}body[data-dsh-skin-center] .eDzMgW_themeButton{font:inherit;border:1px solid var(--dsw-alias-border-l2);color:var(--dsw-alias-label-primary);cursor:pointer;background:0 0;border-radius:6px;padding:4px 12px;font-size:12px;font-weight:600;line-height:1.5;transition:background .12s,border-color .12s,color .12s}body[data-dsh-skin-center] .eDzMgW_themeButton:hover{border-color:var(--dsw-alias-label-dimmed)}body[data-dsh-skin-center] .eDzMgW_themeButton:active{border-color:var(--dsw-alias-brand-primary,#2b7cd9);background:var(--dsw-alias-button-primary-dimmed,#e8f1fc);color:var(--dsw-alias-brand-primary,#1e63b8)}body[data-dsh-skin-center] .eDzMgW_themeButton:focus-visible{outline:2px solid var(--dsw-alias-brand-primary,#2b7cd9);outline-offset:2px}body[data-dsh-skin-center] .eDzMgW_themeButtonActive{border-color:var(--dsw-alias-brand-primary,#2b7cd9);background:var(--dsw-alias-button-primary-dimmed,#e8f1fc);color:var(--dsw-alias-brand-primary,#1e63b8)}body[data-dsh-skin-center] .eDzMgW_list{flex-direction:column;gap:10px;display:flex}body[data-dsh-skin-center] .eDzMgW_card{border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-alias-bg-layer-1);border-radius:8px;flex-direction:column;gap:6px;padding:12px;transition:border-color .16s;display:flex}body[data-dsh-skin-center] .eDzMgW_card:hover{border-color:var(--dsw-alias-label-dimmed)}body[data-dsh-skin-center] .eDzMgW_cardHead{align-items:center;gap:10px;min-width:0;display:flex}body[data-dsh-skin-center] .eDzMgW_swatch{width:14px;height:14px;box-shadow:inset 0 0 0 1px var(--dsw-alias-border-l4,#0f172a1f);border-radius:50%;flex:none}body[data-dsh-skin-center] .eDzMgW_cardName{text-overflow:ellipsis;white-space:nowrap;min-width:0;font-size:13px;font-weight:600;overflow:hidden}body[data-dsh-skin-center] .eDzMgW_cardTagline{color:var(--dsw-alias-label-secondary);margin:0;font-size:13px;line-height:1.45}body[data-dsh-skin-center] .eDzMgW_badge{letter-spacing:.02em;border-radius:999px;flex:none;min-width:0;margin-left:auto;padding:2px 8px;font-size:11px;font-weight:600}body[data-dsh-skin-center] .eDzMgW_badgeActive{color:var(--dsw-alias-state-success-primary,#0f6b3a);background:var(--dsw-alias-state-success-tertiary,#dcf3e5)}body[data-dsh-skin-center] .eDzMgW_badgeTrying{color:var(--dsw-alias-brand-primary,#1e63b8);background:var(--dsw-alias-button-primary-dimmed,#e2edfc)}body[data-dsh-skin-center] .eDzMgW_actions{flex-wrap:wrap;align-items:center;gap:8px;display:flex}body[data-dsh-skin-center] .eDzMgW_button{font:inherit;border:1px solid var(--dsw-alias-border-l2);color:var(--dsw-alias-label-primary);cursor:pointer;background:0 0;border-radius:6px;padding:4px 12px;font-size:12px;font-weight:600;line-height:1.5;transition:background .12s,border-color .12s,color .12s}body[data-dsh-skin-center] .eDzMgW_button:hover:not(:disabled){border-color:var(--dsw-alias-label-dimmed)}body[data-dsh-skin-center] .eDzMgW_button:active:not(:disabled){border-color:var(--dsw-alias-button-primary-hover,#1e63b8);background:var(--dsw-alias-button-primary-dimmed,#e8f1fc);color:var(--dsw-alias-brand-primary,#1e63b8)}body[data-dsh-skin-center] .eDzMgW_button:focus-visible{outline:2px solid var(--dsw-alias-brand-primary,#2b7cd9);outline-offset:2px}body[data-dsh-skin-center] .eDzMgW_buttonPrimary{border-color:var(--dsw-alias-button-info-fill);background:var(--dsw-alias-button-info-fill);color:var(--dsw-alias-bg-layer-3)}body[data-dsh-skin-center] .eDzMgW_buttonPrimary:hover:not(:disabled),body[data-dsh-skin-center] .eDzMgW_buttonPrimary:active:not(:disabled){opacity:.88}body[data-dsh-skin-center] .eDzMgW_buttonGhost{opacity:.5;background:0 0;border-color:#0000}body[data-dsh-skin-center] .eDzMgW_button:disabled{opacity:.5;cursor:default}body[data-dsh-skin-center] .eDzMgW_error{color:var(--dsw-alias-state-error-primary,#b42318);font-size:12px}body[data-dsh-skin-center] .eDzMgW_enableRow{flex-wrap:wrap;align-items:center;gap:8px;padding:8px 0;display:flex}body[data-dsh-skin-center] .eDzMgW_enableLabel{color:var(--dsw-alias-label-primary);font-size:13px;font-weight:500}body[data-dsh-skin-center] .eDzMgW_enableHint{min-width:100%;color:var(--dsw-alias-label-secondary,#6b7280);flex:1;margin:0;font-size:12px;line-height:1.5}body[data-dsh-skin-center] .eDzMgW_switch{border:1px solid var(--dsw-alias-border-l3,#cbd5e1);background:var(--dsw-alias-bg-layer-3,#e2e8f0);cursor:pointer;border-radius:999px;flex:none;align-items:center;width:40px;height:22px;padding:2px;transition:background .12s,border-color .12s;display:inline-flex;position:relative}body[data-dsh-skin-center] .eDzMgW_switchOn{border-color:var(--dsw-alias-brand-primary,#2b7cd9);background:var(--dsw-alias-brand-primary,#2b7cd9)}body[data-dsh-skin-center] .eDzMgW_switch:focus-visible{outline:2px solid var(--dsw-alias-brand-primary,#2b7cd9);outline-offset:2px}body[data-dsh-skin-center] .eDzMgW_switchThumb{background:var(--dsw-alias-label-primary-foreground,#fff);width:18px;height:18px;box-shadow:0 0 0 1px var(--dsw-alias-border-l4,#0f172a1f);border-radius:50%;transition:transform .12s;display:block;transform:translate(0)}body[data-dsh-skin-center] .eDzMgW_switchOn .eDzMgW_switchThumb{transform:translate(18px)}body[data-dsh-skin-center] .eDzMgW_offNote{color:var(--dsw-alias-label-secondary,#6b7280);margin:0;font-size:12.5px;line-height:1.5}body[data-dsh-skin-center] .eDzMgW_backgroundRow{flex-direction:column;gap:6px;padding:8px 0;display:flex}body[data-dsh-skin-center] .eDzMgW_backgroundHead{align-items:center;gap:8px;display:flex}body[data-dsh-skin-center] .eDzMgW_backgroundLabel{color:var(--dsw-alias-label-primary);font-size:13px;font-weight:500}body[data-dsh-skin-center] .eDzMgW_backgroundValue{font-variant-numeric:tabular-nums;color:var(--dsw-alias-brand-primary,#2b7cd9);flex:none;margin-left:auto;font-size:12px}body[data-dsh-skin-center] .eDzMgW_backgroundRange{background:var(--dsw-alias-label-tertiary,#9aa4b5);background:color-mix(in srgb, var(--dsw-alias-label-tertiary,#9aa4b5) 45%, transparent);width:100%;height:4px;box-shadow:0 0 0 1px var(--dsw-alias-border-l3,#cbd5e1);-webkit-appearance:none;appearance:none;cursor:pointer;border-radius:999px;margin:0}body[data-dsh-skin-center] .eDzMgW_backgroundRange::-webkit-slider-runnable-track{background:var(--dsw-alias-bg-layer-3,#e2e8f0);border-radius:999px;height:4px}body[data-dsh-skin-center] .eDzMgW_backgroundRange::-moz-range-track{background:var(--dsw-alias-bg-layer-3,#e2e8f0);border-radius:999px;height:4px}body[data-dsh-skin-center] .eDzMgW_backgroundRange::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;border:2px solid var(--dsw-alias-label-primary-foreground,#fff);background:var(--dsw-alias-brand-primary,#2b7cd9);width:14px;height:14px;box-shadow:0 0 0 1px var(--dsw-alias-border-l4,#0f172a1f);cursor:pointer;border-radius:50%;margin-top:-5px}body[data-dsh-skin-center] .eDzMgW_backgroundRange::-moz-range-thumb{border:2px solid var(--dsw-alias-label-primary-foreground,#fff);background:var(--dsw-alias-brand-primary,#2b7cd9);width:12px;height:12px;box-shadow:0 0 0 1px var(--dsw-alias-border-l4,#0f172a1f);cursor:pointer;border-radius:50%}body[data-dsh-skin-center] .eDzMgW_backgroundRange:focus-visible{outline:2px solid var(--dsw-alias-brand-primary,#2b7cd9);outline-offset:2px}body[data-dsh-skin-center] .eDzMgW_backgroundHint{color:var(--dsw-alias-label-secondary,#6b7280);font-size:12px;line-height:1.5}body[data-dsh-skin-center] .eDzMgW_backgroundHintMuted{color:var(--dsw-alias-label-tertiary,#9aa4b5);font-size:12px;line-height:1.5}@media (prefers-reduced-motion:reduce){body[data-dsh-skin-center] .eDzMgW_pluginCard,body[data-dsh-skin-center] .eDzMgW_card,body[data-dsh-skin-center] .eDzMgW_themeButton,body[data-dsh-skin-center] .eDzMgW_button,body[data-dsh-skin-center] .eDzMgW_switch,body[data-dsh-skin-center] .eDzMgW_switchThumb{transition:none}}body[data-dsh-skin-center] .eDzMgW_wallpaperSection{border-top:1px solid var(--dsw-alias-border-l2);flex-direction:column;gap:10px;padding-top:10px;display:flex}body[data-dsh-skin-center] .eDzMgW_wallpaperStatus{color:var(--dsw-alias-label-secondary,#6b7280);align-items:center;gap:8px;font-size:12px;display:flex}body[data-dsh-skin-center] .eDzMgW_wallpaperStatusError{color:var(--dsw-alias-state-danger,#c53030)}body[data-dsh-skin-center] .eDzMgW_wallpaperControls{flex-direction:column;gap:10px;display:flex}body[data-dsh-skin-center] .eDzMgW_wallpaperGrid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;display:grid}body[data-dsh-skin-center] .eDzMgW_wallpaperCard{border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-alias-bg-layer-1);border-radius:8px;flex-direction:column;gap:6px;padding:8px;transition:border-color .16s;display:flex}body[data-dsh-skin-center] .eDzMgW_wallpaperCard:hover{border-color:var(--dsw-alias-label-dimmed)}body[data-dsh-skin-center] .eDzMgW_wallpaperThumbWrap{aspect-ratio:16/9;background:var(--dsw-alias-bg-layer-1,#f1f5f9);border-radius:6px;position:relative;overflow:hidden}body[data-dsh-skin-center] .eDzMgW_wallpaperThumb{object-fit:cover;width:100%;height:100%;display:block}body[data-dsh-skin-center] .eDzMgW_wallpaperThumbEmpty{width:100%;height:100%}body[data-dsh-skin-center] .eDzMgW_wallpaperType{color:var(--dsw-alias-label-primary,#172a45);background:var(--dsw-alias-bg-layer-2,#ffffffd9);border-radius:4px;padding:3px 6px;font-size:10.5px;line-height:1;position:absolute;top:6px;left:6px}body[data-dsh-skin-center] .eDzMgW_wallpaperThumbWrap .eDzMgW_badge{position:absolute;top:6px;right:6px}body[data-dsh-skin-center] .eDzMgW_wallpaperName{color:var(--dsw-alias-label-primary);text-overflow:ellipsis;white-space:nowrap;font-size:12px;line-height:1.35;overflow:hidden}body[data-dsh-skin-center] .eDzMgW_wallpaperActions{flex-wrap:wrap;gap:6px;display:flex}body[data-dsh-skin-center] .eDzMgW_customThemeCard{overflow:hidden}body[data-dsh-skin-center] .eDzMgW_customThemeEditor{border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-alias-bg-layer-1);border-radius:9px;flex-direction:column;gap:14px;margin:2px -2px -2px;padding:14px;display:flex}body[data-dsh-skin-center] .eDzMgW_customThemeScheme{flex-wrap:wrap;align-items:center;gap:8px;display:flex}body[data-dsh-skin-center] .eDzMgW_customThemeFields{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;display:grid}body[data-dsh-skin-center] .eDzMgW_customThemeField,body[data-dsh-skin-center] .eDzMgW_customThemeContrast{flex-direction:column;gap:7px;min-width:0;display:flex}body[data-dsh-skin-center] .eDzMgW_customThemeFieldLabel{color:var(--dsw-alias-label-secondary);font-size:12px;font-weight:500}body[data-dsh-skin-center] .eDzMgW_customThemeInputRow{align-items:center;gap:7px;min-width:0;display:flex}body[data-dsh-skin-center] .eDzMgW_customThemeColor{border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-alias-bg-layer-2);cursor:pointer;border-radius:7px;flex:none;width:34px;height:30px;padding:2px}body[data-dsh-skin-center] .eDzMgW_customThemeHex{border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-specific-input-major);width:100%;min-width:0;height:30px;color:var(--dsw-alias-label-primary);font:inherit;border-radius:7px;outline:none;padding:0 9px;font-size:12px}body[data-dsh-skin-center] .eDzMgW_customThemeHex:focus,body[data-dsh-skin-center] .eDzMgW_customThemeColor:focus-visible{border-color:var(--dsw-alias-brand-primary);box-shadow:0 0 0 2px var(--dsw-alias-button-primary-dimmed)}body[data-dsh-skin-center] .eDzMgW_customThemeFooter{justify-content:space-between;align-items:center;gap:12px;padding-top:2px;display:flex}body[data-dsh-skin-center] .eDzMgW_advanced{border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-alias-bg-layer-2);border-radius:12px;transition:border-color .16s,background .16s}body[data-dsh-skin-center] .eDzMgW_advanced[open]{border-color:var(--dsw-alias-border-l3)}body[data-dsh-skin-center] .eDzMgW_advancedSummary{cursor:pointer;user-select:none;width:100%;color:var(--dsw-alias-label-primary);align-items:center;gap:8px;padding:10px 12px;font-size:13px;font-weight:500;line-height:20px;list-style:none;display:flex}body[data-dsh-skin-center] .eDzMgW_advancedSummary::-webkit-details-marker{display:none}body[data-dsh-skin-center] .eDzMgW_advancedSummary:hover{color:var(--dsw-alias-state-business-primary)}body[data-dsh-skin-center] .eDzMgW_advancedTitle{flex:none}body[data-dsh-skin-center] .eDzMgW_advancedCaret{color:var(--dsw-alias-label-tertiary);transition:transform .16s var(--ds-ease-in-out);margin-left:auto;font-size:14px}body[data-dsh-skin-center] .eDzMgW_advanced[open] .eDzMgW_advancedCaret{transform:rotate(90deg)}body[data-dsh-skin-center] .eDzMgW_advancedHint{color:var(--dsw-alias-label-tertiary);margin:0;padding:0 12px 8px;font-size:12px;line-height:18px}body[data-dsh-skin-center] .eDzMgW_advancedBody{border-top:1px solid var(--dsw-alias-border-l2);flex-direction:column;gap:12px;padding:8px 12px 12px;display:flex}@media (width<=680px){body[data-dsh-skin-center] .eDzMgW_customThemeFields{grid-template-columns:1fr}body[data-dsh-skin-center] .eDzMgW_customThemeFooter{flex-direction:column;align-items:flex-start}}";
+		const css = "body[data-dsh-skin-center] .eDzMgW_sectionList{margin:0;padding:0;list-style:none}body[data-dsh-skin-center] .eDzMgW_pluginCard{border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-alias-bg-layer-3);border-radius:12px;list-style:none;transition:border-color .16s,background .16s}body[data-dsh-skin-center] .eDzMgW_pluginCard:hover{border-color:var(--dsw-alias-label-dimmed)}body[data-dsh-skin-center] .eDzMgW_cardHeaderStatic{align-items:center;gap:12px;width:100%;padding:14px 16px;display:flex}body[data-dsh-skin-center] .eDzMgW_headText{flex-direction:column;flex:1;gap:4px;min-width:0;display:flex}body[data-dsh-skin-center] .eDzMgW_pluginName{color:var(--dsw-alias-label-primary);align-items:baseline;gap:8px;font-size:15px;font-weight:600;line-height:1.4;display:flex}body[data-dsh-skin-center] .eDzMgW_cardDescription{color:var(--dsw-alias-label-tertiary);font-size:13px;line-height:1.5}body[data-dsh-skin-center] .eDzMgW_cardBody{border-top:1px solid var(--dsw-alias-border-l2);flex-direction:column;gap:12px;margin:0 16px;padding:12px 0 8px;display:flex}body[data-dsh-skin-center] .eDzMgW_head{flex-direction:column;gap:6px;display:flex}body[data-dsh-skin-center] .eDzMgW_titleBadge{color:var(--dsw-alias-label-secondary,#6b7280);font-size:11px;font-weight:500}body[data-dsh-skin-center] .eDzMgW_intro{color:var(--dsw-alias-label-secondary);font-size:13px;line-height:1.5}body[data-dsh-skin-center] .eDzMgW_themeRow{align-items:center;gap:8px;margin-top:2px;display:flex}body[data-dsh-skin-center] .eDzMgW_themeLabel{color:var(--dsw-alias-label-secondary,#6b7280);margin-right:2px;font-size:12px}body[data-dsh-skin-center] .eDzMgW_themeButton{font:inherit;border:1px solid var(--dsw-alias-border-l2);color:var(--dsw-alias-label-primary);cursor:pointer;background:0 0;border-radius:6px;padding:4px 12px;font-size:12px;font-weight:600;line-height:1.5;transition:background .12s,border-color .12s,color .12s}body[data-dsh-skin-center] .eDzMgW_themeButton:hover{border-color:var(--dsw-alias-label-dimmed)}body[data-dsh-skin-center] .eDzMgW_themeButton:active{border-color:var(--dsw-alias-brand-primary,#2b7cd9);background:var(--dsw-alias-button-primary-dimmed,#e8f1fc);color:var(--dsw-alias-brand-primary,#1e63b8)}body[data-dsh-skin-center] .eDzMgW_themeButton:focus-visible{outline:2px solid var(--dsw-alias-brand-primary,#2b7cd9);outline-offset:2px}body[data-dsh-skin-center] .eDzMgW_themeButtonActive{border-color:var(--dsw-alias-brand-primary,#2b7cd9);background:var(--dsw-alias-button-primary-dimmed,#e8f1fc);color:var(--dsw-alias-brand-primary,#1e63b8)}body[data-dsh-skin-center] .eDzMgW_list{flex-direction:column;gap:10px;display:flex}body[data-dsh-skin-center] .eDzMgW_card{border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-alias-bg-layer-1);border-radius:8px;flex-direction:column;gap:6px;padding:12px;transition:border-color .16s;display:flex}body[data-dsh-skin-center] .eDzMgW_card:hover{border-color:var(--dsw-alias-label-dimmed)}body[data-dsh-skin-center] .eDzMgW_cardHead{align-items:center;gap:10px;min-width:0;display:flex}body[data-dsh-skin-center] .eDzMgW_swatch{width:14px;height:14px;box-shadow:inset 0 0 0 1px var(--dsw-alias-border-l4,#0f172a1f);border-radius:50%;flex:none}body[data-dsh-skin-center] .eDzMgW_cardName{text-overflow:ellipsis;white-space:nowrap;min-width:0;font-size:13px;font-weight:600;overflow:hidden}body[data-dsh-skin-center] .eDzMgW_cardTagline{color:var(--dsw-alias-label-secondary);margin:0;font-size:13px;line-height:1.45}body[data-dsh-skin-center] .eDzMgW_badge{letter-spacing:.02em;border-radius:999px;flex:none;min-width:0;margin-left:auto;padding:2px 8px;font-size:11px;font-weight:600}body[data-dsh-skin-center] .eDzMgW_badgeActive{color:var(--dsw-alias-state-success-primary,#0f6b3a);background:var(--dsw-alias-state-success-tertiary,#dcf3e5)}body[data-dsh-skin-center] .eDzMgW_badgeTrying{color:var(--dsw-alias-brand-primary,#1e63b8);background:var(--dsw-alias-button-primary-dimmed,#e2edfc)}body[data-dsh-skin-center] .eDzMgW_actions{flex-wrap:wrap;align-items:center;gap:8px;display:flex}body[data-dsh-skin-center] .eDzMgW_button{font:inherit;border:1px solid var(--dsw-alias-border-l2);color:var(--dsw-alias-label-primary);cursor:pointer;background:0 0;border-radius:6px;padding:4px 12px;font-size:12px;font-weight:600;line-height:1.5;transition:background .12s,border-color .12s,color .12s}body[data-dsh-skin-center] .eDzMgW_button:hover:not(:disabled){border-color:var(--dsw-alias-label-dimmed)}body[data-dsh-skin-center] .eDzMgW_button:active:not(:disabled){border-color:var(--dsw-alias-button-primary-hover,#1e63b8);background:var(--dsw-alias-button-primary-dimmed,#e8f1fc);color:var(--dsw-alias-brand-primary,#1e63b8)}body[data-dsh-skin-center] .eDzMgW_button:focus-visible{outline:2px solid var(--dsw-alias-brand-primary,#2b7cd9);outline-offset:2px}body[data-dsh-skin-center] .eDzMgW_buttonPrimary{border-color:var(--dsw-alias-button-info-fill);background:var(--dsw-alias-button-info-fill);color:var(--dsw-alias-bg-layer-3)}body[data-dsh-skin-center] .eDzMgW_buttonPrimary:hover:not(:disabled),body[data-dsh-skin-center] .eDzMgW_buttonPrimary:active:not(:disabled){opacity:.88}body[data-dsh-skin-center] .eDzMgW_buttonGhost{opacity:.5;background:0 0;border-color:#0000}body[data-dsh-skin-center] .eDzMgW_button:disabled{opacity:.5;cursor:default}body[data-dsh-skin-center] .eDzMgW_error{color:var(--dsw-alias-state-error-primary,#b42318);font-size:12px}body[data-dsh-skin-center] .eDzMgW_enableRow{flex-wrap:wrap;align-items:center;gap:8px;padding:8px 0;display:flex}body[data-dsh-skin-center] .eDzMgW_enableLabel{color:var(--dsw-alias-label-primary);font-size:13px;font-weight:500}body[data-dsh-skin-center] .eDzMgW_enableHint{min-width:100%;color:var(--dsw-alias-label-secondary,#6b7280);flex:1;margin:0;font-size:12px;line-height:1.5}body[data-dsh-skin-center] .eDzMgW_switch{border:1px solid var(--dsw-alias-border-l3,#cbd5e1);background:var(--dsw-alias-bg-layer-3,#e2e8f0);cursor:pointer;border-radius:999px;flex:none;align-items:center;width:40px;height:22px;padding:2px;transition:background .12s,border-color .12s;display:inline-flex;position:relative}body[data-dsh-skin-center] .eDzMgW_switchOn{border-color:var(--dsw-alias-brand-primary,#2b7cd9);background:var(--dsw-alias-brand-primary,#2b7cd9)}body[data-dsh-skin-center] .eDzMgW_switch:focus-visible{outline:2px solid var(--dsw-alias-brand-primary,#2b7cd9);outline-offset:2px}body[data-dsh-skin-center] .eDzMgW_switchThumb{background:var(--dsw-alias-label-primary-foreground,#fff);width:18px;height:18px;box-shadow:0 0 0 1px var(--dsw-alias-border-l4,#0f172a1f);border-radius:50%;transition:transform .12s;display:block;transform:translate(0)}body[data-dsh-skin-center] .eDzMgW_switchOn .eDzMgW_switchThumb{transform:translate(18px)}body[data-dsh-skin-center] .eDzMgW_offNote{color:var(--dsw-alias-label-secondary,#6b7280);margin:0;font-size:12.5px;line-height:1.5}body[data-dsh-skin-center] .eDzMgW_backgroundRow{flex-direction:column;gap:6px;padding:8px 0;display:flex}body[data-dsh-skin-center] .eDzMgW_backgroundHead{align-items:center;gap:8px;display:flex}body[data-dsh-skin-center] .eDzMgW_backgroundLabel{color:var(--dsw-alias-label-primary);font-size:13px;font-weight:500}body[data-dsh-skin-center] .eDzMgW_backgroundValue{font-variant-numeric:tabular-nums;color:var(--dsw-alias-brand-primary,#2b7cd9);flex:none;margin-left:auto;font-size:12px}body[data-dsh-skin-center] .eDzMgW_backgroundRange{background:var(--dsw-alias-label-tertiary,#9aa4b5);background:color-mix(in srgb, var(--dsw-alias-label-tertiary,#9aa4b5) 45%, transparent);width:100%;height:4px;box-shadow:0 0 0 1px var(--dsw-alias-border-l3,#cbd5e1);-webkit-appearance:none;appearance:none;cursor:pointer;border-radius:999px;margin:0}body[data-dsh-skin-center] .eDzMgW_backgroundRange::-webkit-slider-runnable-track{background:var(--dsw-alias-bg-layer-3,#e2e8f0);border-radius:999px;height:4px}body[data-dsh-skin-center] .eDzMgW_backgroundRange::-moz-range-track{background:var(--dsw-alias-bg-layer-3,#e2e8f0);border-radius:999px;height:4px}body[data-dsh-skin-center] .eDzMgW_backgroundRange::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;border:2px solid var(--dsw-alias-label-primary-foreground,#fff);background:var(--dsw-alias-brand-primary,#2b7cd9);width:14px;height:14px;box-shadow:0 0 0 1px var(--dsw-alias-border-l4,#0f172a1f);cursor:pointer;border-radius:50%;margin-top:-5px}body[data-dsh-skin-center] .eDzMgW_backgroundRange::-moz-range-thumb{border:2px solid var(--dsw-alias-label-primary-foreground,#fff);background:var(--dsw-alias-brand-primary,#2b7cd9);width:12px;height:12px;box-shadow:0 0 0 1px var(--dsw-alias-border-l4,#0f172a1f);cursor:pointer;border-radius:50%}body[data-dsh-skin-center] .eDzMgW_backgroundRange:focus-visible{outline:2px solid var(--dsw-alias-brand-primary,#2b7cd9);outline-offset:2px}body[data-dsh-skin-center] .eDzMgW_backgroundHint{color:var(--dsw-alias-label-secondary,#6b7280);font-size:12px;line-height:1.5}body[data-dsh-skin-center] .eDzMgW_backgroundHintMuted{color:var(--dsw-alias-label-tertiary,#9aa4b5);font-size:12px;line-height:1.5}@media (prefers-reduced-motion:reduce){body[data-dsh-skin-center] .eDzMgW_pluginCard,body[data-dsh-skin-center] .eDzMgW_card,body[data-dsh-skin-center] .eDzMgW_themeButton,body[data-dsh-skin-center] .eDzMgW_button,body[data-dsh-skin-center] .eDzMgW_switch,body[data-dsh-skin-center] .eDzMgW_switchThumb{transition:none}}body[data-dsh-skin-center] .eDzMgW_wallpaperSection{border-top:1px solid var(--dsw-alias-border-l2);flex-direction:column;gap:10px;padding-top:10px;display:flex}body[data-dsh-skin-center] .eDzMgW_wallpaperStatus{color:var(--dsw-alias-label-secondary,#6b7280);align-items:center;gap:8px;font-size:12px;display:flex}body[data-dsh-skin-center] .eDzMgW_wallpaperStatusError{color:var(--dsw-alias-state-danger,#c53030)}body[data-dsh-skin-center] .eDzMgW_wallpaperControls{flex-direction:column;gap:10px;display:flex}body[data-dsh-skin-center] .eDzMgW_wallpaperGrid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;display:grid}body[data-dsh-skin-center] .eDzMgW_wallpaperCard{border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-alias-bg-layer-1);border-radius:8px;flex-direction:column;gap:6px;padding:8px;transition:border-color .16s;display:flex}body[data-dsh-skin-center] .eDzMgW_wallpaperCard:hover{border-color:var(--dsw-alias-label-dimmed)}body[data-dsh-skin-center] .eDzMgW_wallpaperThumbWrap{aspect-ratio:16/9;background:var(--dsw-alias-bg-layer-1,#f1f5f9);border-radius:6px;position:relative;overflow:hidden}body[data-dsh-skin-center] .eDzMgW_wallpaperThumb{object-fit:cover;width:100%;height:100%;display:block}body[data-dsh-skin-center] .eDzMgW_wallpaperThumbEmpty{width:100%;height:100%}body[data-dsh-skin-center] .eDzMgW_wallpaperType{color:var(--dsw-alias-label-primary,#172a45);background:var(--dsw-alias-bg-layer-2,#ffffffd9);border-radius:4px;padding:3px 6px;font-size:10.5px;line-height:1;position:absolute;top:6px;left:6px}body[data-dsh-skin-center] .eDzMgW_wallpaperThumbWrap .eDzMgW_badge{position:absolute;top:6px;right:6px}body[data-dsh-skin-center] .eDzMgW_wallpaperName{color:var(--dsw-alias-label-primary);text-overflow:ellipsis;white-space:nowrap;font-size:12px;line-height:1.35;overflow:hidden}body[data-dsh-skin-center] .eDzMgW_wallpaperActions{flex-wrap:wrap;gap:6px;display:flex}body[data-dsh-skin-center] .eDzMgW_customThemeCard{overflow:hidden}body[data-dsh-skin-center] .eDzMgW_customThemeEditor{border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-alias-bg-layer-1);border-radius:9px;flex-direction:column;gap:14px;margin:2px -2px -2px;padding:14px;display:flex}body[data-dsh-skin-center] .eDzMgW_customThemeScheme{flex-wrap:wrap;align-items:center;gap:8px;display:flex}body[data-dsh-skin-center] .eDzMgW_customThemeFields{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;display:grid}body[data-dsh-skin-center] .eDzMgW_customThemeField,body[data-dsh-skin-center] .eDzMgW_customThemeContrast{flex-direction:column;gap:7px;min-width:0;display:flex}body[data-dsh-skin-center] .eDzMgW_customThemeFieldLabel{color:var(--dsw-alias-label-secondary);font-size:12px;font-weight:500}body[data-dsh-skin-center] .eDzMgW_customThemeInputRow{align-items:center;gap:7px;min-width:0;display:flex}body[data-dsh-skin-center] .eDzMgW_customThemeColor{border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-alias-bg-layer-2);cursor:pointer;border-radius:7px;flex:none;width:34px;height:30px;padding:2px}body[data-dsh-skin-center] .eDzMgW_customThemeHex{border:1px solid var(--dsw-alias-border-l2);background:var(--dsw-specific-input-major);width:100%;min-width:0;height:30px;color:var(--dsw-alias-label-primary);font:inherit;border-radius:7px;outline:none;padding:0 9px;font-size:12px}body[data-dsh-skin-center] .eDzMgW_customThemeHex:focus,body[data-dsh-skin-center] .eDzMgW_customThemeColor:focus-visible{border-color:var(--dsw-alias-brand-primary);box-shadow:0 0 0 2px var(--dsw-alias-button-primary-dimmed)}body[data-dsh-skin-center] .eDzMgW_customThemeFooter{justify-content:space-between;align-items:center;gap:12px;padding-top:2px;display:flex}body[data-dsh-skin-center] .eDzMgW_controlsHint{color:var(--dsw-alias-label-tertiary);margin:0;font-size:12px;line-height:18px}@media (width<=680px){body[data-dsh-skin-center] .eDzMgW_customThemeFields{grid-template-columns:1fr}body[data-dsh-skin-center] .eDzMgW_customThemeFooter{flex-direction:column;align-items:flex-start}}";
 		const tagId = "@linxin666/dsh-client-ui-skin-center/skin-center.module.css";
 		if (typeof document !== "undefined" && document.querySelector("style[data-plugin-css=" + JSON.stringify(tagId) + "]") === null) {
 			const tag = document.createElement("style");
@@ -18,12 +18,6 @@ window.__ModuleLoader__.load({
 		}
 		var skin_center_module_css_default = {
 			"actions": "eDzMgW_actions",
-			"advanced": "eDzMgW_advanced",
-			"advancedBody": "eDzMgW_advancedBody",
-			"advancedCaret": "eDzMgW_advancedCaret",
-			"advancedHint": "eDzMgW_advancedHint",
-			"advancedSummary": "eDzMgW_advancedSummary",
-			"advancedTitle": "eDzMgW_advancedTitle",
 			"backgroundHead": "eDzMgW_backgroundHead",
 			"backgroundHint": "eDzMgW_backgroundHint",
 			"backgroundHintMuted": "eDzMgW_backgroundHintMuted",
@@ -44,6 +38,7 @@ window.__ModuleLoader__.load({
 			"cardHeaderStatic": "eDzMgW_cardHeaderStatic",
 			"cardName": "eDzMgW_cardName",
 			"cardTagline": "eDzMgW_cardTagline",
+			"controlsHint": "eDzMgW_controlsHint",
 			"customThemeCard": "eDzMgW_customThemeCard",
 			"customThemeColor": "eDzMgW_customThemeColor",
 			"customThemeContrast": "eDzMgW_customThemeContrast",
@@ -327,6 +322,1036 @@ window.__ModuleLoader__.load({
 				]
 			});
 		}
+		//#endregion
+		//#region src/client/SliderControl.tsx
+		/**
+		* A drag-smooth range slider that decouples the visible value from the
+		* external store while the user drags (issue #725).
+		*
+		* Binding <input type="range"> directly to a useSyncExternalStore value
+		* causes two defects during drag:
+		* 1. Snapping back: the store subscription re-reads the scope snapshot while
+		*    the async scope.set() write is still in flight, resetting the thumb
+		*    to the old value mid-drag.
+		* 2. Lag and stale labels: every onChange drives a full set -> publish ->
+		*    React render cycle, and the displayed number only updates once the
+		*    external store settles instead of following the thumb.
+		*
+		* This control keeps the input effectively uncontrolled: the browser moves
+		* the thumb on the compositor thread with zero React involvement while
+		* dragging, onInput reports the live value (one callback per animation
+		* frame) so labels update in real time, and the final value is committed to
+		* the external store through the native change event, which fires once per
+		* completed pointer interaction (pointer release). Keyboard-only users get
+		* an explicit commit path through onBlur and the Enter/Escape keydown
+		* handlers, because not every engine fires the native change event for
+		* range inputs on blur or Enter (jsdom does not; behavior varies by
+		* browser). A pointer cancel aborts without committing, and the external
+		* value is re-synced into the DOM only while the user is neither dragging
+		* nor keyboard-focusing the input.
+		* @module @linxin666/dsh-client-ui-skin-center/slider-control
+		*/
+		/**
+		* A range slider that stays smooth during drag (issue #725).
+		*
+		* @param props - slider props.
+		* @returns the range input element.
+		*/
+		function SliderControl({ value: externalValue, min = 0, max = 100, step = 1, onChange, onChanging, className, id, ariaLabel, ariaValuetext }) {
+			const inputRef = (0, react.useRef)(null);
+			const draggingRef = (0, react.useRef)(false);
+			const rafRef = (0, react.useRef)(null);
+			const liveRef = (0, react.useRef)(0);
+			const lastCommittedRef = (0, react.useRef)(null);
+			const onChangingRef = (0, react.useRef)(onChanging);
+			onChangingRef.current = onChanging;
+			const commitRef = (0, react.useRef)(onChange);
+			commitRef.current = onChange;
+			/**
+			* Persist a value to the external store, de-duplicated against the last
+			* committed value so the explicit keyboard/onBlur commit paths never
+			* double-fire alongside the native change event (which real browsers also
+			* emit on blur or Enter for range inputs).
+			*/
+			const commit = (0, react.useCallback)((value) => {
+				if (lastCommittedRef.current === value) return;
+				lastCommittedRef.current = value;
+				commitRef.current(value);
+			}, []);
+			const commitCurrent = (0, react.useCallback)(() => {
+				const input = inputRef.current;
+				if (input === null) return;
+				draggingRef.current = false;
+				if (rafRef.current !== null) {
+					cancelAnimationFrame(rafRef.current);
+					rafRef.current = null;
+				}
+				commit(Number(input.value));
+			}, [commit]);
+			(0, react.useEffect)(() => {
+				const input = inputRef.current;
+				if (input !== null && !draggingRef.current && input !== input.ownerDocument.activeElement) input.value = String(externalValue);
+			}, [externalValue]);
+			(0, react.useEffect)(() => {
+				const input = inputRef.current;
+				if (input === null) return;
+				const listener = () => {
+					draggingRef.current = false;
+					if (rafRef.current !== null) {
+						cancelAnimationFrame(rafRef.current);
+						rafRef.current = null;
+					}
+					commit(Number(input.value));
+				};
+				input.addEventListener("change", listener);
+				return () => {
+					input.removeEventListener("change", listener);
+				};
+			}, [commit]);
+			(0, react.useEffect)(() => {
+				return () => {
+					if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+				};
+			}, []);
+			/** Throttled live-value reporter: fires onChanging at most once per frame. */
+			const reportLive = (0, react.useCallback)((value) => {
+				liveRef.current = value;
+				if (rafRef.current !== null) return;
+				rafRef.current = requestAnimationFrame(() => {
+					rafRef.current = null;
+					onChangingRef.current?.(liveRef.current);
+				});
+			}, []);
+			return /* @__PURE__ */ (0, react_jsx_runtime.jsx)("input", {
+				ref: inputRef,
+				id,
+				className,
+				type: "range",
+				min,
+				max,
+				step,
+				defaultValue: externalValue,
+				"aria-label": ariaLabel,
+				"aria-valuetext": ariaValuetext,
+				onPointerDown: (0, react.useCallback)(() => {
+					draggingRef.current = true;
+				}, []),
+				onPointerCancel: (0, react.useCallback)(() => {
+					draggingRef.current = false;
+					if (rafRef.current !== null) {
+						cancelAnimationFrame(rafRef.current);
+						rafRef.current = null;
+					}
+				}, []),
+				onInput: (0, react.useCallback)((event) => {
+					reportLive(Number(event.currentTarget.value));
+				}, [reportLive]),
+				onBlur: (0, react.useCallback)(() => {
+					if (draggingRef.current) return;
+					commitCurrent();
+				}, [commitCurrent]),
+				onKeyDown: (0, react.useCallback)((event) => {
+					if (event.key !== "Enter" && event.key !== "Escape") return;
+					if (draggingRef.current) return;
+					commitCurrent();
+				}, [commitCurrent])
+			});
+		}
+		//#endregion
+		//#region src/client/SkinCenter.tsx
+		/**
+		* The skin-center card: rendered as the content of a first-level settings
+		* section, listing the official stock look plus every installed skin in the
+		* v2 catalog (package-shipped built-ins + user dirs under $DSH_HOME/skins).
+		*
+		* v2 architecture (issue #506): skins are pure asset directories loaded by
+		* the skin-center runtime. Try-on and apply both go through the same atomic
+		* switch engine (src/client/runtime/skin-controller.ts) — try-on simply
+		* skips persistence, and apply is one click with NO page reload, no
+		* cordis.patch.yml rewrite, no boot-graph regeneration. The "trying on"
+		* badge tracks the controller's live state, so closing and reopening the
+		* settings panel keeps showing the skin that is still being previewed.
+		* Copy rides the standard `t` seat; the theme preview control drives the
+		* official theme service (persisted, same as the Appearance row).
+		*/
+		/** The apply target of the official stock-look card. */
+		const OFFICIAL = "official";
+		/**
+		* Live-label helper: the shown value follows the in-drag thumb immediately,
+		* and falls back to the store value once the store settles (issue #725).
+		*/
+		function useLiveValue(value) {
+			const [live, setLive] = (0, react.useState)(null);
+			(0, react.useEffect)(() => {
+				setLive(null);
+			}, [value]);
+			return [live ?? value, setLive];
+		}
+		/**
+		* Render the skin-center card: a static header naming the plugin, with the
+		* always-visible skin list (official default + every installed skin; try-on /
+		* theme preview / one-click apply) rendered below it.
+		* @param props - card props.
+		* @returns the plugin card.
+		*/
+		function SkinCenter({ t, runtime, theme, background, wallpaper, preview, customTheme }) {
+			const snapshot = (0, react.useSyncExternalStore)((listener) => theme.subscribe(listener), () => theme.getTheme());
+			const enabled = (0, react.useSyncExternalStore)(background.subscribe, background.enabled);
+			const opacity = (0, react.useSyncExternalStore)(background.subscribe, background.opacity);
+			const blurEmpty = (0, react.useSyncExternalStore)(background.subscribe, background.blurEmpty);
+			const blurContent = (0, react.useSyncExternalStore)(background.subscribe, background.blurContent);
+			const inputCardBlur = (0, react.useSyncExternalStore)(background.subscribe, background.inputCardBlur);
+			const bubbleOpacity = (0, react.useSyncExternalStore)(background.subscribe, background.bubbleOpacity);
+			const [shownOpacity, setShownOpacity] = useLiveValue(opacity);
+			const [shownBlurEmpty, setShownBlurEmpty] = useLiveValue(blurEmpty);
+			const [shownBlurContent, setShownBlurContent] = useLiveValue(blurContent);
+			const [shownInputCardBlur, setShownInputCardBlur] = useLiveValue(inputCardBlur);
+			const [shownBubbleOpacity, setShownBubbleOpacity] = useLiveValue(bubbleOpacity);
+			const catalog = (0, react.useSyncExternalStore)(runtime.subscribe, runtime.catalog);
+			const state = (0, react.useSyncExternalStore)(runtime.subscribe, runtime.controller.getState);
+			const customThemeState = (0, react.useSyncExternalStore)(customTheme.subscribe, customTheme.getState);
+			const activeId = state.active;
+			const previewing = state.previewing;
+			const tryingId = state.trying;
+			const backdropActive = (activeId === null ? null : runtime.find(activeId))?.manifest.contributes.backgroundMedia !== void 0;
+			const [busyId, setBusyId] = (0, react.useState)(null);
+			const [error, setError] = (0, react.useState)(null);
+			const mounted = (0, react.useRef)(false);
+			const requestSeq = (0, react.useRef)(0);
+			(0, react.useEffect)(() => {
+				mounted.current = true;
+				return () => {
+					mounted.current = false;
+				};
+			}, []);
+			const run = (target, action) => {
+				const seq = ++requestSeq.current;
+				setError(null);
+				setBusyId(target);
+				action().catch(() => {
+					if (!mounted.current || seq !== requestSeq.current) return;
+					setError(t("applyFailed"));
+				}).finally(() => {
+					if (!mounted.current || seq !== requestSeq.current) return;
+					setBusyId(null);
+				});
+			};
+			const tryOn = (entry) => {
+				run(entry.manifest.id, () => preview.runSkin(() => runtime.controller.tryOn(entry.manifest.id, entry)));
+			};
+			const tryOnOfficial = () => {
+				run(OFFICIAL, () => preview.runSkin(() => runtime.controller.tryOn(null, null)));
+			};
+			const exitTryOn = () => {
+				run(tryingId ?? OFFICIAL, () => preview.runSkin(() => runtime.controller.exitTryOn()));
+			};
+			const restoreCommittedSkin = async (state) => {
+				const entry = state.active === null ? null : runtime.find(state.active);
+				if (state.active !== null && entry === null) throw new Error(`cannot restore skin ${state.active}`);
+				if (await runtime.controller.switchTo(state.active, entry) !== state.active) throw new Error(`skin ${state.active ?? "stock"} did not restore`);
+			};
+			const switchAndDeactivateCustomTheme = async (target, entry) => {
+				const previous = { ...runtime.controller.getState() };
+				const active = await runtime.controller.switchTo(target, entry);
+				if (active !== target) throw new Error(`${target === null ? "stock theme" : `skin ${target}`} did not activate`);
+				try {
+					await customTheme.deactivate();
+					return active;
+				} catch (error) {
+					try {
+						await restoreCommittedSkin(previous);
+					} catch (rollbackError) {
+						throw new AggregateError([error, rollbackError], "skin switch cleanup and rollback failed");
+					}
+					throw error;
+				}
+			};
+			const restoreOfficialLook = async () => {
+				const active = await switchAndDeactivateCustomTheme(null, null);
+				if (wallpaper.selection() !== "") wallpaper.clearSelection();
+				return active;
+			};
+			/**
+			* One-click apply: atomic client-side switch + persisted selection. No
+			* reload, no boot-graph wait — the tapIndex adapter makes the next page
+			* load boot straight into this skin.
+			* @param target - skin id, or `official` for the stock look.
+			*/
+			const applySkin = (target) => {
+				if (target === OFFICIAL) {
+					run(OFFICIAL, () => preview.runSkin(restoreOfficialLook));
+					return;
+				}
+				const entry = runtime.find(target);
+				if (entry === null) {
+					setError(t("applyFailed"));
+					return;
+				}
+				run(target, () => preview.runSkin(async () => {
+					const active = await switchAndDeactivateCustomTheme(target, entry);
+					if (wallpaper.selection() !== "") wallpaper.clearSelection();
+					return active;
+				}));
+			};
+			const tryOnCustomTheme = () => {
+				run("custom-theme", () => preview.runCustomTheme(async () => {
+					const active = await runtime.controller.tryOn(null, null);
+					if (active !== null) throw new Error("stock preview did not activate");
+					customTheme.tryOn();
+					return active;
+				}));
+			};
+			const exitCustomThemeTryOn = () => {
+				run("custom-theme", () => preview.runCustomTheme(async () => {
+					customTheme.exitTryOn();
+					return await runtime.controller.exitTryOn();
+				}));
+			};
+			const applyCustomTheme = () => {
+				run("custom-theme", () => preview.runCustomTheme(async () => {
+					await customTheme.apply();
+					const active = await runtime.controller.switchTo(null, null);
+					if (active !== null) {
+						await customTheme.deactivate();
+						throw new Error("stock theme did not activate");
+					}
+					return active;
+				}));
+			};
+			const dark = snapshot.active.colorScheme === "dark";
+			/** One row: try-on control + apply button. Shared by the official card and every skin card. */
+			const actionButtons = (opts) => /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+				className: skin_center_module_css_default.actions,
+				children: [opts.isActive && !opts.isTrying ? /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
+					type: "button",
+					className: `${skin_center_module_css_default.button} ${skin_center_module_css_default.buttonGhost}`,
+					disabled: true,
+					children: t("tryOn")
+				}) : opts.isTrying ? /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
+					type: "button",
+					className: `${skin_center_module_css_default.button} ${skin_center_module_css_default.buttonPrimary}`,
+					disabled: busyId !== null,
+					onClick: exitTryOn,
+					children: t("exitTryOn")
+				}) : /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
+					type: "button",
+					className: `${skin_center_module_css_default.button} ${skin_center_module_css_default.buttonPrimary}`,
+					disabled: busyId !== null,
+					onClick: opts.onTryOn,
+					children: busyId === opts.key ? t("loading") : t("tryOn")
+				}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
+					type: "button",
+					className: skin_center_module_css_default.button,
+					disabled: busyId !== null,
+					onClick: () => {
+						applySkin(opts.key);
+					},
+					children: busyId === opts.key ? t("applying") : opts.applyLabel
+				})]
+			});
+			return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("li", {
+				className: skin_center_module_css_default.pluginCard,
+				children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
+					className: skin_center_module_css_default.cardHeaderStatic,
+					children: /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
+						className: skin_center_module_css_default.headText,
+						children: [/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
+							className: skin_center_module_css_default.pluginName,
+							children: [t("title"), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
+								className: skin_center_module_css_default.titleBadge,
+								children: String(catalog?.length ?? 0)
+							})]
+						}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
+							className: skin_center_module_css_default.cardDescription,
+							title: t("cardDescription"),
+							children: t("cardDescription")
+						})]
+					})
+				}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+					className: skin_center_module_css_default.cardBody,
+					children: [/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+						className: skin_center_module_css_default.enableRow,
+						children: [
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
+								className: skin_center_module_css_default.enableLabel,
+								title: t("enabled"),
+								children: t("enabled")
+							}),
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
+								type: "button",
+								role: "switch",
+								"aria-checked": enabled,
+								"aria-label": t("enabled"),
+								className: enabled ? skin_center_module_css_default.switch + " " + skin_center_module_css_default.switchOn : skin_center_module_css_default.switch,
+								onClick: () => {
+									background.setEnabled(!enabled);
+								},
+								children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { className: skin_center_module_css_default.switchThumb })
+							}),
+							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
+								className: skin_center_module_css_default.enableHint,
+								children: t("enabledHint")
+							})
+						]
+					}), enabled ? /* @__PURE__ */ (0, react_jsx_runtime.jsxs)(react_jsx_runtime.Fragment, { children: [
+						/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+							className: skin_center_module_css_default.head,
+							children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
+								className: skin_center_module_css_default.intro,
+								title: t("intro"),
+								children: t("intro")
+							}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+								className: skin_center_module_css_default.themeRow,
+								children: [
+									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
+										className: skin_center_module_css_default.themeLabel,
+										children: t("theme")
+									}),
+									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
+										type: "button",
+										className: `${skin_center_module_css_default.themeButton} ${dark ? "" : skin_center_module_css_default.themeButtonActive}`,
+										onClick: () => {
+											theme.setTheme("light");
+										},
+										children: t("themeLight")
+									}),
+									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
+										type: "button",
+										className: `${skin_center_module_css_default.themeButton} ${dark ? skin_center_module_css_default.themeButtonActive : ""}`,
+										onClick: () => {
+											theme.setTheme("dark");
+										},
+										children: t("themeDark")
+									})
+								]
+							})]
+						}),
+						error !== null && /* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
+							className: skin_center_module_css_default.error,
+							children: error
+						}),
+						/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+							className: skin_center_module_css_default.list,
+							children: [(() => {
+								const isActive = activeId === null && !previewing && !customThemeState.applied;
+								const isTrying = previewing && tryingId === null && !customThemeState.previewing;
+								const badge = isActive ? t("active") : isTrying ? t("tryingOn") : null;
+								return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+									className: skin_center_module_css_default.card,
+									children: [
+										/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+											className: skin_center_module_css_default.cardHead,
+											children: [
+												/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
+													className: skin_center_module_css_default.swatch,
+													style: { background: "#98a1ab" },
+													"aria-hidden": "true"
+												}),
+												/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
+													className: skin_center_module_css_default.cardName,
+													title: t("official"),
+													children: t("official")
+												}),
+												badge !== null && /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
+													className: `${skin_center_module_css_default.badge} ${isActive ? skin_center_module_css_default.badgeActive : skin_center_module_css_default.badgeTrying}`,
+													children: badge
+												})
+											]
+										}),
+										/* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
+											className: skin_center_module_css_default.cardTagline,
+											title: t("officialTagline"),
+											children: t("officialTagline")
+										}),
+										actionButtons({
+											key: OFFICIAL,
+											isActive,
+											isTrying,
+											onTryOn: tryOnOfficial,
+											applyLabel: t("restore")
+										})
+									]
+								}, OFFICIAL);
+							})(), (catalog ?? []).map((entry) => {
+								const id = entry.manifest.id;
+								const isActive = id === activeId && !previewing;
+								const isTrying = previewing && id === tryingId;
+								const badge = isActive ? t("active") : isTrying ? t("tryingOn") : null;
+								return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+									className: skin_center_module_css_default.card,
+									children: [
+										/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+											className: skin_center_module_css_default.cardHead,
+											children: [
+												/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
+													className: skin_center_module_css_default.swatch,
+													style: { background: entry.manifest.accent ?? "#98a1ab" },
+													"aria-hidden": "true"
+												}),
+												/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
+													className: skin_center_module_css_default.cardName,
+													title: entry.manifest.nameEn,
+													children: entry.manifest.nameEn
+												}),
+												badge !== null && /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
+													className: `${skin_center_module_css_default.badge} ${isActive ? skin_center_module_css_default.badgeActive : skin_center_module_css_default.badgeTrying}`,
+													children: badge
+												})
+											]
+										}),
+										/* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
+											className: skin_center_module_css_default.cardTagline,
+											title: entry.manifest.tagline ?? "",
+											children: entry.manifest.tagline ?? ""
+										}),
+										actionButtons({
+											key: id,
+											isActive,
+											isTrying,
+											onTryOn: () => {
+												tryOn(entry);
+											},
+											applyLabel: t("apply")
+										})
+									]
+								}, id);
+							})]
+						}),
+						/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
+							className: skin_center_module_css_default.controlsHint,
+							children: t("advancedHint")
+						}),
+						/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+							className: skin_center_module_css_default.backgroundRow,
+							children: [
+								/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+									className: skin_center_module_css_default.backgroundHead,
+									children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
+										className: skin_center_module_css_default.backgroundLabel,
+										children: t("backgroundOpacity")
+									}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
+										className: skin_center_module_css_default.backgroundValue,
+										"aria-hidden": "true",
+										children: [shownOpacity, "%"]
+									})]
+								}),
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)(SliderControl, {
+									id: "skin-center-background-opacity",
+									className: skin_center_module_css_default.backgroundRange,
+									min: 0,
+									max: 100,
+									step: 5,
+									value: opacity,
+									ariaValuetext: shownOpacity + "%",
+									ariaLabel: t("backgroundOpacity"),
+									onChanging: setShownOpacity,
+									onChange: (value) => {
+										background.set(value);
+									}
+								}),
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
+									className: backdropActive ? skin_center_module_css_default.backgroundHint : skin_center_module_css_default.backgroundHintMuted,
+									children: backdropActive ? t("backgroundHint") : t("backgroundHintInert")
+								})
+							]
+						}),
+						/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+							className: skin_center_module_css_default.backgroundRow,
+							children: [
+								/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+									className: skin_center_module_css_default.backgroundHead,
+									children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
+										className: skin_center_module_css_default.backgroundLabel,
+										children: t("backgroundBlurEmpty")
+									}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
+										className: skin_center_module_css_default.backgroundValue,
+										"aria-hidden": "true",
+										children: [shownBlurEmpty, "px"]
+									})]
+								}),
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)(SliderControl, {
+									id: "skin-center-background-blur-empty",
+									className: skin_center_module_css_default.backgroundRange,
+									min: 0,
+									max: 20,
+									step: 1,
+									value: blurEmpty,
+									ariaValuetext: shownBlurEmpty + "px",
+									ariaLabel: t("backgroundBlurEmpty"),
+									onChanging: setShownBlurEmpty,
+									onChange: (value) => {
+										background.setBlurEmpty(value);
+									}
+								}),
+								/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+									className: skin_center_module_css_default.backgroundHead,
+									children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
+										className: skin_center_module_css_default.backgroundLabel,
+										children: t("backgroundBlurContent")
+									}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
+										className: skin_center_module_css_default.backgroundValue,
+										"aria-hidden": "true",
+										children: [shownBlurContent, "px"]
+									})]
+								}),
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)(SliderControl, {
+									id: "skin-center-background-blur-content",
+									className: skin_center_module_css_default.backgroundRange,
+									min: 0,
+									max: 20,
+									step: 1,
+									value: blurContent,
+									ariaValuetext: shownBlurContent + "px",
+									ariaLabel: t("backgroundBlurContent"),
+									onChanging: setShownBlurContent,
+									onChange: (value) => {
+										background.setBlurContent(value);
+									}
+								}),
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
+									className: backdropActive ? skin_center_module_css_default.backgroundHint : skin_center_module_css_default.backgroundHintMuted,
+									children: backdropActive ? t("backgroundBlurHint") : t("backgroundBlurInert")
+								})
+							]
+						}),
+						/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+							className: skin_center_module_css_default.backgroundRow,
+							children: [
+								/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+									className: skin_center_module_css_default.backgroundHead,
+									children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
+										className: skin_center_module_css_default.backgroundLabel,
+										children: t("inputCardBlur")
+									}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
+										className: skin_center_module_css_default.backgroundValue,
+										"aria-hidden": "true",
+										children: [shownInputCardBlur, "px"]
+									})]
+								}),
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)(SliderControl, {
+									id: "skin-center-input-card-blur",
+									className: skin_center_module_css_default.backgroundRange,
+									min: 0,
+									max: 20,
+									step: 1,
+									value: inputCardBlur,
+									ariaValuetext: shownInputCardBlur + "px",
+									ariaLabel: t("inputCardBlur"),
+									onChanging: setShownInputCardBlur,
+									onChange: (value) => {
+										background.setInputCardBlur(value);
+									}
+								}),
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
+									className: skin_center_module_css_default.backgroundHint,
+									children: t("inputCardBlurHint")
+								})
+							]
+						}),
+						/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+							className: skin_center_module_css_default.backgroundRow,
+							children: [
+								/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+									className: skin_center_module_css_default.backgroundHead,
+									children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
+										className: skin_center_module_css_default.backgroundLabel,
+										children: t("bubbleOpacity")
+									}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
+										className: skin_center_module_css_default.backgroundValue,
+										"aria-hidden": "true",
+										children: [shownBubbleOpacity, "%"]
+									})]
+								}),
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)(SliderControl, {
+									id: "skin-center-bubble-opacity",
+									className: skin_center_module_css_default.backgroundRange,
+									min: 0,
+									max: 100,
+									step: 5,
+									value: bubbleOpacity,
+									ariaValuetext: shownBubbleOpacity + "%",
+									ariaLabel: t("bubbleOpacity"),
+									onChanging: setShownBubbleOpacity,
+									onChange: (value) => {
+										background.setBubbleOpacity(value);
+									}
+								}),
+								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
+									className: skin_center_module_css_default.backgroundHint,
+									children: t("bubbleOpacityHint")
+								})
+							]
+						}),
+						/* @__PURE__ */ (0, react_jsx_runtime.jsx)(CustomThemeCard, {
+							t,
+							customTheme,
+							scheme: dark ? "dark" : "light",
+							setScheme: (scheme) => {
+								theme.setTheme(scheme);
+							},
+							isActive: customThemeState.applied && activeId === null && !previewing,
+							isTrying: customThemeState.previewing,
+							busy: busyId === "custom-theme",
+							disabled: busyId !== null,
+							onTryOn: tryOnCustomTheme,
+							onExitTryOn: exitCustomThemeTryOn,
+							onApply: applyCustomTheme
+						})
+					] }) : /* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
+						className: skin_center_module_css_default.offNote,
+						role: "status",
+						children: t("offNote")
+					})]
+				})]
+			});
+		}
+		/** Render the skin-center card as a first-level settings page. */
+		function SkinCenterSection(props) {
+			const { t, runtime, theme, background, wallpaper, preview, customTheme } = props;
+			return /* @__PURE__ */ (0, react_jsx_runtime.jsx)("ul", {
+				className: skin_center_module_css_default.sectionList,
+				children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)(SkinCenter, {
+					t,
+					runtime,
+					theme,
+					background,
+					wallpaper,
+					preview,
+					customTheme
+				})
+			});
+		}
+		//#endregion
+		//#region src/core/background.ts
+		/** Effective value of every field when the state carries none. */
+		const SKIN_BACKGROUND_DEFAULTS = {
+			enabled: true,
+			backgroundOpacity: 0,
+			backgroundBlurEmpty: 0,
+			backgroundBlurContent: 0,
+			inputCardBlur: 10,
+			bubbleOpacity: 50
+		};
+		/** The fields normalize/sanitize know about; unknown keys are dropped. */
+		const SKIN_BACKGROUND_FIELDS = Object.keys(SKIN_BACKGROUND_DEFAULTS);
+		/** Fill every absent field from {@link SKIN_BACKGROUND_DEFAULTS}. */
+		function resolveSkinBackground(value) {
+			return {
+				...SKIN_BACKGROUND_DEFAULTS,
+				...value ?? {}
+			};
+		}
+		/** True when at least one field departs from its default (customized data). */
+		function hasCustomSkinBackground(value) {
+			return SKIN_BACKGROUND_FIELDS.some((field) => value[field] !== void 0 && value[field] !== SKIN_BACKGROUND_DEFAULTS[field]);
+		}
+		//#endregion
+		//#region src/client/background.ts
+		/**
+		* Background-scrim handle for the skin center: applies the chosen occlusion
+		* to the page's backdrop, plus an optional per-state Gaussian blur of that
+		* backdrop.
+		*
+		* Occlusion is a CSS variable on `document.body` (--dsw-skin-scrim), which
+		* backdrop-painting skins (whale-song) read inside their
+		* setBackdrop() so the veil stays in sync across theme flips and try-on
+		* restores. The official stock look paints no backdrop, so the variable is
+		* inert there — the value still persists so it is ready for the next backdrop
+		* skin.
+		*
+		* The Gaussian blur targets the same painted backdrop through a fixed child
+		* of `document.body` using backdrop-filter: it samples the body's own
+		* background painted behind it. Separate strengths apply to the empty
+		* conversation and the conversation-with-content states, detected from the
+		* shell's stable message-row class suffixes (hash prefix varies, suffix is
+		* stable). When the active blur is 0 no element exists, so there is no GPU
+		* cost. Blur never changes the occlusion behavior above.
+		*
+		* Occlusion values are 0-100 (0 = no extra veil, 100 = fully obscured); they
+		* are written through as a 0..1 alpha for the CSS variable. Blur values are
+		* 0-20 px. Dragging the controls applies instantly (live).
+		*
+		* Persistence (issue #996): the controller owns no settings scope — the
+		* remote pairing channel fences settings.* as loopback-only, which is what
+		* stranded remote clients on defaults. The caller hands in the initial
+		* values and a `persist` callback (the v2 /active channel); later external
+		* edits (the official settings page locally, the refetched state remotely)
+		* arrive through `init()`.
+		*/
+		/** The namespace string the Host registers (mirrors src/index.ts). */
+		const SKIN_BACKGROUND_NS = "skin-background";
+		/** CSS custom property written to document.body and read by backdrop skins. */
+		const SCRIM_VAR = "--dsw-skin-scrim";
+		/** CSS custom property consumed by skins that expose translucent bubbles. */
+		const BUBBLE_ALPHA_VAR = "--dsh-skin-bubble-alpha";
+		/** CSS custom property consumed by the shared composer neutralizer. */
+		const INPUT_CARD_BLUR_VAR = "--dsh-input-card-blur";
+		SKIN_BACKGROUND_DEFAULTS.backgroundOpacity;
+		SKIN_BACKGROUND_DEFAULTS.bubbleOpacity;
+		SKIN_BACKGROUND_DEFAULTS.backgroundBlurEmpty;
+		/**
+		* Selector for a conversation message row inside the shell's center column.
+		* Official shell message rows carry `data-chat-anchor-key`; the
+		* `data-pane="conversation"` attribute is stamped by the dsh-web-all compat
+		* shim on the center column, where the _userRow / _compactionRow /
+		* _contextRow / _turnErrorRow suffixes are CSS-module message-row classes
+		* (hash prefix varies, suffix is stable).
+		*/
+		const CONVERSATION_CONTENT_SELECTOR = [
+			"[data-chat-anchor-key]",
+			"[data-pane=\"conversation\"] [class*=\"_userRow\"]",
+			"[data-pane=\"conversation\"] [class*=\"_compactionRow\"]",
+			"[data-pane=\"conversation\"] [class*=\"_contextRow\"]",
+			"[data-pane=\"conversation\"] [class*=\"_turnErrorRow\"]"
+		].join(", ");
+		/**
+		* Own the background preference set: apply the values to the body instantly
+		* and persist user edits through the caller-provided channel.
+		*/
+		var BackgroundController = class {
+			enabledValue = SKIN_BACKGROUND_DEFAULTS.enabled;
+			opacityValue = SKIN_BACKGROUND_DEFAULTS.backgroundOpacity;
+			blurEmptyValue = SKIN_BACKGROUND_DEFAULTS.backgroundBlurEmpty;
+			blurContentValue = SKIN_BACKGROUND_DEFAULTS.backgroundBlurContent;
+			inputCardBlurValue = SKIN_BACKGROUND_DEFAULTS.inputCardBlur;
+			bubbleOpacityValue = SKIN_BACKGROUND_DEFAULTS.bubbleOpacity;
+			listeners = /* @__PURE__ */ new Set();
+			persist;
+			/** The fixed backdrop-filter element, present only while active blur > 0. */
+			blurElement = null;
+			/** The body MutationObserver, installed lazily once a blur is active. */
+			observer = null;
+			/** Pending requestAnimationFrame id for a coalesced recheck. */
+			rafId = null;
+			/** Guard: after dispose no scheduled work may reinstall anything. */
+			disposed = false;
+			/**
+			* @param initial - values known at construction (the local settings scope
+			*   snapshot on loopback); null starts from defaults until init() arrives.
+			* @param persist - persistence channel for user edits (v2 /active POST).
+			*/
+			constructor(initial, persist) {
+				this.persist = persist;
+				if (initial !== null) this.assign(initial);
+				this.applyOcclusion();
+				this.applyInputCardBlur();
+				this.applyBubbleOpacity();
+				this.syncBlur();
+			}
+			/**
+			* Replace the current values with externally sourced ones (the refetched
+			* v2 state, or a live settings-scope publish). Never persists — the source
+			* already owns the stored copy; the caller decides whether to forward the
+			* change into the v2 store.
+			*/
+			init(next) {
+				if (this.disposed) return;
+				this.assign(next ?? {});
+				this.applyOcclusion();
+				this.applyInputCardBlur();
+				this.applyBubbleOpacity();
+				this.syncBlur();
+				this.publish();
+			}
+			/** The current values as a persistable config (every field concrete). */
+			snapshot() {
+				return {
+					enabled: this.enabledValue,
+					backgroundOpacity: this.opacityValue,
+					backgroundBlurEmpty: this.blurEmptyValue,
+					backgroundBlurContent: this.blurContentValue,
+					inputCardBlur: this.inputCardBlurValue,
+					bubbleOpacity: this.bubbleOpacityValue
+				};
+			}
+			enabled = () => this.enabledValue;
+			setEnabled(value) {
+				this.enabledValue = value;
+				this.applyOcclusion();
+				this.applyInputCardBlur();
+				this.applyBubbleOpacity();
+				this.syncBlur();
+				this.publish();
+				this.persist(this.snapshot());
+			}
+			opacity = () => this.opacityValue;
+			blurEmpty = () => this.blurEmptyValue;
+			blurContent = () => this.blurContentValue;
+			inputCardBlur = () => this.inputCardBlurValue;
+			bubbleOpacity = () => this.bubbleOpacityValue;
+			subscribe = (listener) => {
+				this.listeners.add(listener);
+				return () => {
+					this.listeners.delete(listener);
+				};
+			};
+			set(opacity) {
+				this.opacityValue = this.clampPercent(opacity);
+				this.applyOcclusion();
+				this.publish();
+				this.persist(this.snapshot());
+			}
+			setBlurEmpty(value) {
+				this.blurEmptyValue = this.clampBlur(value);
+				this.ensureObserver();
+				this.syncBlur();
+				this.publish();
+				this.persist(this.snapshot());
+			}
+			setBlurContent(value) {
+				this.blurContentValue = this.clampBlur(value);
+				this.ensureObserver();
+				this.syncBlur();
+				this.publish();
+				this.persist(this.snapshot());
+			}
+			setInputCardBlur(value) {
+				this.inputCardBlurValue = this.clampBlur(value);
+				this.applyInputCardBlur();
+				this.publish();
+				this.persist(this.snapshot());
+			}
+			setBubbleOpacity(value) {
+				this.bubbleOpacityValue = this.clampPercent(value);
+				this.applyBubbleOpacity();
+				this.publish();
+				this.persist(this.snapshot());
+			}
+			dispose() {
+				this.disposed = true;
+				if (this.rafId !== null) {
+					cancelAnimationFrame(this.rafId);
+					this.rafId = null;
+				}
+				this.removeBlurElement();
+				document.body.style.removeProperty(INPUT_CARD_BLUR_VAR);
+				document.body.style.removeProperty(BUBBLE_ALPHA_VAR);
+				if (this.observer !== null) {
+					this.observer.disconnect();
+					this.observer = null;
+				}
+			}
+			/** Copy one config into the live fields, defaults filling the gaps. */
+			assign(config) {
+				const resolved = resolveSkinBackground(config);
+				this.enabledValue = resolved.enabled;
+				this.opacityValue = resolved.backgroundOpacity;
+				this.blurEmptyValue = resolved.backgroundBlurEmpty;
+				this.blurContentValue = resolved.backgroundBlurContent;
+				this.inputCardBlurValue = resolved.inputCardBlur;
+				this.bubbleOpacityValue = resolved.bubbleOpacity;
+			}
+			clampBlur(value) {
+				return Math.max(0, Math.min(20, Math.round(value)));
+			}
+			clampPercent(value) {
+				return Math.max(0, Math.min(100, Math.round(value)));
+			}
+			applyInputCardBlur() {
+				if (!this.enabledValue) {
+					document.body.style.removeProperty(INPUT_CARD_BLUR_VAR);
+					return;
+				}
+				document.body.style.setProperty(INPUT_CARD_BLUR_VAR, this.inputCardBlurValue + "px");
+			}
+			applyBubbleOpacity() {
+				if (!this.enabledValue) {
+					document.body.style.removeProperty(BUBBLE_ALPHA_VAR);
+					return;
+				}
+				document.body.style.setProperty(BUBBLE_ALPHA_VAR, String(this.bubbleOpacityValue / 100));
+			}
+			/** Write the current occlusion onto the body CSS variable (0..1 alpha). */
+			applyOcclusion() {
+				if (!this.enabledValue) {
+					document.body.style.removeProperty(SCRIM_VAR);
+					return;
+				}
+				document.body.style.setProperty(SCRIM_VAR, String(this.opacityValue / 100));
+			}
+			/**
+			* Apply the active blur: empty or with-content strength depending on the
+			* conversation state. A value > 0 ensures the fixed blur element exists
+			* with the matching backdrop-filter; 0 removes it.
+			*/
+			syncBlur() {
+				if (this.disposed) return;
+				if (this.hasWallpaper()) {
+					this.removeBlurElement();
+					return;
+				}
+				if (!this.enabledValue) {
+					this.removeBlurElement();
+					return;
+				}
+				this.ensureObserver();
+				const active = this.hasConversationContent() ? this.blurContentValue : this.blurEmptyValue;
+				if (active > 0) this.ensureBlurElement(active);
+				else this.removeBlurElement();
+			}
+			/** True when the conversation pane hosts at least one message row. */
+			hasConversationContent() {
+				return document.querySelector(CONVERSATION_CONTENT_SELECTOR) !== null;
+			}
+			/** True while a Wallpaper Engine wallpaper is mounted. */
+			hasWallpaper() {
+				return document.documentElement.hasAttribute("data-dsh-wallpaper-active");
+			}
+			/** Create (if needed) and size the fixed backdrop-filter element. */
+			ensureBlurElement(active) {
+				if (this.blurElement === null) {
+					const element = document.createElement("div");
+					element.style.position = "fixed";
+					element.style.inset = "0";
+					element.style.zIndex = "-1";
+					element.style.pointerEvents = "none";
+					element.setAttribute("aria-hidden", "true");
+					this.blurElement = element;
+					document.body.appendChild(element);
+				}
+				const blur = "blur(" + active + "px)";
+				this.blurElement.style.backdropFilter = blur;
+				this.blurElement.style.setProperty("-webkit-backdrop-filter", blur);
+			}
+			/** Remove the fixed blur element, if present. */
+			removeBlurElement() {
+				if (this.blurElement === null) return;
+				this.blurElement.remove();
+				this.blurElement = null;
+			}
+			/**
+			* Install the MutationObserver on document.body only when either blur
+			* field is active, so a fully-disabled blur never pays the observation
+			* cost. Runs lazily on the first non-zero set.
+			*/
+			ensureObserver() {
+				if (this.disposed || this.observer !== null) return;
+				if (this.blurEmptyValue <= 0 && this.blurContentValue <= 0) return;
+				this.observer = new MutationObserver(() => this.scheduleRecheck());
+				this.observer.observe(document.body, {
+					childList: true,
+					subtree: true,
+					attributes: true,
+					attributeFilter: ["class"]
+				});
+				this.observer.observe(document.documentElement, {
+					attributes: true,
+					attributeFilter: ["data-dsh-wallpaper-active"]
+				});
+			}
+			/** Coalesce burst mutations into one rAF-delayed recheck. */
+			scheduleRecheck() {
+				if (this.disposed || this.rafId !== null) return;
+				this.rafId = requestAnimationFrame(() => {
+					this.rafId = null;
+					if (this.disposed) return;
+					this.syncBlur();
+				});
+			}
+			publish() {
+				for (const listener of this.listeners) listener();
+			}
+		};
 		//#endregion
 		//#region src/client/runtime/backdrop-scene.ts
 		/**
@@ -1336,1689 +2361,6 @@ window.__ModuleLoader__.load({
 			wallpaper.subscribe(restore);
 		}
 		//#endregion
-		//#region src/client/SliderControl.tsx
-		/**
-		* A drag-smooth range slider that decouples the visible value from the
-		* external store while the user drags (issue #725).
-		*
-		* Binding <input type="range"> directly to a useSyncExternalStore value
-		* causes two defects during drag:
-		* 1. Snapping back: the store subscription re-reads the scope snapshot while
-		*    the async scope.set() write is still in flight, resetting the thumb
-		*    to the old value mid-drag.
-		* 2. Lag and stale labels: every onChange drives a full set -> publish ->
-		*    React render cycle, and the displayed number only updates once the
-		*    external store settles instead of following the thumb.
-		*
-		* This control keeps the input effectively uncontrolled: the browser moves
-		* the thumb on the compositor thread with zero React involvement while
-		* dragging, onInput reports the live value (one callback per animation
-		* frame) so labels update in real time, and the final value is committed to
-		* the external store through the native change event, which fires once per
-		* completed pointer interaction (pointer release). Keyboard-only users get
-		* an explicit commit path through onBlur and the Enter/Escape keydown
-		* handlers, because not every engine fires the native change event for
-		* range inputs on blur or Enter (jsdom does not; behavior varies by
-		* browser). A pointer cancel aborts without committing, and the external
-		* value is re-synced into the DOM only while the user is neither dragging
-		* nor keyboard-focusing the input.
-		* @module @linxin666/dsh-client-ui-skin-center/slider-control
-		*/
-		/**
-		* A range slider that stays smooth during drag (issue #725).
-		*
-		* @param props - slider props.
-		* @returns the range input element.
-		*/
-		function SliderControl({ value: externalValue, min = 0, max = 100, step = 1, onChange, onChanging, className, id, ariaLabel, ariaValuetext }) {
-			const inputRef = (0, react.useRef)(null);
-			const draggingRef = (0, react.useRef)(false);
-			const rafRef = (0, react.useRef)(null);
-			const liveRef = (0, react.useRef)(0);
-			const lastCommittedRef = (0, react.useRef)(null);
-			const onChangingRef = (0, react.useRef)(onChanging);
-			onChangingRef.current = onChanging;
-			const commitRef = (0, react.useRef)(onChange);
-			commitRef.current = onChange;
-			/**
-			* Persist a value to the external store, de-duplicated against the last
-			* committed value so the explicit keyboard/onBlur commit paths never
-			* double-fire alongside the native change event (which real browsers also
-			* emit on blur or Enter for range inputs).
-			*/
-			const commit = (0, react.useCallback)((value) => {
-				if (lastCommittedRef.current === value) return;
-				lastCommittedRef.current = value;
-				commitRef.current(value);
-			}, []);
-			const commitCurrent = (0, react.useCallback)(() => {
-				const input = inputRef.current;
-				if (input === null) return;
-				draggingRef.current = false;
-				if (rafRef.current !== null) {
-					cancelAnimationFrame(rafRef.current);
-					rafRef.current = null;
-				}
-				commit(Number(input.value));
-			}, [commit]);
-			(0, react.useEffect)(() => {
-				const input = inputRef.current;
-				if (input !== null && !draggingRef.current && input !== input.ownerDocument.activeElement) input.value = String(externalValue);
-			}, [externalValue]);
-			(0, react.useEffect)(() => {
-				const input = inputRef.current;
-				if (input === null) return;
-				const listener = () => {
-					draggingRef.current = false;
-					if (rafRef.current !== null) {
-						cancelAnimationFrame(rafRef.current);
-						rafRef.current = null;
-					}
-					commit(Number(input.value));
-				};
-				input.addEventListener("change", listener);
-				return () => {
-					input.removeEventListener("change", listener);
-				};
-			}, [commit]);
-			(0, react.useEffect)(() => {
-				return () => {
-					if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
-				};
-			}, []);
-			/** Throttled live-value reporter: fires onChanging at most once per frame. */
-			const reportLive = (0, react.useCallback)((value) => {
-				liveRef.current = value;
-				if (rafRef.current !== null) return;
-				rafRef.current = requestAnimationFrame(() => {
-					rafRef.current = null;
-					onChangingRef.current?.(liveRef.current);
-				});
-			}, []);
-			return /* @__PURE__ */ (0, react_jsx_runtime.jsx)("input", {
-				ref: inputRef,
-				id,
-				className,
-				type: "range",
-				min,
-				max,
-				step,
-				defaultValue: externalValue,
-				"aria-label": ariaLabel,
-				"aria-valuetext": ariaValuetext,
-				onPointerDown: (0, react.useCallback)(() => {
-					draggingRef.current = true;
-				}, []),
-				onPointerCancel: (0, react.useCallback)(() => {
-					draggingRef.current = false;
-					if (rafRef.current !== null) {
-						cancelAnimationFrame(rafRef.current);
-						rafRef.current = null;
-					}
-				}, []),
-				onInput: (0, react.useCallback)((event) => {
-					reportLive(Number(event.currentTarget.value));
-				}, [reportLive]),
-				onBlur: (0, react.useCallback)(() => {
-					if (draggingRef.current) return;
-					commitCurrent();
-				}, [commitCurrent]),
-				onKeyDown: (0, react.useCallback)((event) => {
-					if (event.key !== "Enter" && event.key !== "Escape") return;
-					if (draggingRef.current) return;
-					commitCurrent();
-				}, [commitCurrent])
-			});
-		}
-		//#endregion
-		//#region src/client/WallpaperPanel.tsx
-		/**
-		* The wallpaper panel of the skin-center card: lists the user's local
-		* Wallpaper Engine library (video / web / scene wallpapers) with live
-		* try-on, one-click apply, local import, and render tuning. Rendering and
-		* persistence ride the WallpaperController (wallpaper.ts); the library,
-		* media, import and scene-frame bytes come from the host's /we routes.
-		*
-		* Compliance: wallpapers are the user's own local files (their Workshop
-		* subscriptions or manual folders). The panel never downloads or shares
-		* content; import only copies files within the user's machine.
-		*/
-		/** Live-label helper: the shown value follows the in-drag thumb immediately,
-		* and falls back to the store value once the store settles (issue #725). */
-		function useLiveValue$1(value) {
-			const [live, setLive] = (0, react.useState)(null);
-			(0, react.useEffect)(() => {
-				setLive(null);
-			}, [value]);
-			return [live ?? value, setLive];
-		}
-		/** Host base path of the wallpaper API (mirrors src/we-routes.ts). */
-		const WE_API = "/api/skin-center/we";
-		/** Post one wallpaper action and return whether it succeeded. */
-		async function postWe(path, id) {
-			try {
-				const response = await fetch(WE_API + path, {
-					method: "POST",
-					headers: { "content-type": "application/json" },
-					body: JSON.stringify({ id })
-				});
-				const payload = await response.json().catch(() => null);
-				if (!response.ok || payload?.ok !== true) return payload?.error ?? "HTTP " + String(response.status);
-				return null;
-			} catch (error) {
-				return error instanceof Error ? error.message : String(error);
-			}
-		}
-		/** The type badge copy key of one wallpaper. */
-		function typeKey(item) {
-			switch (item.type) {
-				case "video": return "wallpaperTypeVideo";
-				case "web": return "wallpaperTypeWeb";
-				case "scene": return "wallpaperTypeScene";
-				case "image": return "wallpaperTypeImage";
-				default: return "wallpaperTypeApp";
-			}
-		}
-		/** Wallpaper grid page size: the grid grows one page per Load-more click
-		* instead of mounting every thumbnail at once. */
-		const PAGE_SIZE = 12;
-		/** Render the Wallpaper Engine section of the skin-center card. */
-		function WallpaperPanel({ t, wallpaper }) {
-			const enabled = (0, react.useSyncExternalStore)(wallpaper.subscribe, wallpaper.enabled);
-			const selection = (0, react.useSyncExternalStore)(wallpaper.subscribe, wallpaper.selection);
-			const mode = (0, react.useSyncExternalStore)(wallpaper.subscribe, wallpaper.mode);
-			const fit = (0, react.useSyncExternalStore)(wallpaper.subscribe, wallpaper.fit);
-			const dim = (0, react.useSyncExternalStore)(wallpaper.subscribe, wallpaper.dim);
-			const blur = (0, react.useSyncExternalStore)(wallpaper.subscribe, wallpaper.wallpaperBlur);
-			const opacity = (0, react.useSyncExternalStore)(wallpaper.subscribe, wallpaper.wallpaperOpacity);
-			const pauseOnHidden = (0, react.useSyncExternalStore)(wallpaper.subscribe, wallpaper.pauseOnHidden);
-			const sound = (0, react.useSyncExternalStore)(wallpaper.subscribe, wallpaper.sound);
-			const volume = (0, react.useSyncExternalStore)(wallpaper.subscribe, wallpaper.volume);
-			const activeId = (0, react.useSyncExternalStore)(wallpaper.subscribe, wallpaper.activeId);
-			const trying = (0, react.useSyncExternalStore)(wallpaper.subscribe, wallpaper.trying);
-			const dirs = (0, react.useSyncExternalStore)(wallpaper.subscribe, wallpaper.dirs);
-			const [shownDim, setShownDim] = useLiveValue$1(dim);
-			const [shownBlur, setShownBlur] = useLiveValue$1(blur);
-			const [shownOpacity, setShownOpacity] = useLiveValue$1(opacity);
-			const [shownVolume, setShownVolume] = useLiveValue$1(volume);
-			const [dirInput, setDirInput] = (0, react.useState)("");
-			const [picking, setPicking] = (0, react.useState)(false);
-			const [pageCount, setPageCount] = (0, react.useState)(1);
-			const [items, setItems] = (0, react.useState)(null);
-			const [installDir, setInstallDir] = (0, react.useState)(null);
-			const [systemCount, setSystemCount] = (0, react.useState)(0);
-			const [loadError, setLoadError] = (0, react.useState)(null);
-			const [actionError, setActionError] = (0, react.useState)(null);
-			const [workingId, setWorkingId] = (0, react.useState)(null);
-			const mounted = (0, react.useRef)(false);
-			(0, react.useEffect)(() => {
-				mounted.current = true;
-				return () => {
-					mounted.current = false;
-				};
-			}, []);
-			/** Fetch the inventory and reconcile the mounted layer with the selection. */
-			const load = (0, react.useCallback)(() => {
-				fetch("/api/skin-center/we/inventory").then(async (response) => {
-					const payload = await response.json().catch(() => null);
-					if (!mounted.current) return;
-					if (!response.ok || payload?.ok !== true || !Array.isArray(payload.wallpapers)) {
-						setLoadError(payload?.error ?? "HTTP " + String(response.status));
-						setItems([]);
-						return;
-					}
-					setLoadError(null);
-					setItems(payload.wallpapers);
-					setPageCount(1);
-					setInstallDir(typeof payload.installDir === "string" ? payload.installDir : null);
-					setSystemCount(typeof payload.systemCount === "number" ? payload.systemCount : 0);
-					const selected = wallpaper.selection();
-					wallpaper.sync(resolveSelection(payload.wallpapers, selected) ?? null);
-				}).catch((error) => {
-					if (!mounted.current) return;
-					setLoadError(error instanceof Error ? error.message : String(error));
-					setItems([]);
-				});
-			}, [wallpaper]);
-			(0, react.useEffect)(load, [load]);
-			/** Run one import/remove action with the shared busy + error state. */
-			const runAction = (id, path, after) => {
-				setActionError(null);
-				setWorkingId(id);
-				postWe(path, id).then((error) => {
-					if (!mounted.current) return;
-					setWorkingId(null);
-					if (error !== null) {
-						setActionError(error);
-						return;
-					}
-					after?.();
-					load();
-				});
-			};
-			/** Open the host's native folder picker and add the chosen directory. */
-			const browseDir = () => {
-				const pick = wallpaper.pickDir;
-				if (pick === void 0) return;
-				setActionError(null);
-				setPicking(true);
-				pick().then((path) => {
-					if (!mounted.current) return;
-					setPicking(false);
-					if (path === null || path.trim() === "") return;
-					wallpaper.addDir(path);
-					load();
-				}).catch((error) => {
-					if (!mounted.current) return;
-					setPicking(false);
-					setActionError(t("wallpaperDirBrowseFailed") + ": " + (error instanceof Error ? error.message : String(error)));
-				});
-			};
-			const descriptorOf = (item) => ({
-				id: item.id,
-				title: item.title,
-				type: item.type,
-				videoUrl: item.videoUrl,
-				webUrl: item.webUrl,
-				frameUrl: item.frameUrl,
-				sceneUrl: item.sceneUrl,
-				previewUrl: item.previewUrl
-			});
-			/** Whether one entry can be mounted at all in the current mode. */
-			const renderable = (item) => item.playable || item.frameUrl !== null || item.previewUrl !== null;
-			const activeSelection = selection;
-			return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-				className: skin_center_module_css_default.wallpaperSection,
-				children: [/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-					className: skin_center_module_css_default.enableRow,
-					children: [
-						/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-							className: skin_center_module_css_default.enableLabel,
-							title: t("wallpaperEnable"),
-							children: t("wallpaperTitle")
-						}),
-						/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-							type: "button",
-							role: "switch",
-							"aria-checked": enabled,
-							"aria-label": t("wallpaperEnable"),
-							className: enabled ? skin_center_module_css_default.switch + " " + skin_center_module_css_default.switchOn : skin_center_module_css_default.switch,
-							onClick: () => {
-								wallpaper.setEnabled(!enabled);
-							},
-							children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { className: skin_center_module_css_default.switchThumb })
-						}),
-						/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
-							className: skin_center_module_css_default.enableHint,
-							children: t("wallpaperHint")
-						})
-					]
-				}), enabled && /* @__PURE__ */ (0, react_jsx_runtime.jsxs)(react_jsx_runtime.Fragment, { children: [
-					/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-						className: skin_center_module_css_default.wallpaperStatus,
-						children: [loadError !== null ? /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
-							className: skin_center_module_css_default.wallpaperStatusError,
-							children: [
-								t("wallpaperLoadError"),
-								": ",
-								loadError
-							]
-						}) : items === null ? /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { children: t("loading") }) : installDir !== null ? /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", { children: [
-							t("wallpaperLibraryFound"),
-							" · ",
-							items.length
-						] }) : systemCount > 0 ? /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", { children: [
-							t("wallpaperLibrarySystem"),
-							" · ",
-							items.length
-						] }) : /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", { children: [
-							t("wallpaperLibraryManual"),
-							" · ",
-							items.length
-						] }), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-							type: "button",
-							className: skin_center_module_css_default.button,
-							onClick: load,
-							children: t("wallpaperRefresh")
-						})]
-					}),
-					activeSelection !== "" && /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-						className: skin_center_module_css_default.wallpaperControls,
-						children: [
-							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-								className: skin_center_module_css_default.themeRow,
-								children: [
-									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-										className: skin_center_module_css_default.themeLabel,
-										children: t("wallpaperMode")
-									}),
-									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-										type: "button",
-										className: skin_center_module_css_default.themeButton + (mode === "live" ? " " + skin_center_module_css_default.themeButtonActive : ""),
-										onClick: () => {
-											wallpaper.setMode("live");
-										},
-										children: t("wallpaperModeLive")
-									}),
-									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-										type: "button",
-										className: skin_center_module_css_default.themeButton + (mode === "frame" ? " " + skin_center_module_css_default.themeButtonActive : ""),
-										onClick: () => {
-											wallpaper.setMode("frame");
-										},
-										children: t("wallpaperModeFrame")
-									}),
-									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-										type: "button",
-										className: skin_center_module_css_default.button + " " + skin_center_module_css_default.buttonGhost,
-										onClick: () => {
-											wallpaper.clearSelection();
-										},
-										children: t("wallpaperClear")
-									})
-								]
-							}),
-							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-								className: skin_center_module_css_default.themeRow,
-								children: [
-									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-										className: skin_center_module_css_default.themeLabel,
-										children: t("wallpaperFit")
-									}),
-									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-										type: "button",
-										className: skin_center_module_css_default.themeButton + (fit === "cover" ? " " + skin_center_module_css_default.themeButtonActive : ""),
-										onClick: () => {
-											wallpaper.setFit("cover");
-										},
-										children: t("wallpaperFitCover")
-									}),
-									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-										type: "button",
-										className: skin_center_module_css_default.themeButton + (fit === "contain" ? " " + skin_center_module_css_default.themeButtonActive : ""),
-										onClick: () => {
-											wallpaper.setFit("contain");
-										},
-										children: t("wallpaperFitContain")
-									}),
-									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-										type: "button",
-										className: skin_center_module_css_default.themeButton + (fit === "fill" ? " " + skin_center_module_css_default.themeButtonActive : ""),
-										onClick: () => {
-											wallpaper.setFit("fill");
-										},
-										children: t("wallpaperFitFill")
-									})
-								]
-							}),
-							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-								className: skin_center_module_css_default.backgroundRow,
-								children: [
-									/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-										className: skin_center_module_css_default.backgroundHead,
-										children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-											className: skin_center_module_css_default.backgroundLabel,
-											children: t("wallpaperDim")
-										}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
-											className: skin_center_module_css_default.backgroundValue,
-											"aria-hidden": "true",
-											children: [shownDim, "%"]
-										})]
-									}),
-									/* @__PURE__ */ (0, react_jsx_runtime.jsx)(SliderControl, {
-										className: skin_center_module_css_default.backgroundRange,
-										min: 0,
-										max: 90,
-										step: 5,
-										value: dim,
-										ariaValuetext: shownDim + "%",
-										ariaLabel: t("wallpaperDim"),
-										onChanging: setShownDim,
-										onChange: (value) => {
-											wallpaper.setDim(value);
-										}
-									}),
-									/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-										className: skin_center_module_css_default.backgroundHead,
-										children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-											className: skin_center_module_css_default.backgroundLabel,
-											children: t("wallpaperOpacity")
-										}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
-											className: skin_center_module_css_default.backgroundValue,
-											"aria-hidden": "true",
-											children: [shownOpacity, "%"]
-										})]
-									}),
-									/* @__PURE__ */ (0, react_jsx_runtime.jsx)(SliderControl, {
-										className: skin_center_module_css_default.backgroundRange,
-										min: 0,
-										max: 100,
-										step: 5,
-										value: opacity,
-										ariaValuetext: shownOpacity + "%",
-										ariaLabel: t("wallpaperOpacity"),
-										onChanging: setShownOpacity,
-										onChange: (value) => {
-											wallpaper.setOpacity(value);
-										}
-									}),
-									/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-										className: skin_center_module_css_default.backgroundHead,
-										children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-											className: skin_center_module_css_default.backgroundLabel,
-											children: t("wallpaperBlur")
-										}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
-											className: skin_center_module_css_default.backgroundValue,
-											"aria-hidden": "true",
-											children: [shownBlur, "px"]
-										})]
-									}),
-									/* @__PURE__ */ (0, react_jsx_runtime.jsx)(SliderControl, {
-										className: skin_center_module_css_default.backgroundRange,
-										min: 0,
-										max: 60,
-										step: 1,
-										value: blur,
-										ariaValuetext: shownBlur + "px",
-										ariaLabel: t("wallpaperBlur"),
-										onChanging: setShownBlur,
-										onChange: (value) => {
-											wallpaper.setBlur(value);
-										}
-									})
-								]
-							}),
-							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-								className: skin_center_module_css_default.enableRow,
-								children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-									className: skin_center_module_css_default.enableLabel,
-									children: t("wallpaperPauseHidden")
-								}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-									type: "button",
-									role: "switch",
-									"aria-checked": pauseOnHidden,
-									"aria-label": t("wallpaperPauseHidden"),
-									className: pauseOnHidden ? skin_center_module_css_default.switch + " " + skin_center_module_css_default.switchOn : skin_center_module_css_default.switch,
-									onClick: () => {
-										wallpaper.setPauseOnHidden(!pauseOnHidden);
-									},
-									children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { className: skin_center_module_css_default.switchThumb })
-								})]
-							}),
-							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-								className: skin_center_module_css_default.enableRow,
-								children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-									className: skin_center_module_css_default.enableLabel,
-									title: t("wallpaperSoundHint"),
-									children: t("wallpaperSound")
-								}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-									type: "button",
-									role: "switch",
-									"aria-checked": sound,
-									"aria-label": t("wallpaperSound"),
-									className: sound ? skin_center_module_css_default.switch + " " + skin_center_module_css_default.switchOn : skin_center_module_css_default.switch,
-									onClick: () => {
-										wallpaper.setSound(!sound);
-									},
-									children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { className: skin_center_module_css_default.switchThumb })
-								})]
-							}),
-							sound && /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-								className: skin_center_module_css_default.backgroundRow,
-								children: [/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-									className: skin_center_module_css_default.backgroundHead,
-									children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-										className: skin_center_module_css_default.backgroundLabel,
-										children: t("wallpaperVolume")
-									}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
-										className: skin_center_module_css_default.backgroundValue,
-										"aria-hidden": "true",
-										children: [shownVolume, "%"]
-									})]
-								}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)(SliderControl, {
-									className: skin_center_module_css_default.backgroundRange,
-									min: 0,
-									max: 100,
-									step: 5,
-									value: volume,
-									ariaValuetext: shownVolume + "%",
-									ariaLabel: t("wallpaperVolume"),
-									onChanging: setShownVolume,
-									onChange: (value) => {
-										wallpaper.setVolume(value);
-									}
-								})]
-							})
-						]
-					}),
-					/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-						className: skin_center_module_css_default.wallpaperDirs,
-						children: [
-							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-								className: skin_center_module_css_default.themeLabel,
-								children: t("wallpaperDirs")
-							}),
-							dirs.length === 0 && /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-								className: skin_center_module_css_default.backgroundHintMuted,
-								children: t("wallpaperDirsEmpty")
-							}),
-							dirs.map((dir) => /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
-								className: skin_center_module_css_default.wallpaperDir,
-								children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-									className: skin_center_module_css_default.wallpaperDirPath,
-									title: dir,
-									children: dir
-								}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-									type: "button",
-									className: skin_center_module_css_default.wallpaperDirRemove,
-									"aria-label": t("wallpaperRemove"),
-									onClick: () => {
-										wallpaper.removeDir(dir);
-										load();
-									},
-									children: "×"
-								})]
-							}, dir)),
-							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
-								className: skin_center_module_css_default.wallpaperDirAdd,
-								children: [
-									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("input", {
-										className: skin_center_module_css_default.wallpaperDirInput,
-										type: "text",
-										value: dirInput,
-										placeholder: t("wallpaperDirPlaceholder"),
-										onChange: (event) => {
-											setDirInput(event.target.value);
-										},
-										onKeyDown: (event) => {
-											if (event.key === "Enter" && dirInput.trim() !== "") {
-												wallpaper.addDir(dirInput);
-												setDirInput("");
-												load();
-											}
-										}
-									}),
-									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-										type: "button",
-										className: skin_center_module_css_default.button,
-										disabled: dirInput.trim() === "",
-										onClick: () => {
-											wallpaper.addDir(dirInput);
-											setDirInput("");
-											load();
-										},
-										children: t("wallpaperDirAdd")
-									}),
-									wallpaper.pickDir !== void 0 && /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-										type: "button",
-										className: skin_center_module_css_default.button,
-										disabled: picking,
-										title: t("wallpaperDirBrowseHint"),
-										onClick: browseDir,
-										children: picking ? t("loading") : t("wallpaperDirBrowse")
-									})
-								]
-							}),
-							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
-								className: skin_center_module_css_default.backgroundHintMuted,
-								children: t("wallpaperDirsHint")
-							})
-						]
-					}),
-					actionError !== null && /* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
-						className: skin_center_module_css_default.error,
-						children: actionError
-					}),
-					items !== null && items.length > 0 && /* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
-						className: skin_center_module_css_default.wallpaperGrid,
-						children: items.slice(0, pageCount * PAGE_SIZE).map((item) => {
-							const isApplied = item.id === activeSelection;
-							const isMounted = item.id === activeId;
-							const busy = workingId === item.id;
-							return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-								className: skin_center_module_css_default.wallpaperCard,
-								children: [
-									/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-										className: skin_center_module_css_default.wallpaperThumbWrap,
-										children: [
-											item.previewUrl !== null ? /* @__PURE__ */ (0, react_jsx_runtime.jsx)("img", {
-												className: skin_center_module_css_default.wallpaperThumb,
-												src: item.previewUrl,
-												alt: "",
-												loading: "lazy"
-											}) : item.videoUrl !== null ? /* @__PURE__ */ (0, react_jsx_runtime.jsx)("video", {
-												className: skin_center_module_css_default.wallpaperThumb,
-												src: item.videoUrl,
-												preload: "metadata",
-												muted: true,
-												playsInline: true,
-												"aria-hidden": "true"
-											}) : /* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
-												className: skin_center_module_css_default.wallpaperThumbEmpty,
-												"aria-hidden": "true"
-											}),
-											/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-												className: skin_center_module_css_default.wallpaperType,
-												children: t(typeKey(item))
-											}),
-											isMounted && /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-												className: skin_center_module_css_default.badge + " " + (trying ? skin_center_module_css_default.badgeTrying : skin_center_module_css_default.badgeActive),
-												children: trying ? t("tryingOn") : t("active")
-											})
-										]
-									}),
-									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
-										className: skin_center_module_css_default.wallpaperName,
-										title: item.title,
-										children: item.title
-									}),
-									/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-										className: skin_center_module_css_default.wallpaperActions,
-										children: [
-											isMounted && trying ? /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-												type: "button",
-												className: skin_center_module_css_default.button + " " + skin_center_module_css_default.buttonPrimary,
-												onClick: () => {
-													wallpaper.exitTryOn();
-												},
-												children: t("exitTryOn")
-											}) : /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-												type: "button",
-												className: skin_center_module_css_default.button + " " + skin_center_module_css_default.buttonPrimary,
-												disabled: !renderable(item) || isMounted && isApplied || busy,
-												onClick: () => {
-													wallpaper.tryOn(descriptorOf(item));
-												},
-												children: t("tryOn")
-											}),
-											/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-												type: "button",
-												className: skin_center_module_css_default.button,
-												disabled: !renderable(item) || isApplied || busy,
-												onClick: () => {
-													wallpaper.applySelection(descriptorOf(item));
-												},
-												children: isApplied ? t("active") : t("apply")
-											}),
-											item.source === "imported" ? /* @__PURE__ */ (0, react_jsx_runtime.jsxs)(react_jsx_runtime.Fragment, { children: [item.updateAvailable && /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-												type: "button",
-												className: skin_center_module_css_default.button,
-												disabled: busy,
-												title: t("wallpaperUpdateAvailable"),
-												onClick: () => {
-													runAction(item.id, "/reimport");
-												},
-												children: busy ? t("loading") : t("wallpaperReimport")
-											}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-												type: "button",
-												className: skin_center_module_css_default.button + " " + skin_center_module_css_default.buttonGhost,
-												disabled: busy,
-												onClick: () => {
-													runAction(item.id, "/remove", () => {
-														if (wallpaper.selection() === item.id) wallpaper.clearSelection();
-													});
-												},
-												children: t("wallpaperRemove")
-											})] }) : item.source === "system" ? /* @__PURE__ */ (0, react_jsx_runtime.jsx)(react_jsx_runtime.Fragment, {}) : /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-												type: "button",
-												className: skin_center_module_css_default.button,
-												disabled: busy,
-												title: t("wallpaperImportHint"),
-												onClick: () => {
-													runAction(item.id, "/import");
-												},
-												children: busy ? t("loading") : t("wallpaperImport")
-											})
-										]
-									})
-								]
-							}, item.id);
-						})
-					}),
-					items !== null && items.length > pageCount * PAGE_SIZE && /* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
-						className: skin_center_module_css_default.wallpaperStatus,
-						children: /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("button", {
-							type: "button",
-							className: skin_center_module_css_default.button,
-							onClick: () => {
-								setPageCount((count) => count + 1);
-							},
-							children: [
-								t("wallpaperLoadMore"),
-								" (",
-								items.length - pageCount * PAGE_SIZE,
-								")"
-							]
-						})
-					}),
-					items !== null && items.length === 0 && loadError === null && /* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
-						className: skin_center_module_css_default.backgroundHintMuted,
-						children: t("wallpaperEmpty")
-					})
-				] })]
-			});
-		}
-		//#endregion
-		//#region src/client/SkinCenter.tsx
-		/**
-		* The skin-center card: rendered as the content of a first-level settings
-		* section, listing the official stock look plus every installed skin in the
-		* v2 catalog (package-shipped built-ins + user dirs under $DSH_HOME/skins).
-		*
-		* v2 architecture (issue #506): skins are pure asset directories loaded by
-		* the skin-center runtime. Try-on and apply both go through the same atomic
-		* switch engine (src/client/runtime/skin-controller.ts) — try-on simply
-		* skips persistence, and apply is one click with NO page reload, no
-		* cordis.patch.yml rewrite, no boot-graph regeneration. The "trying on"
-		* badge tracks the controller's live state, so closing and reopening the
-		* settings panel keeps showing the skin that is still being previewed.
-		* Copy rides the standard `t` seat; the theme preview control drives the
-		* official theme service (persisted, same as the Appearance row).
-		*/
-		/** The apply target of the official stock-look card. */
-		const OFFICIAL = "official";
-		/**
-		* Live-label helper: the shown value follows the in-drag thumb immediately,
-		* and falls back to the store value once the store settles (issue #725).
-		*/
-		function useLiveValue(value) {
-			const [live, setLive] = (0, react.useState)(null);
-			(0, react.useEffect)(() => {
-				setLive(null);
-			}, [value]);
-			return [live ?? value, setLive];
-		}
-		/**
-		* Render the skin-center card: a static header naming the plugin, with the
-		* always-visible skin list (official default + every installed skin; try-on /
-		* theme preview / one-click apply) rendered below it.
-		* @param props - card props.
-		* @returns the plugin card.
-		*/
-		function SkinCenter({ t, runtime, theme, background, wallpaper, preview, customTheme }) {
-			const snapshot = (0, react.useSyncExternalStore)((listener) => theme.subscribe(listener), () => theme.getTheme());
-			const enabled = (0, react.useSyncExternalStore)(background.subscribe, background.enabled);
-			const opacity = (0, react.useSyncExternalStore)(background.subscribe, background.opacity);
-			const blurEmpty = (0, react.useSyncExternalStore)(background.subscribe, background.blurEmpty);
-			const blurContent = (0, react.useSyncExternalStore)(background.subscribe, background.blurContent);
-			const inputCardBlur = (0, react.useSyncExternalStore)(background.subscribe, background.inputCardBlur);
-			const bubbleOpacity = (0, react.useSyncExternalStore)(background.subscribe, background.bubbleOpacity);
-			const [shownOpacity, setShownOpacity] = useLiveValue(opacity);
-			const [shownBlurEmpty, setShownBlurEmpty] = useLiveValue(blurEmpty);
-			const [shownBlurContent, setShownBlurContent] = useLiveValue(blurContent);
-			const [shownInputCardBlur, setShownInputCardBlur] = useLiveValue(inputCardBlur);
-			const [shownBubbleOpacity, setShownBubbleOpacity] = useLiveValue(bubbleOpacity);
-			const catalog = (0, react.useSyncExternalStore)(runtime.subscribe, runtime.catalog);
-			const state = (0, react.useSyncExternalStore)(runtime.subscribe, runtime.controller.getState);
-			const customThemeState = (0, react.useSyncExternalStore)(customTheme.subscribe, customTheme.getState);
-			const activeId = state.active;
-			const previewing = state.previewing;
-			const tryingId = state.trying;
-			const backdropActive = (activeId === null ? null : runtime.find(activeId))?.manifest.contributes.backgroundMedia !== void 0;
-			const [busyId, setBusyId] = (0, react.useState)(null);
-			const [error, setError] = (0, react.useState)(null);
-			const mounted = (0, react.useRef)(false);
-			const requestSeq = (0, react.useRef)(0);
-			(0, react.useEffect)(() => {
-				mounted.current = true;
-				return () => {
-					mounted.current = false;
-				};
-			}, []);
-			const run = (target, action) => {
-				const seq = ++requestSeq.current;
-				setError(null);
-				setBusyId(target);
-				action().catch(() => {
-					if (!mounted.current || seq !== requestSeq.current) return;
-					setError(t("applyFailed"));
-				}).finally(() => {
-					if (!mounted.current || seq !== requestSeq.current) return;
-					setBusyId(null);
-				});
-			};
-			const tryOn = (entry) => {
-				run(entry.manifest.id, () => preview.runSkin(() => runtime.controller.tryOn(entry.manifest.id, entry)));
-			};
-			const tryOnOfficial = () => {
-				run(OFFICIAL, () => preview.runSkin(() => runtime.controller.tryOn(null, null)));
-			};
-			const exitTryOn = () => {
-				run(tryingId ?? OFFICIAL, () => preview.runSkin(() => runtime.controller.exitTryOn()));
-			};
-			const restoreCommittedSkin = async (state) => {
-				const entry = state.active === null ? null : runtime.find(state.active);
-				if (state.active !== null && entry === null) throw new Error(`cannot restore skin ${state.active}`);
-				if (await runtime.controller.switchTo(state.active, entry) !== state.active) throw new Error(`skin ${state.active ?? "stock"} did not restore`);
-			};
-			const switchAndDeactivateCustomTheme = async (target, entry) => {
-				const previous = { ...runtime.controller.getState() };
-				const active = await runtime.controller.switchTo(target, entry);
-				if (active !== target) throw new Error(`${target === null ? "stock theme" : `skin ${target}`} did not activate`);
-				try {
-					await customTheme.deactivate();
-					return active;
-				} catch (error) {
-					try {
-						await restoreCommittedSkin(previous);
-					} catch (rollbackError) {
-						throw new AggregateError([error, rollbackError], "skin switch cleanup and rollback failed");
-					}
-					throw error;
-				}
-			};
-			const restoreOfficialLook = async () => {
-				const active = await switchAndDeactivateCustomTheme(null, null);
-				if (wallpaper.selection() !== "") wallpaper.clearSelection();
-				return active;
-			};
-			/**
-			* One-click apply: atomic client-side switch + persisted selection. No
-			* reload, no boot-graph wait — the tapIndex adapter makes the next page
-			* load boot straight into this skin.
-			* @param target - skin id, or `official` for the stock look.
-			*/
-			const applySkin = (target) => {
-				if (target === OFFICIAL) {
-					run(OFFICIAL, () => preview.runSkin(restoreOfficialLook));
-					return;
-				}
-				const entry = runtime.find(target);
-				if (entry === null) {
-					setError(t("applyFailed"));
-					return;
-				}
-				run(target, () => preview.runSkin(async () => {
-					const active = await switchAndDeactivateCustomTheme(target, entry);
-					if (wallpaper.selection() !== "") wallpaper.clearSelection();
-					return active;
-				}));
-			};
-			const tryOnCustomTheme = () => {
-				run("custom-theme", () => preview.runCustomTheme(async () => {
-					const active = await runtime.controller.tryOn(null, null);
-					if (active !== null) throw new Error("stock preview did not activate");
-					customTheme.tryOn();
-					return active;
-				}));
-			};
-			const exitCustomThemeTryOn = () => {
-				run("custom-theme", () => preview.runCustomTheme(async () => {
-					customTheme.exitTryOn();
-					return await runtime.controller.exitTryOn();
-				}));
-			};
-			const applyCustomTheme = () => {
-				run("custom-theme", () => preview.runCustomTheme(async () => {
-					await customTheme.apply();
-					const active = await runtime.controller.switchTo(null, null);
-					if (active !== null) {
-						await customTheme.deactivate();
-						throw new Error("stock theme did not activate");
-					}
-					return active;
-				}));
-			};
-			const dark = snapshot.active.colorScheme === "dark";
-			/** One row: try-on control + apply button. Shared by the official card and every skin card. */
-			const actionButtons = (opts) => /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-				className: skin_center_module_css_default.actions,
-				children: [opts.isActive && !opts.isTrying ? /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-					type: "button",
-					className: `${skin_center_module_css_default.button} ${skin_center_module_css_default.buttonGhost}`,
-					disabled: true,
-					children: t("tryOn")
-				}) : opts.isTrying ? /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-					type: "button",
-					className: `${skin_center_module_css_default.button} ${skin_center_module_css_default.buttonPrimary}`,
-					disabled: busyId !== null,
-					onClick: exitTryOn,
-					children: t("exitTryOn")
-				}) : /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-					type: "button",
-					className: `${skin_center_module_css_default.button} ${skin_center_module_css_default.buttonPrimary}`,
-					disabled: busyId !== null,
-					onClick: opts.onTryOn,
-					children: busyId === opts.key ? t("loading") : t("tryOn")
-				}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-					type: "button",
-					className: skin_center_module_css_default.button,
-					disabled: busyId !== null,
-					onClick: () => {
-						applySkin(opts.key);
-					},
-					children: busyId === opts.key ? t("applying") : opts.applyLabel
-				})]
-			});
-			return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("li", {
-				className: skin_center_module_css_default.pluginCard,
-				children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
-					className: skin_center_module_css_default.cardHeaderStatic,
-					children: /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
-						className: skin_center_module_css_default.headText,
-						children: [/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
-							className: skin_center_module_css_default.pluginName,
-							children: [t("title"), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-								className: skin_center_module_css_default.titleBadge,
-								children: String(catalog?.length ?? 0)
-							})]
-						}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-							className: skin_center_module_css_default.cardDescription,
-							title: t("cardDescription"),
-							children: t("cardDescription")
-						})]
-					})
-				}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-					className: skin_center_module_css_default.cardBody,
-					children: [/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-						className: skin_center_module_css_default.enableRow,
-						children: [
-							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-								className: skin_center_module_css_default.enableLabel,
-								title: t("enabled"),
-								children: t("enabled")
-							}),
-							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-								type: "button",
-								role: "switch",
-								"aria-checked": enabled,
-								"aria-label": t("enabled"),
-								className: enabled ? skin_center_module_css_default.switch + " " + skin_center_module_css_default.switchOn : skin_center_module_css_default.switch,
-								onClick: () => {
-									background.setEnabled(!enabled);
-								},
-								children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { className: skin_center_module_css_default.switchThumb })
-							}),
-							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
-								className: skin_center_module_css_default.enableHint,
-								children: t("enabledHint")
-							})
-						]
-					}), enabled ? /* @__PURE__ */ (0, react_jsx_runtime.jsxs)(react_jsx_runtime.Fragment, { children: [
-						/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-							className: skin_center_module_css_default.head,
-							children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
-								className: skin_center_module_css_default.intro,
-								title: t("intro"),
-								children: t("intro")
-							}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-								className: skin_center_module_css_default.themeRow,
-								children: [
-									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-										className: skin_center_module_css_default.themeLabel,
-										children: t("theme")
-									}),
-									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-										type: "button",
-										className: `${skin_center_module_css_default.themeButton} ${dark ? "" : skin_center_module_css_default.themeButtonActive}`,
-										onClick: () => {
-											theme.setTheme("light");
-										},
-										children: t("themeLight")
-									}),
-									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-										type: "button",
-										className: `${skin_center_module_css_default.themeButton} ${dark ? skin_center_module_css_default.themeButtonActive : ""}`,
-										onClick: () => {
-											theme.setTheme("dark");
-										},
-										children: t("themeDark")
-									})
-								]
-							})]
-						}),
-						error !== null && /* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
-							className: skin_center_module_css_default.error,
-							children: error
-						}),
-						/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-							className: skin_center_module_css_default.list,
-							children: [(() => {
-								const isActive = activeId === null && !previewing && !customThemeState.applied;
-								const isTrying = previewing && tryingId === null && !customThemeState.previewing;
-								const badge = isActive ? t("active") : isTrying ? t("tryingOn") : null;
-								return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-									className: skin_center_module_css_default.card,
-									children: [
-										/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-											className: skin_center_module_css_default.cardHead,
-											children: [
-												/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-													className: skin_center_module_css_default.swatch,
-													style: { background: "#98a1ab" },
-													"aria-hidden": "true"
-												}),
-												/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-													className: skin_center_module_css_default.cardName,
-													title: t("official"),
-													children: t("official")
-												}),
-												badge !== null && /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-													className: `${skin_center_module_css_default.badge} ${isActive ? skin_center_module_css_default.badgeActive : skin_center_module_css_default.badgeTrying}`,
-													children: badge
-												})
-											]
-										}),
-										/* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
-											className: skin_center_module_css_default.cardTagline,
-											title: t("officialTagline"),
-											children: t("officialTagline")
-										}),
-										actionButtons({
-											key: OFFICIAL,
-											isActive,
-											isTrying,
-											onTryOn: tryOnOfficial,
-											applyLabel: t("restore")
-										})
-									]
-								}, OFFICIAL);
-							})(), (catalog ?? []).map((entry) => {
-								const id = entry.manifest.id;
-								const isActive = id === activeId && !previewing;
-								const isTrying = previewing && id === tryingId;
-								const badge = isActive ? t("active") : isTrying ? t("tryingOn") : null;
-								return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-									className: skin_center_module_css_default.card,
-									children: [
-										/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-											className: skin_center_module_css_default.cardHead,
-											children: [
-												/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-													className: skin_center_module_css_default.swatch,
-													style: { background: entry.manifest.accent ?? "#98a1ab" },
-													"aria-hidden": "true"
-												}),
-												/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-													className: skin_center_module_css_default.cardName,
-													title: entry.manifest.nameEn,
-													children: entry.manifest.nameEn
-												}),
-												badge !== null && /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-													className: `${skin_center_module_css_default.badge} ${isActive ? skin_center_module_css_default.badgeActive : skin_center_module_css_default.badgeTrying}`,
-													children: badge
-												})
-											]
-										}),
-										/* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
-											className: skin_center_module_css_default.cardTagline,
-											title: entry.manifest.tagline ?? "",
-											children: entry.manifest.tagline ?? ""
-										}),
-										actionButtons({
-											key: id,
-											isActive,
-											isTrying,
-											onTryOn: () => {
-												tryOn(entry);
-											},
-											applyLabel: t("apply")
-										})
-									]
-								}, id);
-							})]
-						}),
-						/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("details", {
-							className: skin_center_module_css_default.advanced,
-							children: [
-								/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("summary", {
-									className: skin_center_module_css_default.advancedSummary,
-									children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-										className: skin_center_module_css_default.advancedTitle,
-										children: t("advanced")
-									}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-										className: skin_center_module_css_default.advancedCaret,
-										"aria-hidden": "true",
-										children: "›"
-									})]
-								}),
-								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
-									className: skin_center_module_css_default.advancedHint,
-									children: t("advancedHint")
-								}),
-								/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-									className: skin_center_module_css_default.advancedBody,
-									children: [
-										/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-											className: skin_center_module_css_default.backgroundRow,
-											children: [
-												/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-													className: skin_center_module_css_default.backgroundHead,
-													children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-														className: skin_center_module_css_default.backgroundLabel,
-														children: t("backgroundOpacity")
-													}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
-														className: skin_center_module_css_default.backgroundValue,
-														"aria-hidden": "true",
-														children: [shownOpacity, "%"]
-													})]
-												}),
-												/* @__PURE__ */ (0, react_jsx_runtime.jsx)(SliderControl, {
-													id: "skin-center-background-opacity",
-													className: skin_center_module_css_default.backgroundRange,
-													min: 0,
-													max: 100,
-													step: 5,
-													value: opacity,
-													ariaValuetext: shownOpacity + "%",
-													ariaLabel: t("backgroundOpacity"),
-													onChanging: setShownOpacity,
-													onChange: (value) => {
-														background.set(value);
-													}
-												}),
-												/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
-													className: backdropActive ? skin_center_module_css_default.backgroundHint : skin_center_module_css_default.backgroundHintMuted,
-													children: backdropActive ? t("backgroundHint") : t("backgroundHintInert")
-												})
-											]
-										}),
-										/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-											className: skin_center_module_css_default.backgroundRow,
-											children: [
-												/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-													className: skin_center_module_css_default.backgroundHead,
-													children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-														className: skin_center_module_css_default.backgroundLabel,
-														children: t("backgroundBlurEmpty")
-													}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
-														className: skin_center_module_css_default.backgroundValue,
-														"aria-hidden": "true",
-														children: [shownBlurEmpty, "px"]
-													})]
-												}),
-												/* @__PURE__ */ (0, react_jsx_runtime.jsx)(SliderControl, {
-													id: "skin-center-background-blur-empty",
-													className: skin_center_module_css_default.backgroundRange,
-													min: 0,
-													max: 20,
-													step: 1,
-													value: blurEmpty,
-													ariaValuetext: shownBlurEmpty + "px",
-													ariaLabel: t("backgroundBlurEmpty"),
-													onChanging: setShownBlurEmpty,
-													onChange: (value) => {
-														background.setBlurEmpty(value);
-													}
-												}),
-												/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-													className: skin_center_module_css_default.backgroundHead,
-													children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-														className: skin_center_module_css_default.backgroundLabel,
-														children: t("backgroundBlurContent")
-													}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
-														className: skin_center_module_css_default.backgroundValue,
-														"aria-hidden": "true",
-														children: [shownBlurContent, "px"]
-													})]
-												}),
-												/* @__PURE__ */ (0, react_jsx_runtime.jsx)(SliderControl, {
-													id: "skin-center-background-blur-content",
-													className: skin_center_module_css_default.backgroundRange,
-													min: 0,
-													max: 20,
-													step: 1,
-													value: blurContent,
-													ariaValuetext: shownBlurContent + "px",
-													ariaLabel: t("backgroundBlurContent"),
-													onChanging: setShownBlurContent,
-													onChange: (value) => {
-														background.setBlurContent(value);
-													}
-												}),
-												/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
-													className: backdropActive ? skin_center_module_css_default.backgroundHint : skin_center_module_css_default.backgroundHintMuted,
-													children: backdropActive ? t("backgroundBlurHint") : t("backgroundBlurInert")
-												})
-											]
-										}),
-										/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-											className: skin_center_module_css_default.backgroundRow,
-											children: [
-												/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-													className: skin_center_module_css_default.backgroundHead,
-													children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-														className: skin_center_module_css_default.backgroundLabel,
-														children: t("inputCardBlur")
-													}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
-														className: skin_center_module_css_default.backgroundValue,
-														"aria-hidden": "true",
-														children: [shownInputCardBlur, "px"]
-													})]
-												}),
-												/* @__PURE__ */ (0, react_jsx_runtime.jsx)(SliderControl, {
-													id: "skin-center-input-card-blur",
-													className: skin_center_module_css_default.backgroundRange,
-													min: 0,
-													max: 20,
-													step: 1,
-													value: inputCardBlur,
-													ariaValuetext: shownInputCardBlur + "px",
-													ariaLabel: t("inputCardBlur"),
-													onChanging: setShownInputCardBlur,
-													onChange: (value) => {
-														background.setInputCardBlur(value);
-													}
-												}),
-												/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
-													className: skin_center_module_css_default.backgroundHint,
-													children: t("inputCardBlurHint")
-												})
-											]
-										}),
-										/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-											className: skin_center_module_css_default.backgroundRow,
-											children: [
-												/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-													className: skin_center_module_css_default.backgroundHead,
-													children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-														className: skin_center_module_css_default.backgroundLabel,
-														children: t("bubbleOpacity")
-													}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
-														className: skin_center_module_css_default.backgroundValue,
-														"aria-hidden": "true",
-														children: [shownBubbleOpacity, "%"]
-													})]
-												}),
-												/* @__PURE__ */ (0, react_jsx_runtime.jsx)(SliderControl, {
-													id: "skin-center-bubble-opacity",
-													className: skin_center_module_css_default.backgroundRange,
-													min: 0,
-													max: 100,
-													step: 5,
-													value: bubbleOpacity,
-													ariaValuetext: shownBubbleOpacity + "%",
-													ariaLabel: t("bubbleOpacity"),
-													onChanging: setShownBubbleOpacity,
-													onChange: (value) => {
-														background.setBubbleOpacity(value);
-													}
-												}),
-												/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
-													className: skin_center_module_css_default.backgroundHint,
-													children: t("bubbleOpacityHint")
-												})
-											]
-										}),
-										/* @__PURE__ */ (0, react_jsx_runtime.jsx)(WallpaperPanel, {
-											t,
-											wallpaper
-										}),
-										/* @__PURE__ */ (0, react_jsx_runtime.jsx)(CustomThemeCard, {
-											t,
-											customTheme,
-											scheme: dark ? "dark" : "light",
-											setScheme: (scheme) => {
-												theme.setTheme(scheme);
-											},
-											isActive: customThemeState.applied && activeId === null && !previewing,
-											isTrying: customThemeState.previewing,
-											busy: busyId === "custom-theme",
-											disabled: busyId !== null,
-											onTryOn: tryOnCustomTheme,
-											onExitTryOn: exitCustomThemeTryOn,
-											onApply: applyCustomTheme
-										})
-									]
-								})
-							]
-						})
-					] }) : /* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
-						className: skin_center_module_css_default.offNote,
-						role: "status",
-						children: t("offNote")
-					})]
-				})]
-			});
-		}
-		/** Render the skin-center card as a first-level settings page. */
-		function SkinCenterSection(props) {
-			const { t, runtime, theme, background, wallpaper, preview, customTheme } = props;
-			return /* @__PURE__ */ (0, react_jsx_runtime.jsx)("ul", {
-				className: skin_center_module_css_default.sectionList,
-				children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)(SkinCenter, {
-					t,
-					runtime,
-					theme,
-					background,
-					wallpaper,
-					preview,
-					customTheme
-				})
-			});
-		}
-		//#endregion
-		//#region src/core/background.ts
-		/** Effective value of every field when the state carries none. */
-		const SKIN_BACKGROUND_DEFAULTS = {
-			enabled: true,
-			backgroundOpacity: 0,
-			backgroundBlurEmpty: 0,
-			backgroundBlurContent: 0,
-			inputCardBlur: 10,
-			bubbleOpacity: 50
-		};
-		/** The fields normalize/sanitize know about; unknown keys are dropped. */
-		const SKIN_BACKGROUND_FIELDS = Object.keys(SKIN_BACKGROUND_DEFAULTS);
-		/** Fill every absent field from {@link SKIN_BACKGROUND_DEFAULTS}. */
-		function resolveSkinBackground(value) {
-			return {
-				...SKIN_BACKGROUND_DEFAULTS,
-				...value ?? {}
-			};
-		}
-		/** True when at least one field departs from its default (customized data). */
-		function hasCustomSkinBackground(value) {
-			return SKIN_BACKGROUND_FIELDS.some((field) => value[field] !== void 0 && value[field] !== SKIN_BACKGROUND_DEFAULTS[field]);
-		}
-		//#endregion
-		//#region src/client/background.ts
-		/**
-		* Background-scrim handle for the skin center: applies the chosen occlusion
-		* to the page's backdrop, plus an optional per-state Gaussian blur of that
-		* backdrop.
-		*
-		* Occlusion is a CSS variable on `document.body` (--dsw-skin-scrim), which
-		* backdrop-painting skins (whale-song) read inside their
-		* setBackdrop() so the veil stays in sync across theme flips and try-on
-		* restores. The official stock look paints no backdrop, so the variable is
-		* inert there — the value still persists so it is ready for the next backdrop
-		* skin.
-		*
-		* The Gaussian blur targets the same painted backdrop through a fixed child
-		* of `document.body` using backdrop-filter: it samples the body's own
-		* background painted behind it. Separate strengths apply to the empty
-		* conversation and the conversation-with-content states, detected from the
-		* shell's stable message-row class suffixes (hash prefix varies, suffix is
-		* stable). When the active blur is 0 no element exists, so there is no GPU
-		* cost. Blur never changes the occlusion behavior above.
-		*
-		* Occlusion values are 0-100 (0 = no extra veil, 100 = fully obscured); they
-		* are written through as a 0..1 alpha for the CSS variable. Blur values are
-		* 0-20 px. Dragging the controls applies instantly (live).
-		*
-		* Persistence (issue #996): the controller owns no settings scope — the
-		* remote pairing channel fences settings.* as loopback-only, which is what
-		* stranded remote clients on defaults. The caller hands in the initial
-		* values and a `persist` callback (the v2 /active channel); later external
-		* edits (the official settings page locally, the refetched state remotely)
-		* arrive through `init()`.
-		*/
-		/** The namespace string the Host registers (mirrors src/index.ts). */
-		const SKIN_BACKGROUND_NS = "skin-background";
-		/** CSS custom property written to document.body and read by backdrop skins. */
-		const SCRIM_VAR = "--dsw-skin-scrim";
-		/** CSS custom property consumed by skins that expose translucent bubbles. */
-		const BUBBLE_ALPHA_VAR = "--dsh-skin-bubble-alpha";
-		/** CSS custom property consumed by the shared composer neutralizer. */
-		const INPUT_CARD_BLUR_VAR = "--dsh-input-card-blur";
-		SKIN_BACKGROUND_DEFAULTS.backgroundOpacity;
-		SKIN_BACKGROUND_DEFAULTS.bubbleOpacity;
-		SKIN_BACKGROUND_DEFAULTS.backgroundBlurEmpty;
-		/**
-		* Selector for a conversation message row inside the shell's center column.
-		* Official shell message rows carry `data-chat-anchor-key`; the
-		* `data-pane="conversation"` attribute is stamped by the dsh-web-all compat
-		* shim on the center column, where the _userRow / _compactionRow /
-		* _contextRow / _turnErrorRow suffixes are CSS-module message-row classes
-		* (hash prefix varies, suffix is stable).
-		*/
-		const CONVERSATION_CONTENT_SELECTOR = [
-			"[data-chat-anchor-key]",
-			"[data-pane=\"conversation\"] [class*=\"_userRow\"]",
-			"[data-pane=\"conversation\"] [class*=\"_compactionRow\"]",
-			"[data-pane=\"conversation\"] [class*=\"_contextRow\"]",
-			"[data-pane=\"conversation\"] [class*=\"_turnErrorRow\"]"
-		].join(", ");
-		/**
-		* Own the background preference set: apply the values to the body instantly
-		* and persist user edits through the caller-provided channel.
-		*/
-		var BackgroundController = class {
-			enabledValue = SKIN_BACKGROUND_DEFAULTS.enabled;
-			opacityValue = SKIN_BACKGROUND_DEFAULTS.backgroundOpacity;
-			blurEmptyValue = SKIN_BACKGROUND_DEFAULTS.backgroundBlurEmpty;
-			blurContentValue = SKIN_BACKGROUND_DEFAULTS.backgroundBlurContent;
-			inputCardBlurValue = SKIN_BACKGROUND_DEFAULTS.inputCardBlur;
-			bubbleOpacityValue = SKIN_BACKGROUND_DEFAULTS.bubbleOpacity;
-			listeners = /* @__PURE__ */ new Set();
-			persist;
-			/** The fixed backdrop-filter element, present only while active blur > 0. */
-			blurElement = null;
-			/** The body MutationObserver, installed lazily once a blur is active. */
-			observer = null;
-			/** Pending requestAnimationFrame id for a coalesced recheck. */
-			rafId = null;
-			/** Guard: after dispose no scheduled work may reinstall anything. */
-			disposed = false;
-			/**
-			* @param initial - values known at construction (the local settings scope
-			*   snapshot on loopback); null starts from defaults until init() arrives.
-			* @param persist - persistence channel for user edits (v2 /active POST).
-			*/
-			constructor(initial, persist) {
-				this.persist = persist;
-				if (initial !== null) this.assign(initial);
-				this.applyOcclusion();
-				this.applyInputCardBlur();
-				this.applyBubbleOpacity();
-				this.syncBlur();
-			}
-			/**
-			* Replace the current values with externally sourced ones (the refetched
-			* v2 state, or a live settings-scope publish). Never persists — the source
-			* already owns the stored copy; the caller decides whether to forward the
-			* change into the v2 store.
-			*/
-			init(next) {
-				if (this.disposed) return;
-				this.assign(next ?? {});
-				this.applyOcclusion();
-				this.applyInputCardBlur();
-				this.applyBubbleOpacity();
-				this.syncBlur();
-				this.publish();
-			}
-			/** The current values as a persistable config (every field concrete). */
-			snapshot() {
-				return {
-					enabled: this.enabledValue,
-					backgroundOpacity: this.opacityValue,
-					backgroundBlurEmpty: this.blurEmptyValue,
-					backgroundBlurContent: this.blurContentValue,
-					inputCardBlur: this.inputCardBlurValue,
-					bubbleOpacity: this.bubbleOpacityValue
-				};
-			}
-			enabled = () => this.enabledValue;
-			setEnabled(value) {
-				this.enabledValue = value;
-				this.applyOcclusion();
-				this.applyInputCardBlur();
-				this.applyBubbleOpacity();
-				this.syncBlur();
-				this.publish();
-				this.persist(this.snapshot());
-			}
-			opacity = () => this.opacityValue;
-			blurEmpty = () => this.blurEmptyValue;
-			blurContent = () => this.blurContentValue;
-			inputCardBlur = () => this.inputCardBlurValue;
-			bubbleOpacity = () => this.bubbleOpacityValue;
-			subscribe = (listener) => {
-				this.listeners.add(listener);
-				return () => {
-					this.listeners.delete(listener);
-				};
-			};
-			set(opacity) {
-				this.opacityValue = this.clampPercent(opacity);
-				this.applyOcclusion();
-				this.publish();
-				this.persist(this.snapshot());
-			}
-			setBlurEmpty(value) {
-				this.blurEmptyValue = this.clampBlur(value);
-				this.ensureObserver();
-				this.syncBlur();
-				this.publish();
-				this.persist(this.snapshot());
-			}
-			setBlurContent(value) {
-				this.blurContentValue = this.clampBlur(value);
-				this.ensureObserver();
-				this.syncBlur();
-				this.publish();
-				this.persist(this.snapshot());
-			}
-			setInputCardBlur(value) {
-				this.inputCardBlurValue = this.clampBlur(value);
-				this.applyInputCardBlur();
-				this.publish();
-				this.persist(this.snapshot());
-			}
-			setBubbleOpacity(value) {
-				this.bubbleOpacityValue = this.clampPercent(value);
-				this.applyBubbleOpacity();
-				this.publish();
-				this.persist(this.snapshot());
-			}
-			dispose() {
-				this.disposed = true;
-				if (this.rafId !== null) {
-					cancelAnimationFrame(this.rafId);
-					this.rafId = null;
-				}
-				this.removeBlurElement();
-				document.body.style.removeProperty(INPUT_CARD_BLUR_VAR);
-				document.body.style.removeProperty(BUBBLE_ALPHA_VAR);
-				if (this.observer !== null) {
-					this.observer.disconnect();
-					this.observer = null;
-				}
-			}
-			/** Copy one config into the live fields, defaults filling the gaps. */
-			assign(config) {
-				const resolved = resolveSkinBackground(config);
-				this.enabledValue = resolved.enabled;
-				this.opacityValue = resolved.backgroundOpacity;
-				this.blurEmptyValue = resolved.backgroundBlurEmpty;
-				this.blurContentValue = resolved.backgroundBlurContent;
-				this.inputCardBlurValue = resolved.inputCardBlur;
-				this.bubbleOpacityValue = resolved.bubbleOpacity;
-			}
-			clampBlur(value) {
-				return Math.max(0, Math.min(20, Math.round(value)));
-			}
-			clampPercent(value) {
-				return Math.max(0, Math.min(100, Math.round(value)));
-			}
-			applyInputCardBlur() {
-				if (!this.enabledValue) {
-					document.body.style.removeProperty(INPUT_CARD_BLUR_VAR);
-					return;
-				}
-				document.body.style.setProperty(INPUT_CARD_BLUR_VAR, this.inputCardBlurValue + "px");
-			}
-			applyBubbleOpacity() {
-				if (!this.enabledValue) {
-					document.body.style.removeProperty(BUBBLE_ALPHA_VAR);
-					return;
-				}
-				document.body.style.setProperty(BUBBLE_ALPHA_VAR, String(this.bubbleOpacityValue / 100));
-			}
-			/** Write the current occlusion onto the body CSS variable (0..1 alpha). */
-			applyOcclusion() {
-				if (!this.enabledValue) {
-					document.body.style.removeProperty(SCRIM_VAR);
-					return;
-				}
-				document.body.style.setProperty(SCRIM_VAR, String(this.opacityValue / 100));
-			}
-			/**
-			* Apply the active blur: empty or with-content strength depending on the
-			* conversation state. A value > 0 ensures the fixed blur element exists
-			* with the matching backdrop-filter; 0 removes it.
-			*/
-			syncBlur() {
-				if (this.disposed) return;
-				if (this.hasWallpaper()) {
-					this.removeBlurElement();
-					return;
-				}
-				if (!this.enabledValue) {
-					this.removeBlurElement();
-					return;
-				}
-				this.ensureObserver();
-				const active = this.hasConversationContent() ? this.blurContentValue : this.blurEmptyValue;
-				if (active > 0) this.ensureBlurElement(active);
-				else this.removeBlurElement();
-			}
-			/** True when the conversation pane hosts at least one message row. */
-			hasConversationContent() {
-				return document.querySelector(CONVERSATION_CONTENT_SELECTOR) !== null;
-			}
-			/** True while a Wallpaper Engine wallpaper is mounted. */
-			hasWallpaper() {
-				return document.documentElement.hasAttribute("data-dsh-wallpaper-active");
-			}
-			/** Create (if needed) and size the fixed backdrop-filter element. */
-			ensureBlurElement(active) {
-				if (this.blurElement === null) {
-					const element = document.createElement("div");
-					element.style.position = "fixed";
-					element.style.inset = "0";
-					element.style.zIndex = "-1";
-					element.style.pointerEvents = "none";
-					element.setAttribute("aria-hidden", "true");
-					this.blurElement = element;
-					document.body.appendChild(element);
-				}
-				const blur = "blur(" + active + "px)";
-				this.blurElement.style.backdropFilter = blur;
-				this.blurElement.style.setProperty("-webkit-backdrop-filter", blur);
-			}
-			/** Remove the fixed blur element, if present. */
-			removeBlurElement() {
-				if (this.blurElement === null) return;
-				this.blurElement.remove();
-				this.blurElement = null;
-			}
-			/**
-			* Install the MutationObserver on document.body only when either blur
-			* field is active, so a fully-disabled blur never pays the observation
-			* cost. Runs lazily on the first non-zero set.
-			*/
-			ensureObserver() {
-				if (this.disposed || this.observer !== null) return;
-				if (this.blurEmptyValue <= 0 && this.blurContentValue <= 0) return;
-				this.observer = new MutationObserver(() => this.scheduleRecheck());
-				this.observer.observe(document.body, {
-					childList: true,
-					subtree: true,
-					attributes: true,
-					attributeFilter: ["class"]
-				});
-				this.observer.observe(document.documentElement, {
-					attributes: true,
-					attributeFilter: ["data-dsh-wallpaper-active"]
-				});
-			}
-			/** Coalesce burst mutations into one rAF-delayed recheck. */
-			scheduleRecheck() {
-				if (this.disposed || this.rafId !== null) return;
-				this.rafId = requestAnimationFrame(() => {
-					this.rafId = null;
-					if (this.disposed) return;
-					this.syncBlur();
-				});
-			}
-			publish() {
-				for (const listener of this.listeners) listener();
-			}
-		};
-		//#endregion
 		//#region src/client/locales.ts
 		const en = {
 			title: "Skin Center",
@@ -3044,7 +2386,7 @@ window.__ModuleLoader__.load({
 			themeLight: "Light",
 			themeDark: "Dark",
 			advanced: "Advanced settings",
-			advancedHint: "Backdrop occlusion, wallpaper, and custom theme tweaks live here.",
+			advancedHint: "Backdrop occlusion, blur and the custom theme are listed directly below.",
 			tryOnError: "Try-on failed — see console",
 			backgroundOpacity: "Background occlusion",
 			backgroundBlurEmpty: "Blur when empty",
@@ -3139,7 +2481,7 @@ window.__ModuleLoader__.load({
 			themeLight: "亮色",
 			themeDark: "暗色",
 			advanced: "高级设置",
-			advancedHint: "背景遮挡、动态壁纸与自定义主题的微调都在这里。",
+			advancedHint: "背景遮挡、背景模糊与自定义主题直接列在下方。",
 			tryOnError: "试穿失败，详见控制台",
 			backgroundOpacity: "背景遮挡",
 			backgroundBlurEmpty: "空对话背景模糊",

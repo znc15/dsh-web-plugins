@@ -171,18 +171,13 @@ afterEach(() => {
 })
 
 describe('SkinCenter custom theme placement', () => {
-  it('folds the custom theme into the collapsed advanced settings', async () => {
+  it('shows the custom theme directly in the card, with no disclosure dropdown', async () => {
     await renderSkinCenter()
 
     const customCard = host.querySelector('[data-dsh-custom-theme-card]')
     expect(customCard).not.toBeNull()
-    const body = customCard?.parentElement
-    expect(body?.className).toContain('advancedBody')
-    expect(body?.lastElementChild).toBe(customCard)
-    expect(body?.parentElement?.tagName).toBe('DETAILS')
-    const summary = body?.parentElement?.querySelector('summary')
-    expect(summary?.textContent).toContain(t('advanced'))
-    // The catalog skin list stays outside the advanced disclosure.
+    // No dropdown: options are independent rows in the card body.
+    expect(host.querySelector('details')).toBeNull()
     const mintCard = cardNamed('Mint')
     expect(mintCard.closest('details')).toBeNull()
   })

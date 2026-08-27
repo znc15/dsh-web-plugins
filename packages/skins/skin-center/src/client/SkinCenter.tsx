@@ -22,7 +22,6 @@ import type { WallpaperHandle } from './wallpaper.ts'
 import type { PreviewCoordinator } from './preview-coordinator.ts'
 import type { CustomThemeController } from './custom-theme-controller.ts'
 import { CustomThemeCard } from './CustomThemePanel.tsx'
-import { WallpaperPanel } from './WallpaperPanel.tsx'
 import { SliderControl } from './SliderControl.tsx'
 import css from './skin-center.module.css'
 
@@ -377,19 +376,14 @@ export function SkinCenter({ t, runtime, theme, background, wallpaper, preview, 
                     })}
                   </div>
 
-                  <details className={css.advanced}>
-                    <summary className={css.advancedSummary}>
-                      <span className={css.advancedTitle}>{t('advanced')}</span>
-                      <span className={css.advancedCaret} aria-hidden="true">›</span>
-                    </summary>
-                    <p className={css.advancedHint}>{t('advancedHint')}</p>
-                    <div className={css.advancedBody}>
-                    <div className={css.backgroundRow}>
+                  <p className={css.controlsHint}>{t('advancedHint')}</p>
+
+                  <div className={css.backgroundRow}>
                     <div className={css.backgroundHead}>
                       <span className={css.backgroundLabel}>{t('backgroundOpacity')}</span>
                       <span className={css.backgroundValue} aria-hidden="true">{shownOpacity}%</span>
                     </div>
-                                        <SliderControl
+                    <SliderControl
                       id="skin-center-background-opacity"
                       className={css.backgroundRange}
                       min={0}
@@ -405,12 +399,13 @@ export function SkinCenter({ t, runtime, theme, background, wallpaper, preview, 
                       {backdropActive ? t('backgroundHint') : t('backgroundHintInert')}
                     </p>
                   </div>
+
                   <div className={css.backgroundRow}>
                     <div className={css.backgroundHead}>
                       <span className={css.backgroundLabel}>{t('backgroundBlurEmpty')}</span>
                       <span className={css.backgroundValue} aria-hidden="true">{shownBlurEmpty}px</span>
                     </div>
-                                        <SliderControl
+                    <SliderControl
                       id="skin-center-background-blur-empty"
                       className={css.backgroundRange}
                       min={0}
@@ -426,7 +421,7 @@ export function SkinCenter({ t, runtime, theme, background, wallpaper, preview, 
                       <span className={css.backgroundLabel}>{t('backgroundBlurContent')}</span>
                       <span className={css.backgroundValue} aria-hidden="true">{shownBlurContent}px</span>
                     </div>
-                                        <SliderControl
+                    <SliderControl
                       id="skin-center-background-blur-content"
                       className={css.backgroundRange}
                       min={0}
@@ -448,7 +443,7 @@ export function SkinCenter({ t, runtime, theme, background, wallpaper, preview, 
                       <span className={css.backgroundLabel}>{t('inputCardBlur')}</span>
                       <span className={css.backgroundValue} aria-hidden="true">{shownInputCardBlur}px</span>
                     </div>
-                                        <SliderControl
+                    <SliderControl
                       id="skin-center-input-card-blur"
                       className={css.backgroundRange}
                       min={0}
@@ -468,7 +463,7 @@ export function SkinCenter({ t, runtime, theme, background, wallpaper, preview, 
                       <span className={css.backgroundLabel}>{t('bubbleOpacity')}</span>
                       <span className={css.backgroundValue} aria-hidden="true">{shownBubbleOpacity}%</span>
                     </div>
-                                        <SliderControl
+                    <SliderControl
                       id="skin-center-bubble-opacity"
                       className={css.backgroundRange}
                       min={0}
@@ -483,23 +478,19 @@ export function SkinCenter({ t, runtime, theme, background, wallpaper, preview, 
                     <p className={css.backgroundHint}>{t('bubbleOpacityHint')}</p>
                   </div>
 
-                  <WallpaperPanel t={t} wallpaper={wallpaper} />
-
-                    <CustomThemeCard
-                      t={t}
-                      customTheme={customTheme}
-                      scheme={dark ? 'dark' : 'light'}
-                      setScheme={scheme => { theme.setTheme(scheme) }}
-                      isActive={customThemeState.applied && activeId === null && !previewing}
-                      isTrying={customThemeState.previewing}
-                      busy={busyId === 'custom-theme'}
-                      disabled={busyId !== null}
-                      onTryOn={tryOnCustomTheme}
-                      onExitTryOn={exitCustomThemeTryOn}
-                      onApply={applyCustomTheme}
-                    />
-                    </div>
-                  </details>
+                  <CustomThemeCard
+                    t={t}
+                    customTheme={customTheme}
+                    scheme={dark ? 'dark' : 'light'}
+                    setScheme={scheme => { theme.setTheme(scheme) }}
+                    isActive={customThemeState.applied && activeId === null && !previewing}
+                    isTrying={customThemeState.previewing}
+                    busy={busyId === 'custom-theme'}
+                    disabled={busyId !== null}
+                    onTryOn={tryOnCustomTheme}
+                    onExitTryOn={exitCustomThemeTryOn}
+                    onApply={applyCustomTheme}
+                  />
                 </>
               )
               : (
