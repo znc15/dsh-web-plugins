@@ -19,7 +19,7 @@
 }
 
 .error {
-  color: var(--dsw-alias-text-danger, #d33);
+  color: var(--dsw-alias-state-error-primary, #d33);
 }
 
 .buttons {
@@ -29,7 +29,7 @@
 
 .button {
   appearance: none;
-  border: 1px solid var(--dsw-alias-border);
+  border: 1px solid var(--dsw-alias-border-l2);
   border-radius: 4px;
   background: transparent;
   color: inherit;
@@ -40,5 +40,5 @@
 }
 
 .button:hover {
-  background: var(--dsw-alias-fill-secondary);
+  background: var(--dsw-alias-interactive-bg-hover);
 }
