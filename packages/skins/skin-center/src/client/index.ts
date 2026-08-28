@@ -292,8 +292,7 @@ export function apply(ctx: ClientContext): void {
 
   // First-level settings section: the Skin Center card as its own top-level
   // settings page. Browsing and installing new skins happens in the DSH
-  // Market store; this section manages the installed ones (try-on, apply,
-  // wallpaper, custom theme).
+  // Market store; this section manages the installed ones (try-on, apply).
   ctx.slots.inject('settings.section', () => {
     try {
       return ctx.slots.register({

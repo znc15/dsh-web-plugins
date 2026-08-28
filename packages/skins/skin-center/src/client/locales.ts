@@ -102,7 +102,7 @@ export type SkinCenterKey =
 
 export const en: Record<SkinCenterKey, string> = {
   title: 'Skin Center',
-  cardDescription: 'Try on any installed skin live in the GUI — exit restores instantly, applying persists in one click.',
+  cardDescription: 'Switch the stock look and the whale-song skin, and toggle the light/dark theme.',
   enabled: 'Enable skin center',
   enabledHint: 'When off, try-on, apply and background controls are disabled; turn it back on to resume.',
   offNote: 'The skin center is turned off.',
@@ -198,7 +198,7 @@ export const en: Record<SkinCenterKey, string> = {
 
 export const zh: Record<SkinCenterKey, string> = {
   title: '皮肤',
-  cardDescription: '在 GUI 内即时试穿任意皮肤，退出即完全还原；应用一键完成并自动刷新。',
+  cardDescription: '在官方默认外观与鲸吟皮肤之间切换，并一键切换亮/暗主题。',
   enabled: '启用皮肤中心',
   enabledHint: '关闭后停用试穿、应用与背景控件，重新打开即恢复。',
   offNote: '皮肤中心已关闭。',

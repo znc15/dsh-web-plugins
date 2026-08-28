@@ -85,384 +85,15 @@ window.__ModuleLoader__.load({
 			"wallpaperType": "eDzMgW_wallpaperType"
 		};
 		//#endregion
-		//#region src/client/CustomThemePanel.tsx
-		function CustomThemeCard(props) {
-			const { t, customTheme, scheme, setScheme, isActive, isTrying, busy, disabled, onTryOn, onExitTryOn, onApply } = props;
-			const customThemeState = (0, react.useSyncExternalStore)(customTheme.subscribe, customTheme.getState);
-			const profile = customTheme.profile(scheme);
-			const [expanded, setExpanded] = (0, react.useState)(false);
-			const [draftColors, setDraftColors] = (0, react.useState)({
-				accent: profile.accent,
-				background: profile.background,
-				foreground: profile.foreground
-			});
-			(0, react.useEffect)(() => {
-				setDraftColors({
-					accent: profile.accent,
-					background: profile.background,
-					foreground: profile.foreground
-				});
-			}, [
-				scheme,
-				profile.accent,
-				profile.background,
-				profile.foreground
-			]);
-			const setDraft = (key, value) => {
-				setDraftColors((current) => ({
-					...current,
-					[key]: value
-				}));
-			};
-			const commitColor = (key) => {
-				const value = draftColors[key];
-				if (/^#[0-9a-f]{6}$/i.test(value)) customTheme.setProfileValue(scheme, key, value);
-				else setDraft(key, profile[key]);
-			};
-			const colorField = (key, label) => {
-				const draft = draftColors[key];
-				const pickerValue = /^#[0-9a-f]{6}$/i.test(draft) ? draft : profile[key];
-				return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("label", {
-					className: skin_center_module_css_default.customThemeField,
-					children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-						className: skin_center_module_css_default.customThemeFieldLabel,
-						children: label
-					}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
-						className: skin_center_module_css_default.customThemeInputRow,
-						children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("input", {
-							className: skin_center_module_css_default.customThemeColor,
-							type: "color",
-							value: pickerValue,
-							"aria-label": label,
-							disabled,
-							onChange: (event) => {
-								const value = event.target.value;
-								setDraft(key, value);
-								customTheme.setProfileValue(scheme, key, value);
-							}
-						}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("input", {
-							className: skin_center_module_css_default.customThemeHex,
-							type: "text",
-							value: draft,
-							inputMode: "text",
-							maxLength: 7,
-							spellCheck: false,
-							"aria-label": `${label} hex`,
-							disabled,
-							onChange: (event) => {
-								setDraft(key, event.target.value);
-							},
-							onBlur: () => {
-								commitColor(key);
-							},
-							onKeyDown: (event) => {
-								if (event.key === "Enter") event.currentTarget.blur();
-							}
-						})]
-					})]
-				}, key);
-			};
-			return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-				className: `${skin_center_module_css_default.card} ${skin_center_module_css_default.customThemeCard}`,
-				"data-dsh-custom-theme-card": "",
-				children: [
-					/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-						className: skin_center_module_css_default.cardHead,
-						children: [
-							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-								className: skin_center_module_css_default.swatch,
-								style: { background: profile.accent },
-								"aria-hidden": "true"
-							}),
-							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-								className: skin_center_module_css_default.cardName,
-								children: t("customThemeTitle")
-							}),
-							(isActive || isTrying) && /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-								className: `${skin_center_module_css_default.badge} ${isActive ? skin_center_module_css_default.badgeActive : skin_center_module_css_default.badgeTrying}`,
-								children: isActive ? t("active") : t("tryingOn")
-							})
-						]
-					}),
-					/* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
-						className: skin_center_module_css_default.cardTagline,
-						children: t("customThemeTagline")
-					}),
-					customThemeState.writeError !== null && /* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
-						className: skin_center_module_css_default.error,
-						role: "alert",
-						children: t("customThemeSaveFailed")
-					}),
-					/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-						className: skin_center_module_css_default.actions,
-						children: [
-							isActive && !isTrying ? /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-								type: "button",
-								className: `${skin_center_module_css_default.button} ${skin_center_module_css_default.buttonGhost}`,
-								disabled: true,
-								children: t("tryOn")
-							}) : isTrying ? /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-								type: "button",
-								className: `${skin_center_module_css_default.button} ${skin_center_module_css_default.buttonPrimary}`,
-								disabled,
-								onClick: onExitTryOn,
-								children: t("exitTryOn")
-							}) : /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-								type: "button",
-								className: `${skin_center_module_css_default.button} ${skin_center_module_css_default.buttonPrimary}`,
-								disabled,
-								onClick: onTryOn,
-								children: busy ? t("loading") : t("tryOn")
-							}),
-							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-								type: "button",
-								className: skin_center_module_css_default.button,
-								disabled,
-								onClick: onApply,
-								children: busy ? t("applying") : t("apply")
-							}),
-							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-								type: "button",
-								className: skin_center_module_css_default.button,
-								"aria-expanded": expanded,
-								disabled,
-								onClick: () => {
-									setExpanded((value) => !value);
-								},
-								children: expanded ? t("customThemeCloseEdit") : t("customThemeEdit")
-							})
-						]
-					}),
-					expanded && /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-						className: skin_center_module_css_default.customThemeEditor,
-						children: [
-							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-								className: skin_center_module_css_default.customThemeScheme,
-								role: "group",
-								"aria-label": t("customThemeMode"),
-								children: [
-									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-										className: skin_center_module_css_default.themeLabel,
-										children: t("customThemeMode")
-									}),
-									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-										type: "button",
-										"aria-pressed": scheme === "light",
-										className: `${skin_center_module_css_default.themeButton} ${scheme === "light" ? skin_center_module_css_default.themeButtonActive : ""}`,
-										disabled,
-										onClick: () => {
-											setScheme("light");
-										},
-										children: t("customThemeLight")
-									}),
-									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-										type: "button",
-										"aria-pressed": scheme === "dark",
-										className: `${skin_center_module_css_default.themeButton} ${scheme === "dark" ? skin_center_module_css_default.themeButtonActive : ""}`,
-										disabled,
-										onClick: () => {
-											setScheme("dark");
-										},
-										children: t("customThemeDark")
-									})
-								]
-							}),
-							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-								className: skin_center_module_css_default.customThemeFields,
-								children: [
-									colorField("accent", t("customThemeAccent")),
-									colorField("background", t("customThemeBackground")),
-									colorField("foreground", t("customThemeForeground"))
-								]
-							}),
-							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("label", {
-								className: skin_center_module_css_default.customThemeContrast,
-								children: [/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
-									className: skin_center_module_css_default.backgroundHead,
-									children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-										className: skin_center_module_css_default.customThemeFieldLabel,
-										children: t("customThemeContrast")
-									}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-										className: skin_center_module_css_default.backgroundValue,
-										"aria-hidden": "true",
-										children: profile.contrast
-									})]
-								}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("input", {
-									className: skin_center_module_css_default.backgroundRange,
-									type: "range",
-									min: "0",
-									max: "100",
-									step: "1",
-									value: profile.contrast,
-									"aria-label": t("customThemeContrast"),
-									"aria-valuetext": String(profile.contrast),
-									disabled,
-									onChange: (event) => {
-										customTheme.setProfileValue(scheme, "contrast", Number(event.target.value));
-									}
-								})]
-							}),
-							/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-								className: skin_center_module_css_default.customThemeFooter,
-								children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-									className: skin_center_module_css_default.backgroundHintMuted,
-									children: t("customThemeResetHint")
-								}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-									type: "button",
-									className: skin_center_module_css_default.button,
-									disabled,
-									onClick: () => {
-										customTheme.reset(scheme);
-									},
-									children: t("customThemeReset")
-								})]
-							})
-						]
-					})
-				]
-			});
-		}
-		//#endregion
-		//#region src/client/SliderControl.tsx
-		/**
-		* A drag-smooth range slider that decouples the visible value from the
-		* external store while the user drags (issue #725).
-		*
-		* Binding <input type="range"> directly to a useSyncExternalStore value
-		* causes two defects during drag:
-		* 1. Snapping back: the store subscription re-reads the scope snapshot while
-		*    the async scope.set() write is still in flight, resetting the thumb
-		*    to the old value mid-drag.
-		* 2. Lag and stale labels: every onChange drives a full set -> publish ->
-		*    React render cycle, and the displayed number only updates once the
-		*    external store settles instead of following the thumb.
-		*
-		* This control keeps the input effectively uncontrolled: the browser moves
-		* the thumb on the compositor thread with zero React involvement while
-		* dragging, onInput reports the live value (one callback per animation
-		* frame) so labels update in real time, and the final value is committed to
-		* the external store through the native change event, which fires once per
-		* completed pointer interaction (pointer release). Keyboard-only users get
-		* an explicit commit path through onBlur and the Enter/Escape keydown
-		* handlers, because not every engine fires the native change event for
-		* range inputs on blur or Enter (jsdom does not; behavior varies by
-		* browser). A pointer cancel aborts without committing, and the external
-		* value is re-synced into the DOM only while the user is neither dragging
-		* nor keyboard-focusing the input.
-		* @module @linxin666/dsh-client-ui-skin-center/slider-control
-		*/
-		/**
-		* A range slider that stays smooth during drag (issue #725).
-		*
-		* @param props - slider props.
-		* @returns the range input element.
-		*/
-		function SliderControl({ value: externalValue, min = 0, max = 100, step = 1, onChange, onChanging, className, id, ariaLabel, ariaValuetext }) {
-			const inputRef = (0, react.useRef)(null);
-			const draggingRef = (0, react.useRef)(false);
-			const rafRef = (0, react.useRef)(null);
-			const liveRef = (0, react.useRef)(0);
-			const lastCommittedRef = (0, react.useRef)(null);
-			const onChangingRef = (0, react.useRef)(onChanging);
-			onChangingRef.current = onChanging;
-			const commitRef = (0, react.useRef)(onChange);
-			commitRef.current = onChange;
-			/**
-			* Persist a value to the external store, de-duplicated against the last
-			* committed value so the explicit keyboard/onBlur commit paths never
-			* double-fire alongside the native change event (which real browsers also
-			* emit on blur or Enter for range inputs).
-			*/
-			const commit = (0, react.useCallback)((value) => {
-				if (lastCommittedRef.current === value) return;
-				lastCommittedRef.current = value;
-				commitRef.current(value);
-			}, []);
-			const commitCurrent = (0, react.useCallback)(() => {
-				const input = inputRef.current;
-				if (input === null) return;
-				draggingRef.current = false;
-				if (rafRef.current !== null) {
-					cancelAnimationFrame(rafRef.current);
-					rafRef.current = null;
-				}
-				commit(Number(input.value));
-			}, [commit]);
-			(0, react.useEffect)(() => {
-				const input = inputRef.current;
-				if (input !== null && !draggingRef.current && input !== input.ownerDocument.activeElement) input.value = String(externalValue);
-			}, [externalValue]);
-			(0, react.useEffect)(() => {
-				const input = inputRef.current;
-				if (input === null) return;
-				const listener = () => {
-					draggingRef.current = false;
-					if (rafRef.current !== null) {
-						cancelAnimationFrame(rafRef.current);
-						rafRef.current = null;
-					}
-					commit(Number(input.value));
-				};
-				input.addEventListener("change", listener);
-				return () => {
-					input.removeEventListener("change", listener);
-				};
-			}, [commit]);
-			(0, react.useEffect)(() => {
-				return () => {
-					if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
-				};
-			}, []);
-			/** Throttled live-value reporter: fires onChanging at most once per frame. */
-			const reportLive = (0, react.useCallback)((value) => {
-				liveRef.current = value;
-				if (rafRef.current !== null) return;
-				rafRef.current = requestAnimationFrame(() => {
-					rafRef.current = null;
-					onChangingRef.current?.(liveRef.current);
-				});
-			}, []);
-			return /* @__PURE__ */ (0, react_jsx_runtime.jsx)("input", {
-				ref: inputRef,
-				id,
-				className,
-				type: "range",
-				min,
-				max,
-				step,
-				defaultValue: externalValue,
-				"aria-label": ariaLabel,
-				"aria-valuetext": ariaValuetext,
-				onPointerDown: (0, react.useCallback)(() => {
-					draggingRef.current = true;
-				}, []),
-				onPointerCancel: (0, react.useCallback)(() => {
-					draggingRef.current = false;
-					if (rafRef.current !== null) {
-						cancelAnimationFrame(rafRef.current);
-						rafRef.current = null;
-					}
-				}, []),
-				onInput: (0, react.useCallback)((event) => {
-					reportLive(Number(event.currentTarget.value));
-				}, [reportLive]),
-				onBlur: (0, react.useCallback)(() => {
-					if (draggingRef.current) return;
-					commitCurrent();
-				}, [commitCurrent]),
-				onKeyDown: (0, react.useCallback)((event) => {
-					if (event.key !== "Enter" && event.key !== "Escape") return;
-					if (draggingRef.current) return;
-					commitCurrent();
-				}, [commitCurrent])
-			});
-		}
-		//#endregion
 		//#region src/client/SkinCenter.tsx
 		/**
 		* The skin-center card: rendered as the content of a first-level settings
-		* section, listing the official stock look plus every installed skin in the
-		* v2 catalog (package-shipped built-ins + user dirs under $DSH_HOME/skins).
+		* section. It keeps only the essentials the user asked for: the enable
+		* switch, the official stock look, Whale Song (the only shipped skin), and
+		* the light/dark theme toggle. Background sliders, the custom-theme editor
+		* and the wallpaper panel are intentionally not rendered here; the
+		* host-side bridges (background scrim persistence, wallpaper selection
+		* clearing) keep working.
 		*
 		* v2 architecture (issue #506): skins are pure asset directories loaded by
 		* the skin-center runtime. Try-on and apply both go through the same atomic
@@ -471,49 +102,27 @@ window.__ModuleLoader__.load({
 		* cordis.patch.yml rewrite, no boot-graph regeneration. The "trying on"
 		* badge tracks the controller's live state, so closing and reopening the
 		* settings panel keeps showing the skin that is still being previewed.
-		* Copy rides the standard `t` seat; the theme preview control drives the
+		* Copy rides the standard t seat; the theme preview control drives the
 		* official theme service (persisted, same as the Appearance row).
 		*/
 		/** The apply target of the official stock-look card. */
 		const OFFICIAL = "official";
+		/** The only catalog skin the minimal management card lists. */
+		const WHALE_SONG = "whale-song";
 		/**
-		* Live-label helper: the shown value follows the in-drag thumb immediately,
-		* and falls back to the store value once the store settles (issue #725).
-		*/
-		function useLiveValue(value) {
-			const [live, setLive] = (0, react.useState)(null);
-			(0, react.useEffect)(() => {
-				setLive(null);
-			}, [value]);
-			return [live ?? value, setLive];
-		}
-		/**
-		* Render the skin-center card: a static header naming the plugin, with the
-		* always-visible skin list (official default + every installed skin; try-on /
-		* theme preview / one-click apply) rendered below it.
+		* Render the skin-center card: enable switch, stock look, Whale Song and the
+		* theme toggle.
 		* @param props - card props.
 		* @returns the plugin card.
 		*/
 		function SkinCenter({ t, runtime, theme, background, wallpaper, preview, customTheme }) {
 			const snapshot = (0, react.useSyncExternalStore)((listener) => theme.subscribe(listener), () => theme.getTheme());
 			const enabled = (0, react.useSyncExternalStore)(background.subscribe, background.enabled);
-			const opacity = (0, react.useSyncExternalStore)(background.subscribe, background.opacity);
-			const blurEmpty = (0, react.useSyncExternalStore)(background.subscribe, background.blurEmpty);
-			const blurContent = (0, react.useSyncExternalStore)(background.subscribe, background.blurContent);
-			const inputCardBlur = (0, react.useSyncExternalStore)(background.subscribe, background.inputCardBlur);
-			const bubbleOpacity = (0, react.useSyncExternalStore)(background.subscribe, background.bubbleOpacity);
-			const [shownOpacity, setShownOpacity] = useLiveValue(opacity);
-			const [shownBlurEmpty, setShownBlurEmpty] = useLiveValue(blurEmpty);
-			const [shownBlurContent, setShownBlurContent] = useLiveValue(blurContent);
-			const [shownInputCardBlur, setShownInputCardBlur] = useLiveValue(inputCardBlur);
-			const [shownBubbleOpacity, setShownBubbleOpacity] = useLiveValue(bubbleOpacity);
 			const catalog = (0, react.useSyncExternalStore)(runtime.subscribe, runtime.catalog);
 			const state = (0, react.useSyncExternalStore)(runtime.subscribe, runtime.controller.getState);
-			const customThemeState = (0, react.useSyncExternalStore)(customTheme.subscribe, customTheme.getState);
 			const activeId = state.active;
 			const previewing = state.previewing;
 			const tryingId = state.trying;
-			const backdropActive = (activeId === null ? null : runtime.find(activeId))?.manifest.contributes.backgroundMedia !== void 0;
 			const [busyId, setBusyId] = (0, react.useState)(null);
 			const [error, setError] = (0, react.useState)(null);
 			const mounted = (0, react.useRef)(false);
@@ -545,21 +154,16 @@ window.__ModuleLoader__.load({
 			const exitTryOn = () => {
 				run(tryingId ?? OFFICIAL, () => preview.runSkin(() => runtime.controller.exitTryOn()));
 			};
-			const restoreCommittedSkin = async (state) => {
-				const entry = state.active === null ? null : runtime.find(state.active);
-				if (state.active !== null && entry === null) throw new Error(`cannot restore skin ${state.active}`);
-				if (await runtime.controller.switchTo(state.active, entry) !== state.active) throw new Error(`skin ${state.active ?? "stock"} did not restore`);
-			};
 			const switchAndDeactivateCustomTheme = async (target, entry) => {
 				const previous = { ...runtime.controller.getState() };
 				const active = await runtime.controller.switchTo(target, entry);
-				if (active !== target) throw new Error(`${target === null ? "stock theme" : `skin ${target}`} did not activate`);
+				if (active !== target) throw new Error((target === null ? "stock theme" : "skin " + target) + " did not activate");
 				try {
 					await customTheme.deactivate();
 					return active;
 				} catch (error) {
 					try {
-						await restoreCommittedSkin(previous);
+						await runtime.controller.switchTo(previous.active, previous.active === null ? null : runtime.find(previous.active));
 					} catch (rollbackError) {
 						throw new AggregateError([error, rollbackError], "skin switch cleanup and rollback failed");
 					}
@@ -575,7 +179,7 @@ window.__ModuleLoader__.load({
 			* One-click apply: atomic client-side switch + persisted selection. No
 			* reload, no boot-graph wait — the tapIndex adapter makes the next page
 			* load boot straight into this skin.
-			* @param target - skin id, or `official` for the stock look.
+			* @param target - skin id, or official for the stock look.
 			*/
 			const applySkin = (target) => {
 				if (target === OFFICIAL) {
@@ -590,31 +194,6 @@ window.__ModuleLoader__.load({
 				run(target, () => preview.runSkin(async () => {
 					const active = await switchAndDeactivateCustomTheme(target, entry);
 					if (wallpaper.selection() !== "") wallpaper.clearSelection();
-					return active;
-				}));
-			};
-			const tryOnCustomTheme = () => {
-				run("custom-theme", () => preview.runCustomTheme(async () => {
-					const active = await runtime.controller.tryOn(null, null);
-					if (active !== null) throw new Error("stock preview did not activate");
-					customTheme.tryOn();
-					return active;
-				}));
-			};
-			const exitCustomThemeTryOn = () => {
-				run("custom-theme", () => preview.runCustomTheme(async () => {
-					customTheme.exitTryOn();
-					return await runtime.controller.exitTryOn();
-				}));
-			};
-			const applyCustomTheme = () => {
-				run("custom-theme", () => preview.runCustomTheme(async () => {
-					await customTheme.apply();
-					const active = await runtime.controller.switchTo(null, null);
-					if (active !== null) {
-						await customTheme.deactivate();
-						throw new Error("stock theme did not activate");
-					}
 					return active;
 				}));
 			};
@@ -655,12 +234,9 @@ window.__ModuleLoader__.load({
 					className: skin_center_module_css_default.cardHeaderStatic,
 					children: /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
 						className: skin_center_module_css_default.headText,
-						children: [/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
+						children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
 							className: skin_center_module_css_default.pluginName,
-							children: [t("title"), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-								className: skin_center_module_css_default.titleBadge,
-								children: String(catalog?.length ?? 0)
-							})]
+							children: t("title")
 						}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
 							className: skin_center_module_css_default.cardDescription,
 							title: t("cardDescription"),
@@ -671,36 +247,25 @@ window.__ModuleLoader__.load({
 					className: skin_center_module_css_default.cardBody,
 					children: [/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
 						className: skin_center_module_css_default.enableRow,
-						children: [
-							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-								className: skin_center_module_css_default.enableLabel,
-								title: t("enabled"),
-								children: t("enabled")
-							}),
-							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
-								type: "button",
-								role: "switch",
-								"aria-checked": enabled,
-								"aria-label": t("enabled"),
-								className: enabled ? skin_center_module_css_default.switch + " " + skin_center_module_css_default.switchOn : skin_center_module_css_default.switch,
-								onClick: () => {
-									background.setEnabled(!enabled);
-								},
-								children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { className: skin_center_module_css_default.switchThumb })
-							}),
-							/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
-								className: skin_center_module_css_default.enableHint,
-								children: t("enabledHint")
-							})
-						]
+						children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
+							className: skin_center_module_css_default.enableLabel,
+							title: t("enabled"),
+							children: t("enabled")
+						}), /* @__PURE__ */ (0, react_jsx_runtime.jsx)("button", {
+							type: "button",
+							role: "switch",
+							"aria-checked": enabled,
+							"aria-label": t("enabled"),
+							className: enabled ? skin_center_module_css_default.switch + " " + skin_center_module_css_default.switchOn : skin_center_module_css_default.switch,
+							onClick: () => {
+								background.setEnabled(!enabled);
+							},
+							children: /* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", { className: skin_center_module_css_default.switchThumb })
+						})]
 					}), enabled ? /* @__PURE__ */ (0, react_jsx_runtime.jsxs)(react_jsx_runtime.Fragment, { children: [
-						/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+						/* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
 							className: skin_center_module_css_default.head,
-							children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
-								className: skin_center_module_css_default.intro,
-								title: t("intro"),
-								children: t("intro")
-							}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
+							children: /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
 								className: skin_center_module_css_default.themeRow,
 								children: [
 									/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
@@ -724,7 +289,7 @@ window.__ModuleLoader__.load({
 										children: t("themeDark")
 									})
 								]
-							})]
+							})
 						}),
 						error !== null && /* @__PURE__ */ (0, react_jsx_runtime.jsx)("div", {
 							className: skin_center_module_css_default.error,
@@ -733,8 +298,8 @@ window.__ModuleLoader__.load({
 						/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
 							className: skin_center_module_css_default.list,
 							children: [(() => {
-								const isActive = activeId === null && !previewing && !customThemeState.applied;
-								const isTrying = previewing && tryingId === null && !customThemeState.previewing;
+								const isActive = activeId === null && !previewing;
+								const isTrying = previewing && tryingId === null;
 								const badge = isActive ? t("active") : isTrying ? t("tryingOn") : null;
 								return /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
 									className: skin_center_module_css_default.card,
@@ -772,7 +337,7 @@ window.__ModuleLoader__.load({
 										})
 									]
 								}, OFFICIAL);
-							})(), (catalog ?? []).map((entry) => {
+							})(), (catalog ?? []).filter((entry) => entry.manifest.id === WHALE_SONG).map((entry) => {
 								const id = entry.manifest.id;
 								const isActive = id === activeId && !previewing;
 								const isTrying = previewing && id === tryingId;
@@ -816,186 +381,6 @@ window.__ModuleLoader__.load({
 									]
 								}, id);
 							})]
-						}),
-						/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
-							className: skin_center_module_css_default.controlsHint,
-							children: t("advancedHint")
-						}),
-						/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-							className: skin_center_module_css_default.backgroundRow,
-							children: [
-								/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-									className: skin_center_module_css_default.backgroundHead,
-									children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-										className: skin_center_module_css_default.backgroundLabel,
-										children: t("backgroundOpacity")
-									}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
-										className: skin_center_module_css_default.backgroundValue,
-										"aria-hidden": "true",
-										children: [shownOpacity, "%"]
-									})]
-								}),
-								/* @__PURE__ */ (0, react_jsx_runtime.jsx)(SliderControl, {
-									id: "skin-center-background-opacity",
-									className: skin_center_module_css_default.backgroundRange,
-									min: 0,
-									max: 100,
-									step: 5,
-									value: opacity,
-									ariaValuetext: shownOpacity + "%",
-									ariaLabel: t("backgroundOpacity"),
-									onChanging: setShownOpacity,
-									onChange: (value) => {
-										background.set(value);
-									}
-								}),
-								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
-									className: backdropActive ? skin_center_module_css_default.backgroundHint : skin_center_module_css_default.backgroundHintMuted,
-									children: backdropActive ? t("backgroundHint") : t("backgroundHintInert")
-								})
-							]
-						}),
-						/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-							className: skin_center_module_css_default.backgroundRow,
-							children: [
-								/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-									className: skin_center_module_css_default.backgroundHead,
-									children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-										className: skin_center_module_css_default.backgroundLabel,
-										children: t("backgroundBlurEmpty")
-									}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
-										className: skin_center_module_css_default.backgroundValue,
-										"aria-hidden": "true",
-										children: [shownBlurEmpty, "px"]
-									})]
-								}),
-								/* @__PURE__ */ (0, react_jsx_runtime.jsx)(SliderControl, {
-									id: "skin-center-background-blur-empty",
-									className: skin_center_module_css_default.backgroundRange,
-									min: 0,
-									max: 20,
-									step: 1,
-									value: blurEmpty,
-									ariaValuetext: shownBlurEmpty + "px",
-									ariaLabel: t("backgroundBlurEmpty"),
-									onChanging: setShownBlurEmpty,
-									onChange: (value) => {
-										background.setBlurEmpty(value);
-									}
-								}),
-								/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-									className: skin_center_module_css_default.backgroundHead,
-									children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-										className: skin_center_module_css_default.backgroundLabel,
-										children: t("backgroundBlurContent")
-									}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
-										className: skin_center_module_css_default.backgroundValue,
-										"aria-hidden": "true",
-										children: [shownBlurContent, "px"]
-									})]
-								}),
-								/* @__PURE__ */ (0, react_jsx_runtime.jsx)(SliderControl, {
-									id: "skin-center-background-blur-content",
-									className: skin_center_module_css_default.backgroundRange,
-									min: 0,
-									max: 20,
-									step: 1,
-									value: blurContent,
-									ariaValuetext: shownBlurContent + "px",
-									ariaLabel: t("backgroundBlurContent"),
-									onChanging: setShownBlurContent,
-									onChange: (value) => {
-										background.setBlurContent(value);
-									}
-								}),
-								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
-									className: backdropActive ? skin_center_module_css_default.backgroundHint : skin_center_module_css_default.backgroundHintMuted,
-									children: backdropActive ? t("backgroundBlurHint") : t("backgroundBlurInert")
-								})
-							]
-						}),
-						/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-							className: skin_center_module_css_default.backgroundRow,
-							children: [
-								/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-									className: skin_center_module_css_default.backgroundHead,
-									children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-										className: skin_center_module_css_default.backgroundLabel,
-										children: t("inputCardBlur")
-									}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
-										className: skin_center_module_css_default.backgroundValue,
-										"aria-hidden": "true",
-										children: [shownInputCardBlur, "px"]
-									})]
-								}),
-								/* @__PURE__ */ (0, react_jsx_runtime.jsx)(SliderControl, {
-									id: "skin-center-input-card-blur",
-									className: skin_center_module_css_default.backgroundRange,
-									min: 0,
-									max: 20,
-									step: 1,
-									value: inputCardBlur,
-									ariaValuetext: shownInputCardBlur + "px",
-									ariaLabel: t("inputCardBlur"),
-									onChanging: setShownInputCardBlur,
-									onChange: (value) => {
-										background.setInputCardBlur(value);
-									}
-								}),
-								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
-									className: skin_center_module_css_default.backgroundHint,
-									children: t("inputCardBlurHint")
-								})
-							]
-						}),
-						/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-							className: skin_center_module_css_default.backgroundRow,
-							children: [
-								/* @__PURE__ */ (0, react_jsx_runtime.jsxs)("div", {
-									className: skin_center_module_css_default.backgroundHead,
-									children: [/* @__PURE__ */ (0, react_jsx_runtime.jsx)("span", {
-										className: skin_center_module_css_default.backgroundLabel,
-										children: t("bubbleOpacity")
-									}), /* @__PURE__ */ (0, react_jsx_runtime.jsxs)("span", {
-										className: skin_center_module_css_default.backgroundValue,
-										"aria-hidden": "true",
-										children: [shownBubbleOpacity, "%"]
-									})]
-								}),
-								/* @__PURE__ */ (0, react_jsx_runtime.jsx)(SliderControl, {
-									id: "skin-center-bubble-opacity",
-									className: skin_center_module_css_default.backgroundRange,
-									min: 0,
-									max: 100,
-									step: 5,
-									value: bubbleOpacity,
-									ariaValuetext: shownBubbleOpacity + "%",
-									ariaLabel: t("bubbleOpacity"),
-									onChanging: setShownBubbleOpacity,
-									onChange: (value) => {
-										background.setBubbleOpacity(value);
-									}
-								}),
-								/* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
-									className: skin_center_module_css_default.backgroundHint,
-									children: t("bubbleOpacityHint")
-								})
-							]
-						}),
-						/* @__PURE__ */ (0, react_jsx_runtime.jsx)(CustomThemeCard, {
-							t,
-							customTheme,
-							scheme: dark ? "dark" : "light",
-							setScheme: (scheme) => {
-								theme.setTheme(scheme);
-							},
-							isActive: customThemeState.applied && activeId === null && !previewing,
-							isTrying: customThemeState.previewing,
-							busy: busyId === "custom-theme",
-							disabled: busyId !== null,
-							onTryOn: tryOnCustomTheme,
-							onExitTryOn: exitCustomThemeTryOn,
-							onApply: applyCustomTheme
 						})
 					] }) : /* @__PURE__ */ (0, react_jsx_runtime.jsx)("p", {
 						className: skin_center_module_css_default.offNote,
@@ -2364,7 +1749,7 @@ window.__ModuleLoader__.load({
 		//#region src/client/locales.ts
 		const en = {
 			title: "Skin Center",
-			cardDescription: "Try on any installed skin live in the GUI — exit restores instantly, applying persists in one click.",
+			cardDescription: "Switch the stock look and the whale-song skin, and toggle the light/dark theme.",
 			enabled: "Enable skin center",
 			enabledHint: "When off, try-on, apply and background controls are disabled; turn it back on to resume.",
 			offNote: "The skin center is turned off.",
@@ -2459,7 +1844,7 @@ window.__ModuleLoader__.load({
 		};
 		const zh = {
 			title: "皮肤",
-			cardDescription: "在 GUI 内即时试穿任意皮肤，退出即完全还原；应用一键完成并自动刷新。",
+			cardDescription: "在官方默认外观与鲸吟皮肤之间切换，并一键切换亮/暗主题。",
 			enabled: "启用皮肤中心",
 			enabledHint: "关闭后停用试穿、应用与背景控件，重新打开即恢复。",
 			offNote: "皮肤中心已关闭。",
